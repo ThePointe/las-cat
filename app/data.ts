@@ -782,7 +782,7 @@ export const medicalInfo = [
     icon: "stethoscope",
     title: "Beachside Clinic — Huacas",
     description:
-      "Closest clinic to Las Catalinas, located in Huacas.",
+      "Closest clinic to Las Catalinas, located in Huacas. Dr. Oscar Salas.",
     contact: "+506 2653-9911",
     urgent: true,
   },
@@ -790,7 +790,7 @@ export const medicalInfo = [
     icon: "hospital",
     title: "Hospital — Flamingo",
     description:
-      "Full hospital in Flamingo for more serious situations.",
+      "Full hospital in Flamingo for more serious situations. Dr. Enrique Baltodano Briceño.",
     contact: "+506-2690-2300",
     urgent: true,
   },
