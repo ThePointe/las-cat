@@ -51,18 +51,18 @@ export const inTownRestaurants: Restaurant[] = [
     mustGo: true,
     icon: "utensils",
     name: "Ponciana",
-    location: "Santarena Hotel",
-    cuisine: "Italian Mediterranean",
-    vibe: "All-Day Dining",
+    location: "Santarena Hotel, Main Plaza",
+    cuisine: "Mediterranean · Costa Rican Fusion",
+    vibe: "All-Day Fine Dining",
     description:
-      "The social heart of Las Catalinas — exceptional quality breakfast, lunch & dinner. 4.7/5 ★, #1 of 7 in Las Catalinas.",
+      "The social heart of Las Catalinas — award-winning Mediterranean cuisine with Costa Rican ingredients. 4.7/5 ★, #1 of 7 in Las Catalinas.",
     fullDescription:
-      "The social heart of Las Catalinas — exceptional quality breakfast buffet, plus lunch and dinner. Indoor & outdoor seating in a welcoming cultural space. Make reservations, especially for breakfast and dinner. Award-winning Mediterranean cuisine celebrating local ingredients.",
+      "The social heart of Las Catalinas featuring a celebrated breakfast buffet with fresh local fruits, pastries, and eggs prepared to order. Lunch showcases Mediterranean specialties with fresh Costa Rican seafood and vegetables. Dinner is elevated, with inventive preparations of local ingredients. Both indoor and outdoor seating create an inviting, cultural atmosphere. Basque-inspired traditions meet Pacific Coast bounty. Reservations essential, especially for breakfast and dinner service.",
     hours: "7am–10:30am Breakfast, 12pm–9pm Lunch & Dinner",
     phone: "+506 2106 1500",
     email: "ponciana@santarenahotel.com",
     rating: "4.7/5 (200 reviews) • #1 of 7 in Las Catalinas",
-    tags: ["★ Top Rated", "Breakfast Buffet", "Reservations Recommended"],
+    tags: ["★ Top Rated", "Breakfast Buffet", "Award-Winning", "Reservations Required"],
     images: [
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/01/d7/d9/outdoor-dinning-area.jpg",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/01/d7/d8/ponciana-bar.jpg",
@@ -83,17 +83,17 @@ export const inTownRestaurants: Restaurant[] = [
     mustGo: true,
     icon: "coffee",
     name: "Pura Vida Ride",
-    location: "In Town",
-    cuisine: "Coffee & Adventure Center",
-    vibe: "Morning Ritual + Water Sports",
+    location: "In Town (Main Street)",
+    cuisine: "Specialty Coffee & Adventure Outfitter",
+    vibe: "Morning Coffee + Afternoon Adventures",
     description:
-      "Organic coffee, empanadas, and adventure. Also mountain bikes, kayaks, paddleboards, e-foiling. 4.8/5 ★, Travelers' Choice 2025.",
+      "World-class organic coffee, empanadas, and a full adventure center. Mountain biking, kayaking, paddleboarding, e-foiling — all in one place. 4.8/5 ★, Travelers' Choice 2025.",
     fullDescription:
-      "Get up early and sit in the rocking chairs with fresh organic coffee, empanadas, and muffins. This is the heart of morning in Las Catalinas. In the afternoon, grab gelato or rent equipment for adventure: mountain bikes through the forest, kayaks in the bay, paddleboards, e-foiling, and more. A full-service adventure center.",
+      "Start your day in the iconic rocking chairs with shade-grown organic espresso drinks prepared by expert baristas using the finest coffee beans. Fresh daily empanadas, bagels, muffins, and gelato round out the cafe menu. Afternoon shifts into adventure: rent world-renowned mountain bikes for forest trails, kayaks for the sheltered bay, stand-up paddleboards, or try e-foiling — the future of water sports. Featured brands include Yeti, Patagonia, Vissla, and Ripcurl. Full-service bike shop with guided tours and expert advice for all skill levels.",
     hours: "7am–5pm Daily",
     phone: "+506 8584-6045",
     rating: "4.8/5 (441 reviews) • #1 of 5 Activities in Las Catalinas • Travelers' Choice 2025",
-    tags: ["★ Top Rated", "Organic Coffee", "Equipment Rentals", "E-Foiling"],
+    tags: ["★ Top Rated", "Organic Coffee", "Mountain Bike Rentals", "E-Foiling", "Water Sports"],
     images: [
       "https://images.squarespace-cdn.com/content/v1/6803fa5f375c7e07e48fbc2c/1745091185730-VIIYA3JSD670YRVOZJNT/coffeeshop-costa-rica-pura-vida-ride.jpg",
       "https://images.squarespace-cdn.com/content/v1/6803fa5f375c7e07e48fbc2c/1745091185754-1C020YDN7MB7C49H03TH/coffeeshop-pure-vida-ride-costa-rica+%281%29.jpg",
@@ -115,17 +115,17 @@ export const inTownRestaurants: Restaurant[] = [
     icon: "soup",
     name: "Pots & Bowls",
     location: "In Town (Town Center)",
-    cuisine: "Health Café / Smoothie Bar",
-    vibe: "Local Favorite",
+    cuisine: "Health Café · Sustainable Seafood",
+    vibe: "Fresh · Nutritious · Local",
     description:
-      "Creative bowls, ceviche, cold brew. 4.8/5 ★, Travelers' Choice 2025, #3 of 7 in Las Catalinas.",
+      "Artisanal bowls with responsibly-sourced seafood, cold-pressed juices, and specialty coffee. 4.8/5 ★, Travelers' Choice 2025, #3 of 7 in Las Catalinas.",
     fullDescription:
-      "A beloved Las Catalinas staple for healthy, delicious meals. Creative bowls, fresh ceviche, cold-pressed juices, smoothies, and excellent coffee. Perfect for breakfast, lunch, or a quick snack. Everything is made fresh daily with a focus on clean, nutritious ingredients.",
+      "A Las Catalinas institution for thoughtfully-prepared healthy meals. Every dish balances nutrition with flavor — no processed ingredients. Create custom protein bowls with fresh vegetables and house-made pesto and nut butters. Ceviche features certified sustainable-catch seafood from Gulf of Nicoya artisanal fishermen. Cold-pressed juices and smoothies (with plant-based milk options) pair with Café Willows arabica coffee from a five-generation family farm. Host private events. On-site shop featuring locally-made ceramics, Costa Rican apparel, plants, and gifts. All day breakfast, lunch & dinner.",
     hours: "7:30am–8pm Daily",
     phone: "+506 8500 5950",
     email: "info@blossomgroupcr.com",
     rating: "4.8/5 (128 reviews) • #3 of 7 in Las Catalinas • Travelers' Choice 2025",
-    tags: ["★ Top Rated", "Health Conscious", "Fresh Bowls", "Smoothies"],
+    tags: ["★ Top Rated", "Sustainable Seafood", "Plant-Based Options", "Cold-Pressed Juice", "Private Events"],
     images: [
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/10/9a/0a/cold-brew.jpg?w=1100&h=1100&s=1",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/10/99/f1/ceviche.jpg?w=1100&h=1100&s=1",
@@ -145,17 +145,18 @@ export const inTownRestaurants: Restaurant[] = [
   {
     icon: "star",
     name: "Sentido Norte",
-    location: "Casa Chameleon Hotel",
-    cuisine: "Costa Rican Coastal",
-    vibe: "Award-Winning Fine Dining",
+    location: "Casa Chameleon Hotel, Ocean Bluff",
+    cuisine: "Contemporary Costa Rican · Sea-to-Table",
+    vibe: "Michelin-Level Fine Dining",
     description:
-      "Top 10% restaurants globally (2025). Local ingredients, coastal flair, stunning views.",
+      "Top 10% restaurants globally per CNN. Recognized as one of the world's most romantic restaurants. Sea- and farm-to-table cuisine with local Guanacaste ingredients.",
     fullDescription:
-      "The jewel of Casa Chameleon Hotel — an award-winning fine dining destination in the top 10% of restaurants globally. Local ingredients reimagined with coastal flair, inventive cocktails, and unforgettable sunset views. Minimum $45 for sunset drinks. Adults and children 10+ only. Reservations required.",
-    hours: "Call for seasonal hours",
-    phone: "+506 2103 1200",
-    rating: "Top 10% globally (2025) • 5-star fine dining",
-    tags: ["★ Award-Winning", "Fine Dining", "Reservations Required", "Ocean Views"],
+      "The crown jewel of Casa Chameleon — a Michelin-caliber fine dining destination in the top 10% of restaurants globally. Every meal and cocktail features sea- and farm-to-table ingredients celebrated through contemporary Costa Rican techniques. Open-air venue with breathtaking Pacific vistas. CNN named it one of the world's most romantic restaurants. Separate breakfast, lunch, dinner, and wine menus. Day guests welcome with pool access (9am–5pm) or sunset service by reservation ($95+ per person). Dress code: casual elegant, no flip-flops. Groups 8+ require $200 deposit. 10+ years old only. Smoke-free, pet-free. Reservations essential.",
+    hours: "Breakfast, Lunch & Dinner Daily (Call for hours)",
+    phone: "+506 2103-1200",
+    email: "reservations@casachameleonhotels.com",
+    rating: "Top 10% globally (2025) • CNN's Most Romantic Restaurants",
+    tags: ["★ Award-Winning", "Sea-to-Table", "One World's Most Romantic", "Fine Dining", "Reservations Required"],
     images: [
       "https://www.casachameleonhotels.com/wp-content/uploads/2020/09/sentido-norte-restaurant-casa-chameleon-costa-rica.jpg",
     ],
@@ -202,20 +203,22 @@ export const inTownRestaurants: Restaurant[] = [
   {
     icon: "wine",
     name: "Pascual",
-    location: "Plaza Mercado",
-    cuisine: "Authentic Spanish",
-    vibe: "Tapas Bar",
+    location: "Plaza Mercado, Heart of Town",
+    cuisine: "Authentic Spanish · Tapas",
+    vibe: "Evening Spanish Social",
     description:
-      "Classic croquetas, silky paella, and chilled gazpacho in the heart of Plaza Mercado. Evening only — a great dinner destination.",
-    hours: "2pm – 10pm daily",
+      "Classic Spanish croquetas, silky paella, and chilled gazpacho in a lively Plaza Mercado setting. Evening only — perfect for sunset wine and tapas.",
+    fullDescription:
+      "Pascual brings authentic Spain to Las Catalinas' vibrant Plaza Mercado. Evening-only hours mean this is the place to settle in as the sun sets and the plaza comes alive. Classic Spanish croquetas with perfectly crispy exteriors and creamy centers. Silky paella made with care and seafood from local waters. Chilled gazpacho, tender boquerones (marinated anchovies), squid ink noodles (fideos con tinta de calamar), and jamón ibérico. Wine selection is impressive — Spanish and international bottles curated for the menu. Friday nights feature mixology classes where you can learn Spanish cocktail techniques. The atmosphere is relaxed and social — perfect for lingering conversations over wine.",
+    hours: "2pm–10pm Daily",
     phone: "+506 6440 3850",
-    tags: ["Tapas", "Paella", "Evening Only"],
+    tags: ["Tapas", "Spanish Wine", "Paella", "Evening Only", "Mixology Fridays", "Social Atmosphere"],
     menu: {
-      en: "Authentic Spanish tapas and traditional dishes. Croquetas, paella, gazpacho, boquerones, squid ink noodles, and an impressive wine selection. Mixology classes available Friday nights.",
-      es: "Auténticas tapas españolas y platos tradicionales. Croquetas, paella, gazpacho, boquerones, fideos con tinta de calamar y una impresionante selección de vinos. Clases de coctelería disponibles los viernes.",
+      en: "Authentic Spanish tapas and traditional dishes. Croquetas (crispy and creamy), paella with seafood, chilled gazpacho, boquerones, squid ink noodles, jamón ibérico, and an impressive wine selection. Mixology classes Friday nights.",
+      es: "Auténticas tapas españolas y platos tradicionales. Croquetas (crujientes y cremosas), paella con mariscos, gazpacho frío, boquerones, fideos con tinta de calamar, jamón ibérico, y una impresionante selección de vinos. Clases de coctelería los viernes.",
       highlights: {
-        en: ["Spanish Croquetas", "Silky Paella", "Gazpacho", "Wine Selection"],
-        es: ["Croquetas Españolas", "Paella Sedosa", "Gazpacho", "Selección de Vinos"]
+        en: ["Spanish Croquetas", "Paella", "Gazpacho", "Jamón Ibérico", "Wine Selection", "Mixology Classes"],
+        es: ["Croquetas Españolas", "Paella", "Gazpacho", "Jamón Ibérico", "Selección de Vinos", "Clases de Coctelería"]
       },
       url: "https://www.pascualcr.com/"
     },
@@ -224,18 +227,20 @@ export const inTownRestaurants: Restaurant[] = [
     icon: "beer",
     name: "Papagayo Taphouse",
     location: "Playa Danta — Beachfront",
-    cuisine: "Craft Beer & Pub Food",
-    vibe: "Lively Brewery",
+    cuisine: "Craft Brewery · Pub Food",
+    vibe: "Beachside Brewery Vibes",
     description:
-      "One of Costa Rica's best craft breweries right on the sand. Cold beer, great snacks, swing seats, and big TVs for sports. Unbeatable sunset energy.",
-    hours: "Midday through evening",
-    tags: ["Craft Beer", "Beachfront", "Sports on TV"],
+      "One of Costa Rica's finest craft breweries right on the sand with swing seats and incredible sunsets. Cold beer, great food, sports on big screens.",
+    fullDescription:
+      "Papagayo Brewing offers quality craft beer \"as refreshing as it is flavorful — made to accentuate the Guanacaste climate and culture, from brewery to beach.\" Sit in iconic swing seats directly on Playa Danta with feet in the sand, cold beers in hand, and unbeatable sunset energy. Signature brews include Beach Lager (perfect for the tropics), Tropical IPA, Offshore Ale, and Passion Fruit Ale. Top-notch cocktails crafted to complement the beers. Casual pub food pairs with your brew. Big TVs for sports. This is where Las Catalinas comes to celebrate, unwind, and catch the sunset with fellow travelers and locals.",
+    hours: "Midday through Evening Daily",
+    tags: ["Craft Beer", "Beachfront", "Swing Seats", "Sports on TV", "Sunset Views", "Local Favorite"],
     menu: {
-      en: "Costa Rican craft beers including Beach Lager, Tropical IPA, Offshore Ale, and Passion Fruit Ale. Top-notch cocktails and casual pub food.",
-      es: "Cervezas artesanales costarricenses incluyendo Beach Lager, Tropical IPA, Offshore Ale y Passion Fruit Ale. Cócteles excepcionales y comida casual de bar.",
+      en: "Handcrafted Costa Rican craft beers: Beach Lager, Tropical IPA, Offshore Ale, Passion Fruit Ale. Top-notch cocktails and casual pub food perfectly paired with cold beer and tropical sunsets.",
+      es: "Cervezas artesanales de Costa Rica elaboradas a mano: Beach Lager, Tropical IPA, Offshore Ale, Passion Fruit Ale. Cócteles excepcionales y comida casual de bar perfectamente combinados con cerveza fría y atardeceres tropicales.",
       highlights: {
-        en: ["Beach Lager", "Tropical IPA", "Craft Cocktails", "Casual Pub Food"],
-        es: ["Beach Lager", "Tropical IPA", "Cócteles Artesanales", "Comida de Bar Casual"]
+        en: ["Beach Lager", "Tropical IPA", "Passion Fruit Ale", "Craft Cocktails", "Pub Food", "Sunset Vibes"],
+        es: ["Beach Lager", "Tropical IPA", "Passion Fruit Ale", "Cócteles Artesanales", "Comida de Bar", "Vibes al Atardecer"]
       },
       url: "https://papagayo-brewing.com/"
     },
@@ -243,19 +248,23 @@ export const inTownRestaurants: Restaurant[] = [
   {
     icon: "sandwich",
     name: "The Deli at Copper & Stone",
-    location: "In Town",
-    cuisine: "Deli & Café",
-    vibe: "Gourmet Deli",
+    location: "In Town, Main Plaza",
+    cuisine: "Gourmet Deli · Prepared Cuisine",
+    vibe: "Grab & Go · Fine Preparation",
     description:
-      "Signature sandwiches, prepared meals, organic smoothies, fresh breads & pastries. Daily veggie & non-veggie entrée specials. Pizza every Friday. Pricey but excellent and very convenient.",
-    hours: "Daily",
-    tags: ["Fresh Breads", "Pizza Fridays", "Organic Smoothies"],
+      "World-class prepared foods, artisan sandwiches, organic smoothies, prime meats & cheeses. Daily specials. Fresh pizza every Friday.",
+    fullDescription:
+      "Las Catalinas' most convenient gourmet option for prepared cuisine. World-class prepared proteins, sides, soups, and fresh salads ready for grab-and-go beach trips or to finish at your villa. Artisan sandwiches made fresh daily with premium meats and cheeses. Prime CAB beef cuts available. Fresh breads and pastries baked in-house. Organic cold-pressed juices, smoothies with non-dairy options, and excellent coffee service. Daily rotating specials feature vegetarian and non-vegetarian options. Fresh-made pizza every Friday. Juice bar. Deli staples and gourmet provisions for your stay.",
+    hours: "Daily (Hours TBD - contact for details)",
+    phone: "+506 2106 1551",
+    email: "orders@copperandstonegourmet.com",
+    tags: ["Prepared Meals", "Grab & Go", "Prime Meats & Cheeses", "Friday Pizza", "Organic Smoothies", "Convenient"],
     menu: {
-      en: "Artisan sandwiches, fresh breads & pastries, prepared meals, organic smoothies, salads, and prime CAB cuts. Daily veggie and non-veggie specials. Fresh pizza every Friday.",
-      es: "Sándwiches artesanales, panes y pasteles frescos, comidas preparadas, batidos orgánicos, ensaladas y cortes de carne CAB. Especiales vegetarianos y no vegetarianos diarios. Pizza fresca todos los viernes.",
+      en: "World-class prepared cuisine: proteins, sides, vegetables, soups, and salads. Artisan sandwiches, deli staples, prime CAB beef cuts, fresh breads and pastries, organic smoothies and juices, coffee service. Weekly rotating vegetarian and non-vegetarian specials. Fresh pizza every Friday.",
+      es: "Cocina preparada de clase mundial: proteínas, acompañamientos, vegetales, sopas y ensaladas. Sándwiches artesanales, productos de delicatessen, cortes de carne CAB prime, panes y pasteles frescos, batidos y jugos orgánicos, servicio de café. Especiales semanales vegetarianos y no vegetarianos. Pizza fresca todos los viernes.",
       highlights: {
-        en: ["Artisan Sandwiches", "Fresh Breads", "Friday Pizza", "Organic Smoothies"],
-        es: ["Sándwiches Artesanales", "Panes Frescos", "Pizza los Viernes", "Batidos Orgánicos"]
+        en: ["Prepared Meals", "Artisan Sandwiches", "Prime Beef Cuts", "Friday Pizza", "Organic Smoothies", "Fresh Breads"],
+        es: ["Comidas Preparadas", "Sándwiches Artesanales", "Cortes Prime", "Pizza los Viernes", "Batidos Orgánicos", "Panes Frescos"]
       },
       url: "https://copperandstonegourmet.com/"
     },
@@ -303,19 +312,21 @@ export const inTownRestaurants: Restaurant[] = [
   {
     icon: "leaf",
     name: "Nature's Table",
-    location: "Center of Joy",
-    cuisine: "Health Café",
-    vibe: "Wellness Café",
+    location: "Center of Joy, Main Plaza",
+    cuisine: "Health & Wellness Café",
+    vibe: "Plant-Based · Nutritious",
     description:
-      "Health-conscious café nestled in the heart of the Center of Joy, right in the center of town. Perfect for a light, nutritious meal.",
-    hours: "Check current hours",
-    tags: ["Healthy", "Light Meals", "Wellness"],
+      "Wellness-focused café in the heart of the Center of Joy. Fresh juices, healthy bowls, plant-based dishes, and light nutritious meals.",
+    fullDescription:
+      "Nature's Table brings wellness to the heart of Las Catalinas' vibrant Center of Joy. Meticulously-prepared light, nutritious meals designed for those prioritizing health without sacrificing taste. Create custom healthy bowls with fresh vegetables, proteins, and house-made dressings. Cold-pressed fresh juices packed with whole fruits and vegetables. Salads feature local produce, legumes, and creative combinations. Plant-based options throughout the menu. Smoothie bowls with granola and fresh toppings. The café atmosphere invites lingering over a healthy meal or quick refueling between activities. Perfect before or after yoga, hiking, or water sports.",
+    hours: "7am–6pm Daily",
+    tags: ["Plant-Based", "Fresh Juices", "Healthy Bowls", "Wellness", "Quick Service"],
     menu: {
-      en: "Light, nutritious meals focused on wellness. Healthy bowls, salads, fresh juices, and plant-based options.",
-      es: "Comidas ligeras y nutritivas enfocadas en el bienestar. Ensalazones saludables, ensaladas, jugos frescos y opciones a base de plantas.",
+      en: "Light, nutritious meals focused on wellness and plant-based options. Customizable healthy bowls, fresh green salads with local vegetables, cold-pressed juices, smoothie bowls, protein-rich legume dishes, and light meals for the health-conscious.",
+      es: "Comidas ligeras y nutritivas enfocadas en el bienestar y opciones a base de plantas. Ensalazones saludables personalizables, ensaladas verdes frescas con vegetales locales, jugos recién exprimidos, tazones de batido, platos de legumbres ricos en proteínas, y comidas ligeras.",
       highlights: {
-        en: ["Healthy Bowls", "Fresh Juices", "Plant-Based", "Light Meals"],
-        es: ["Ensalazones Saludables", "Jugos Frescos", "Opciones Veganas", "Comidas Ligeras"]
+        en: ["Healthy Bowls", "Cold-Pressed Juices", "Plant-Based Options", "Fresh Salads", "Smoothie Bowls"],
+        es: ["Ensalazones Saludables", "Jugos Recién Exprimidos", "Opciones Veganas", "Ensaladas Frescas", "Tazones de Batido"]
       },
     },
   },
@@ -362,13 +373,14 @@ export const nearbyAreas: NearbyArea[] = [
       {
         mustGo: true,
         name: "La Forketta",
-        cuisine: "Italian",
+        cuisine: "Traditional Italian · Mediterranean",
         description:
-          "Incredible hand-made pastas and brick-oven pizzas. 4.7/5 ★, Travelers' Choice 2025, #5 of 47.",
+          "Incredible hand-made pastas and brick-oven pizzas in a cozy Potrero setting. 4.7/5 ★, Travelers' Choice 2025, #5 of 47.",
         fullDescription:
-          "A cozy Italian eatery in Potrero with incredible hand-made pastas and brick-oven pizzas. Super friendly staff, mostly outdoor seating, and a warm, welcoming atmosphere. Very popular — make reservations via WhatsApp. Every pizza is made with love and fresh, quality ingredients. The pasta dishes are exceptional and authentic.",
+          "A beloved Italian gem in Potrero where healthy and delicious go hand-in-hand in Mediterranean cuisine. Every hand-made pasta celebrates traditional Italian preparations with fresh, quality ingredients. Brick-oven pizzas emerge with crispy, wood-fired perfection. Super friendly staff creates a warm, welcoming atmosphere in mostly-outdoor seating overlooking the Potrero coast. Specialties include Spaghetti alla Carbonara with eggs and bacon, Lasagne alla Bolognese with housemade pasta, and Burrata Pizza. The seafood options (fish soup, grilled octopus) showcase local Pacific catches. Very popular — make reservations in advance via WhatsApp.",
+        hours: "Lunch & Dinner Daily (Call for exact hours)",
         rating: "4.7/5 (296 reviews) • Travelers' Choice 2025 • #5 of 47 in Playa Potrero",
-        tags: ["★ Top Rated", "Brick-Oven Pizza", "Hand-Made Pasta"],
+        tags: ["★ Top Rated", "Brick-Oven Pizza", "Hand-Made Pasta", "Mediterranean", "Family-Friendly"],
         phone: "WhatsApp +506 2215 0226",
         images: [
           "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/cb/e6/9c/nuestra-pizza-burrata.jpg",
@@ -377,11 +389,11 @@ export const nearbyAreas: NearbyArea[] = [
           "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/27/07/d9/la-forketta.jpg",
         ],
         menu: {
-          en: "Traditional Italian cuisine with hand-made pastas and brick-oven pizzas. Fresh, quality ingredients with authentic recipes.",
-          es: "Cocina italiana tradicional con pastas hechas a mano y pizzas de horno de leña. Ingredientes frescos y de calidad con recetas auténticas.",
+          en: "Traditional Mediterranean Italian cuisine where fresh ingredients meet housemade preparations. Hand-made pastas (Carbonara, Bolognese Lasagne, seafood varieties). Brick-oven pizzas include Burrata. Soups, salads, fish dishes, and fresh seafood from local fishermen.",
+          es: "Cocina italiana mediterránea tradicional donde ingredientes frescos se encuentran con preparaciones caseras. Pastas hechas a mano (Carbonara, Lasaña Boloñesa, variedades de mariscos). Pizzas de horno de leña incluyendo Burrata. Sopas, ensaladas, pescados y mariscos frescos de pescadores locales.",
           highlights: {
-            en: ["Hand-Made Pasta", "Brick-Oven Pizza", "Burrata Pizza", "Grilled Octopus"],
-            es: ["Pasta Hecha a Mano", "Pizza de Horno de Leña", "Pizza Burrata", "Pulpo a la Parrilla"]
+            en: ["Spaghetti alla Carbonara", "Brick-Oven Pizza", "Burrata Pizza", "Fresh Seafood", "Grilled Octopus"],
+            es: ["Spaghetti alla Carbonara", "Pizza de Horno de Leña", "Pizza Burrata", "Mariscos Frescos", "Pulpo a la Parrilla"]
           },
           url: "https://laforketta.restaurant/"
         },
@@ -493,19 +505,21 @@ export const nearbyAreas: NearbyArea[] = [
       {
         mustGo: true,
         name: "Gracia at Mar Vista",
-        cuisine: "International",
+        cuisine: "Globally-Inspired · Farm-to-Table",
         description:
-          "Hilltop restaurant with stunning infinity pool. Arrive early for sunset — bring a swimsuit!",
+          "Iconic hilltop restaurant with infinity pool overlooking the Pacific. World-class cuisine, famous key lime pie, and breathtaking sunsets.",
         fullDescription:
-          "Hilltop restaurant with a stunning infinity pool overlooking the ocean. Arrive early for sunset and bring a swimsuit so you can enjoy the pool and views. Excellent food, famous key lime pie, and an unforgettable experience. Tell the gate guard \"Vamos a Gracia.\" Reservations recommended.",
-        tags: ["Infinity Pool", "★ Sunset Views", "Hilltop", "Swimming"],
+          "The benchmark Gracia location in the gated Mar Vista community between Brasilito and Flamingo. Architecturally-designed indoor-outdoor space showcases globally-inspired, locally-sourced cuisine. Signature infinity pool overlooks breathtaking Pacific vistas — bring a swimsuit for sunset cocktails overlooking the ocean. Lunch menus are casual and relaxed; dinner is more elegant. On-site organic hydroponic garden (Jardin Organico) produces fresh lettuces, herbs, and vegetables steps from the kitchen. Weekend lunch features a playground for families with kids. Famous for exquisite key lime pie and inventive dishes like Mahi Wulfe with grilled artichokes and sun-dried tomatoes. Tell the gate guard 'Vamos a Gracia.' Reservations essential.",
+        tags: ["Infinity Pool", "★ Sunset Views", "Farm-to-Table", "Organic Garden", "Family-Friendly Weekend Lunch"],
         phone: "WhatsApp +506 6110 1687",
+        email: "reservations@graciacostarica.com",
+        hours: "Mon-Sun 12pm–8:30pm (last seating 8:30pm)",
         menu: {
-          en: "Farm-to-table cuisine with inventive tapas and fresh seafood. Lunch menu features casual dining; dinner is more elegant. Famous key lime pie and unique dishes like Mahi Wulfe with grilled artichokes and sun-dried tomatoes.",
-          es: "Cocina de la granja a la mesa con tapas inventivas y mariscos frescos. El menú de almuerzo presenta comida casual; la cena es más elegante. Famoso pay de lima clave y platos únicos como Mahi Wulfe con alcachofas a la parrilla y tomates secados al sol.",
+          en: "Simple yet exquisite dishes with depth and layers of flavor. Globally-inspired with locally-sourced ingredients from the on-site organic garden. Fresh seafood, inventive tapas, famous key lime pie, and creative cocktails.",
+          es: "Platos simples pero exquisitos con profundidad y capas de sabor. Inspirado globalmente con ingredientes locales del jardín orgánico in situ. Mariscos frescos, tapas inventivas, famoso pay de lima clave y cócteles creativos.",
           highlights: {
-            en: ["Creative Tapas", "Mahi Wulfe", "Key Lime Pie", "Farm-to-Table"],
-            es: ["Tapas Creativas", "Mahi Wulfe", "Pay de Lima Clave", "De la Granja a la Mesa"]
+            en: ["Creative Tapas", "Mahi Wulfe", "Key Lime Pie", "Organic Garden", "Sunset Cocktails"],
+            es: ["Tapas Creativas", "Mahi Wulfe", "Pay de Lima Clave", "Jardín Orgánico", "Cócteles al Atardecer"]
           },
           url: "https://graciacostarica.com/mar-vista/"
         },
@@ -635,8 +649,14 @@ export interface Activity {
   icon: string;
   title: string;
   description: string;
+  fullDescription?: string;
   tags: string[];
   phone?: string;
+  email?: string;
+  pricing?: string;
+  difficulty?: string;
+  duration?: string;
+  images?: string[];
 }
 
 export const activities: Activity[] = [
@@ -644,22 +664,35 @@ export const activities: Activity[] = [
     icon: "mountain",
     title: "Hiking Trails",
     description:
-      "Six trails for all levels through tropical dry forest. Download the AllTrails app — it works great in LC. Bring LOTS of water (especially in dry season) and spray insect repellent on your legs. Get a trail map from the concierge.",
-    tags: ["All Levels", "6 Trails", "42km Network", "AllTrails App"],
+      "Six trails for all levels through tropical dry forest with stunning Pacific vistas. Download the AllTrails app — it works great here.",
+    fullDescription:
+      "Explore 42km of pristine trails through tropical dry forest ecosystems teeming with wildlife. Six distinct trails range from easy strolls through town trails to challenging ridge hikes with panoramic Pacific vistas. Spot howler monkeys, iguanas, coatis, and tropical birds throughout the network. Trails weave past hidden coves and natural springs. The AllTrails app works great in Las Catalinas for navigation. Essential gear: bring LOTS of water (at least 2 liters, especially in dry season Nov-Apr when it's hot). Spray insect repellent on legs to avoid mosquitoes. Wear sturdy hiking boots for rocky terrain. Get detailed trail maps from the concierge before heading out. Best hiking times are early morning (cooler) or late afternoon. The dry season (Nov-Apr) offers the best visibility and hardest terrain. Rainy season trails can be slippery.",
+    difficulty: "All Levels (Easy to Challenging)",
+    duration: "1-4 hours depending on trail",
+    tags: ["All Levels", "6 Trails", "42km Network", "AllTrails App", "Wildlife Spotting", "Free"],
   },
   {
     icon: "bike",
     title: "Mountain Biking",
     description:
-      "42km of world-class single track through tropical dry forest. Spot howler monkeys and iguanas, catch Pacific panoramas. Rentals and guided tours available.",
-    tags: ["All Skill Levels", "Rentals Available", "Guided Tours"],
+      "42km of world-class single track through tropical dry forest. Expert-curated trails with Pacific vistas. Rentals, guided tours, and all skill levels.",
+    fullDescription:
+      "Las Catalinas sits atop a 42km network of world-renowned mountain biking single track — some of the best technical riding in Central America. Trails traverse tropical dry forest with constant surprises: howler monkeys crashing through branches, white-faced iguanas sunbathing on rocks, coatis foraging below, and sudden vistas of the Pacific stretching to the horizon. The network accommodates all skills from gentle forest rolls suitable for kids to challenging technical descents for experts. Pura Vida Ride (in town) rents premium bikes (Yeti, Patagonia-brand partners) and offers professional guided tours with expert knowledge of local trails, flora, and fauna. Dry season (Nov-Apr) offers the hardest terrain and best visibility. Rainy season (May-Oct) brings lush scenery but slippery conditions. Wear helmet, protective gear, and bring plenty of water.",
+    difficulty: "All Skill Levels (Beginner to Expert)",
+    duration: "1-4 hours depending on trail",
+    tags: ["World-Class Trails", "All Skill Levels", "Rentals Available", "Guided Tours", "Technical Riding", "Scenic Views"],
   },
   {
     icon: "activity",
     title: "Yoga at Casa Chameleon",
     description:
-      "Monday–Thursday at 9am, $14 per class with arguably the best view anywhere in Las Catalinas. Call to confirm current times before going.",
-    tags: ["Mon–Thu @ 9am", "$14/class", "Best Views in LC"],
+      "Monday–Thursday at 9am overlooking the Pacific. Arguably the best view during yoga anywhere in Las Catalinas. $14 per class.",
+    fullDescription:
+      "Start your morning with sunrise yoga on the cliffs of Casa Chameleon Hotel. Classes focus on gentle to moderate practice suitable for all levels. The Pacific Ocean stretches endlessly before you, creating a meditative atmosphere enhanced by the sound of waves and tropical birds. Each class is approximately 60 minutes. The studio is open-air with overhead fans and natural light. Bring your own mat (though some are available). Classes typically include breathing exercises (pranayama), asana practice, and savasana (final relaxation). The early 9am time means you'll likely catch golden morning light and have the rest of the day for adventures. Perfect for recovering from activities or simply finding stillness. Call Casa Chameleon ahead to confirm current class times and any holiday schedule changes.",
+    duration: "60 minutes",
+    pricing: "$14 per class",
+    difficulty: "All Levels",
+    tags: ["Sunrise Views", "All Levels", "Open-Air Studio", "Ocean Views", "Mon-Thu Mornings"],
     phone: "+506 2103 1200",
   },
   {
@@ -673,8 +706,12 @@ export const activities: Activity[] = [
     icon: "anchor",
     title: "Sunset Catamaran",
     description:
-      "Sail the Pacific at golden hour with snorkeling, kayaking, and paddleboarding included. Walk over to the concierge to arrange a shared sail with other LC guests — or book a private charter.",
-    tags: ["Snorkeling Included", "Sunset Views", "Concierge Can Arrange"],
+      "Sail the Pacific at golden hour with snorkeling, kayaking, and paddleboarding included. Shared sails or private charters available.",
+    fullDescription:
+      "Experience the Pacific at its most magical — golden light, warm breeze, and the promise of adventure. Professional catamaran sails depart as sunset approaches, featuring snorkeling in crystal-clear waters to spot tropical fish and sea life, kayaking in sheltered coves, and paddleboarding across glassy-calm waters. Tours typically last 3-4 hours. Snacks and beverages included. Shared sails with other Las Catalinas guests provide a social atmosphere and represent excellent value. Private charters available for groups seeking exclusivity. The concierge can arrange everything and recommend trusted operators. Best conditions in dry season (Nov-Apr) when waters are calmer and visibility is better. Rainy season can bring choppier conditions but fewer crowds.",
+    duration: "3-4 hours",
+    pricing: "Shared sails $75-100pp, Private charters available",
+    tags: ["Snorkeling Included", "Sunset Views", "All Skill Levels", "Drinks Included", "Concierge Arranges"],
   },
   {
     icon: "sun",
@@ -730,25 +767,32 @@ export const privateChefs = [
     icon: "chef-hat",
     name: "Copper & Stone Catering",
     description:
-      "Best prices and fabulous food for private events. They can prepare anything from a simple BBQ to an extravagant multi-course meal. Contact the event manager.",
+      "Best-value catering for private events. Everything from casual BBQ to elegant multi-course dinners. Full setup and cleanup included.",
+    fullDescription:
+      "Copper & Stone Catering offers the best prices in the region for private events and in-home dining experiences. Whether you're planning a casual beach BBQ for 10 or an elegant five-course dinner for 50, they can execute flawlessly. The culinary team works with you to design menus reflecting your preferences and budget. They handle shopping, prep, cooking, setup, table service, and cleanup — everything needed for a memorable meal. Many guests opt for family-style service where dishes are shared. Wine pairings available. They specialize in fresh local seafood, prime meats, and creative vegetarian options. Professional staff ensures everything runs smoothly. Multi-day event catering also available. Contact the event manager to discuss your vision and timeline.",
     phone: "+506 8334 8766",
-    tags: ["Best Prices", "BBQ & Events", "Catering"],
+    tags: ["Best Prices", "BBQ & Events", "Full-Service Catering", "Wine Pairings", "Custom Menus"],
   },
   {
     icon: "fish",
     name: "In-Home Sushi Experience",
     description:
-      "A talented local sushi chef comes to your home and prepares everything — dishes, setup, cleanup — the full experience. About $50 per person. He also runs two popular food trucks in Huacas (Origami & Kotoy).",
+      "A talented local sushi chef prepares authentic sushi at your villa. Everything included — ingredients, preparation, setup, cleanup.",
+    fullDescription:
+      "An exceptional local sushi chef brings an immersive sushi experience directly to your Las Catalinas home. You host, he handles everything else. The chef arrives with premium ingredients, equipment, and expertise. He prepares fresh rolls, nigiri, and specialty sushi pieces right in your kitchen while guests watch and learn. All dishes, utensils, setup, and cleanup included — you simply enjoy. Roughly $50 per person depending on menu selections. This same talented chef operates the popular Origami and Kotoy food trucks in Huacas for daytime snacking. Private experience perfect for intimate dinners, small celebrations, or simply a unique culinary moment in your villa.",
     phone: "+506 8942-1717",
-    tags: ["~$50/pp", "Chef Brings Everything", "Setup & Cleanup Included"],
+    tags: ["All-Inclusive", "At Your Villa", "Premium Ingredients", "$50/pp", "Interactive Experience"],
   },
   {
     icon: "utensils",
     name: "RLT Cuisine — Classes & Private Dinners",
     description:
-      "Award-winning culinary master offering hands-on cooking classes and private dinners in Potrero (~10 min away). Food Lab: 4-seat intimate restaurant experience. All skill levels welcome.",
-    phone: "+506 8735-1877 (WhatsApp) · rltcuisine.com",
-    tags: ["Award-Winning", "Cooking Classes", "Private Dinners", "Food Lab"],
+      "Award-winning culinary master offering hands-on cooking classes and private dinners. Food Lab: intimate 4-seat restaurant in Potrero.",
+    fullDescription:
+      "RLT Cuisine represents the highest level of culinary artistry in the Guanacaste region. The award-winning chef brings international training and local passion to every experience. Options include: (1) Private dinners in your villa or his kitchen with fully customized menus, (2) Hands-on cooking classes teaching techniques and recipes you'll use for years, (3) Food Lab — an exclusive 4-seat intimate restaurant experience in Potrero featuring prix-fixe menus showcasing his creativity. All skill levels welcome for classes. The chef sources the finest local ingredients and international imports. Wine pairings curated to complement each dish. Flexible scheduling accommodates your preferences. This is destination dining at its finest — a unique food experience paired with genuine hospitality.",
+    phone: "+506 8735-1877 (WhatsApp)",
+    email: "info@rltcuisine.com",
+    tags: ["Award-Winning", "Cooking Classes", "Private Dinners", "Food Lab", "Customizable", "Premium Experience"],
   },
 ];
 
@@ -760,16 +804,20 @@ export const dayTrips = [
     name: "Diamante Eco Adventure Park",
     distance: "30 min",
     description:
-      "Zipline over the forest canopy, butterfly house, and wildlife center with jaguars. Great half-day adventure.",
-    tags: ["Zipline", "Jaguars", "Butterfly House"],
+      "Zipline over forest canopy, visit a butterfly house, and see jaguars in a wildlife center. Perfect half-day adventure.",
+    fullDescription:
+      "Experience Costa Rica's wildlife and rainforest from above. The eco-adventure park features a canopy zipline course offering thrilling views of the jungle landscape. Navigate hanging bridges, spot wildlife from vantage points, and experience the rainforest ecosystem up close. The butterfly house showcases dozens of colorful species in a net-enclosed garden. The wildlife center features rescued jaguars, sloths, and other tropical animals in naturalistic habitats with educational information about conservation. A café and gift shop on-site. Professional guides ensure safety. Perfect for families and those seeking a concentrated dose of Costa Rican nature without extensive hiking.",
+    tags: ["Zipline", "Jaguars", "Butterfly House", "Canopy Tour", "Half-Day", "Family-Friendly"],
   },
   {
     icon: "waves",
     name: "Tamarindo",
     distance: "45 min",
     description:
-      "The region's largest beach town. Known for surfing — rent a board or take a lesson. Grab lunch at Witches Rock restaurant (try the Big Ass Nachos or Green Papaya). Shops, art galleries, restaurants throughout.",
-    tags: ["Surfing", "Shopping", "Witches Rock"],
+      "Costa Rica's prime beach town with world-class surfing, shopping, galleries, and diverse dining. Try Witches Rock for Big Ass Nachos.",
+    fullDescription:
+      "Tamarindo is the Guanacaste region's most developed beach town, offering everything from rustic beach vibes to upscale resorts. The long, sandy Playa Tamarindo is famous for consistent waves perfect for surfers of all levels — rental shops and lessons available everywhere. The town sprawls along the beach and up into the hills, featuring numerous restaurants from casual beach shacks to upscale venues (don't miss Witches Rock's legendary Big Ass Nachos and Green Papaya salad). Art galleries showcase local and international artists. Shopping ranges from souvenir shops to boutiques. Nightlife is vibrant with beach bars, clubs, and live music venues. It's touristy compared to Las Catalinas' quiet charm, but offers excellent infrastructure, more dining variety, and ocean recreation. The beach has patrolled swimming areas and lifeguards.",
+    tags: ["Surfing", "Shopping", "Restaurants", "Nightlife", "Full-Day Activity", "Beach Town"],
   },
   {
     icon: "droplets",
@@ -829,18 +877,22 @@ export const boating = [
     name: "Get My Boat",
     type: "Boat Rental Broker",
     description:
-      "Range of boats from $75/person to $300/hour. Connects you with local providers. Cash payment required — they'll meet you at the beach.",
+      "Wide range of boat rentals from budget to premium. Connects you with trusted local providers. Flexible pricing and delivery to beach.",
+    fullDescription:
+      "Get My Boat serves as a broker connecting visitors with local boat rental operators. Options range from budget fishing boats ($75/person) to premium private yachts ($300/hour). Browse the network of providers, choose your vessel, and they'll coordinate everything including beach delivery. Great for fishing trips, sunset cruises, snorkeling expeditions, or exploring nearby islands. Cash payment required — operators meet you directly at the beach in Las Catalinas. Pricing typically includes fuel and basic safety equipment. Insurance and skipper services available. The broker model means you're dealing directly with local operators who know the waters intimately.",
+    tags: ["Budget to Premium", "Local Providers", "Beach Delivery", "Flexible Options"],
     contact: "+506-8597-8323",
-    tags: ["Range of Options", "Local Providers", "Cash Only"],
   },
   {
     icon: "anchor",
     name: "Mantaray Sailing",
     type: "Full-Day Catamaran",
     description:
-      "Endless drinks, delicious lunch (fish & veggie wraps, fresh fruit platter). For 8 people roughly $150pp. Shuttle from LC available ($10/person). Morning $1,500 · Sunset $1,900 · Full Day $3,000.",
+      "All-inclusive catamaran with endless drinks, gourmet lunch, and professional crew. Shuttle from Las Catalinas available.",
+    fullDescription:
+      "Mantaray Sailing operates a well-maintained catamaran perfect for full-day adventures. The experience includes endless drinks (beer, wine, sodas), a delicious multi-course lunch featuring fresh fish wraps, veggie wraps, and fresh fruit platters. Professional, attentive crew handles sailing and watersports. For groups of 8, cost averages roughly $150 per person. Round-trip shuttle from Las Catalinas available for $10/person. Multiple departure times: Morning sails depart early and return by early afternoon. Sunset sails depart late afternoon and return after dusk. Full-day options combine both experiences. On-board snorkeling, swimming, and relaxation are included. The catamaran features shaded areas, a full bar, and comfortable seating. Pricing: Morning $1,500 · Sunset $1,900 · Full Day $3,000.",
+    tags: ["All-Inclusive", "Drinks & Lunch", "Snorkeling", "Professional Crew", "Shuttle Available", "Group-Friendly"],
     contact: "+506 8525-0942",
-    tags: ["Drinks & Lunch Included", "Shuttle from LC", "Professional Crew"],
   },
   {
     icon: "sailboat",

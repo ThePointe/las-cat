@@ -441,7 +441,7 @@ export default function Home() {
           <SectionHead eyebrow="In-Home Dining" title="Private Chefs & Catering" sub="Bring the restaurant to your villa." t={t} />
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {privateChefs.map(c => (
-              <div key={c.name} className={`${t.cardOnAlt} rounded-2xl p-6 flex flex-col`}>
+              <a key={c.name} href={`/details/chef/${encodeURIComponent(c.name)}`} className={`${t.cardOnAlt} rounded-2xl p-6 flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] cursor-pointer group`}>
                 <div className={`w-10 h-10 rounded-2xl ${t.accentMid} flex items-center justify-center mb-5`}>
                   <Icon name={c.icon} className={`w-5 h-5 ${t.accent}`} />
                 </div>
@@ -451,7 +451,7 @@ export default function Home() {
                   {c.tags.map(tag => <span key={tag} className={`text-[12px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
                 </div>
                 {c.phone && <div className={`text-[13px] ${t.muted} flex items-center gap-1.5`}><Phone className="w-3 h-3 flex-shrink-0" />{c.phone}</div>}
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -463,7 +463,7 @@ export default function Home() {
           <SectionHead eyebrow="Adventure Awaits" title="Activities & Wellness" sub="From sunrise yoga to sunset catamarans — on your terms." t={t} />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             {activities.map(a => (
-              <div key={a.title} className={`${t.cardBg} rounded-2xl p-5 flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]`}>
+              <a key={a.title} href={`/details/activity/${encodeURIComponent(a.title)}`} className={`${t.cardBg} rounded-2xl p-5 flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] cursor-pointer group`}>
                 <div className={`w-10 h-10 rounded-2xl ${t.accentMid} flex items-center justify-center mb-4`}>
                   <Icon name={a.icon} className={`w-5 h-5 ${t.accent}`} />
                 </div>
@@ -473,7 +473,7 @@ export default function Home() {
                   {a.tags.map(tag => <span key={tag} className={`text-[11px] px-2 py-0.5 rounded-full ${t.pill}`}>{tag}</span>)}
                 </div>
                 {a.phone && <div className={`text-[12px] ${t.muted} flex items-center gap-1.5 mt-1`}><Phone className="w-3 h-3 flex-shrink-0" />{a.phone}</div>}
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -524,7 +524,7 @@ export default function Home() {
           <SectionHead eyebrow="Explore Beyond" title="Day Trips & Excursions" sub="Costa Rica's greatest adventures are all within reach." t={t} />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {dayTrips.map(trip => (
-              <div key={trip.name} className={`${t.cardBg} rounded-2xl p-5 flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]`}>
+              <a key={trip.name} href={`/details/daytrip/${encodeURIComponent(trip.name)}`} className={`${t.cardBg} rounded-2xl p-5 flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] cursor-pointer group`}>
                 <div className="flex items-start justify-between mb-4">
                   <div className={`w-10 h-10 rounded-2xl ${t.accentMid} flex items-center justify-center`}>
                     <Icon name={trip.icon} className={`w-5 h-5 ${t.accent}`} />
@@ -536,7 +536,7 @@ export default function Home() {
                 <div className="flex flex-wrap gap-1.5">
                   {trip.tags.map(tag => <span key={tag} className={`text-[11px] px-2 py-0.5 rounded-full ${t.pill}`}>{tag}</span>)}
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -548,7 +548,7 @@ export default function Home() {
           <SectionHead eyebrow="On the Water" title="Boating & Fishing" sub="No fishing license needed. Sunset cruises, private yachts, and kayak fishing." t={t} />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {boating.map(b => (
-              <div key={b.name} className={`${t.cardOnAlt} rounded-2xl p-6 flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]`}>
+              <a key={b.name} href={`/details/boating/${encodeURIComponent(b.name)}`} className={`${t.cardOnAlt} rounded-2xl p-6 flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] cursor-pointer group`}>
                 <div className="flex items-start justify-between mb-4">
                   <div className={`w-10 h-10 rounded-2xl ${t.accentMid} flex items-center justify-center`}>
                     <Icon name={b.icon} className={`w-5 h-5 ${t.accent}`} />
@@ -561,7 +561,7 @@ export default function Home() {
                   {b.tags.map(tag => <span key={tag} className={`text-[12px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
                 </div>
                 {b.contact && <div className={`text-[13px] ${t.muted} flex items-center gap-1.5`}><Phone className="w-3 h-3 flex-shrink-0" />{b.contact}</div>}
-              </div>
+              </a>
             ))}
           </div>
         </div>
