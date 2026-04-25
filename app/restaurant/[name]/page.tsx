@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, use } from "react";
-import { ChevronLeft, Phone, Mail, Clock, MapPin, X } from "lucide-react";
+import { ChevronLeft, Phone, Mail, Clock, MapPin, X, Globe } from "lucide-react";
 import Link from "next/link";
 import { inTownRestaurants, nearbyAreas } from "@/app/data";
 
@@ -14,6 +14,7 @@ export default function RestaurantDetail({ params }: { params: Promise<{ name: s
 
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [menuLanguage, setMenuLanguage] = useState<"en" | "es">("en");
 
   if (!restaurant) {
     return (
@@ -33,6 +34,7 @@ export default function RestaurantDetail({ params }: { params: Promise<{ name: s
   const phone: string | null = restaurant.phone || null;
   const location: string | null = (restaurant as any).location || null;
   const hours: string | null = (restaurant as any).hours || null;
+  const menu: any = (restaurant as any).menu || null;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -100,6 +102,71 @@ export default function RestaurantDetail({ params }: { params: Promise<{ name: s
                 </span>
               ))}
             </div>
+
+            {/* Menu Section */}
+            {menu && (
+              <div className="mb-8">
+                <div className="flex items-center justify-between mb-4">
+                  <h2 className="text-lg font-semibold text-gray-900">Menu</h2>
+                  {menu.en && menu.es && (
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => setMenuLanguage("en")}
+                        className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
+                          menuLanguage === "en"
+                            ? "bg-blue-600 text-white"
+                            : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                        }`}
+                      >
+                        English
+                      </button>
+                      <button
+                        onClick={() => setMenuLanguage("es")}
+                        className={`px-3 py-1 rounded-lg text-sm font-medium transition-colors ${
+                          menuLanguage === "es"
+                            ? "bg-blue-600 text-white"
+                            : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                        }`}
+                      >
+                        Español
+                      </button>
+                    </div>
+                  )}
+                </div>
+
+                <div className="bg-white rounded-xl p-6 border border-gray-200">
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    {menuLanguage === "en" ? menu.en : menu.es || menu.en}
+                  </p>
+
+                  {menu.highlights && (menuLanguage === "en" ? menu.highlights.en : menu.highlights.es) && (
+                    <div className="mb-4">
+                      <h3 className="text-sm font-semibold text-gray-900 mb-2">{menuLanguage === "en" ? "Highlights:" : "Destacados:"}</h3>
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                        {(menuLanguage === "en" ? menu.highlights.en : menu.highlights.es)?.map((item: string, idx: number) => (
+                          <li key={idx} className="flex items-start gap-2 text-sm text-gray-700">
+                            <span className="text-blue-600 mt-1">•</span>
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  {menu.url && (
+                    <a
+                      href={menu.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium text-sm"
+                    >
+                      <Globe className="w-4 h-4" />
+                      View Full Menu
+                    </a>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Sidebar */}

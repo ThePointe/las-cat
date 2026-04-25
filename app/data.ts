@@ -39,7 +39,10 @@ export interface Restaurant {
     en?: string;
     es?: string;
     url?: string;
-    highlights?: string[];
+    highlights?: {
+      en?: string[];
+      es?: string[];
+    };
   };
 }
 
@@ -69,7 +72,10 @@ export const inTownRestaurants: Restaurant[] = [
     menu: {
       en: "Mediterranean cuisine inspired by Basque traditions with fresh Costa Rican ingredients. Features vegetarian, vegan, and gluten-free options.",
       es: "Cocina mediterránea inspirada en tradiciones vascas con ingredientes frescos de Costa Rica. Opciones vegetarianas, veganas y sin gluten.",
-      highlights: ["Breakfast Buffet", "Costa Rican Beets Salmorejo", "Fresh Fish", "Pineapple Desserts"],
+      highlights: {
+        en: ["Breakfast Buffet", "Costa Rican Beets Salmorejo", "Fresh Fish", "Pineapple Desserts"],
+        es: ["Desayuno Buffet", "Salmorejo de Remolacha Costarricense", "Pescado Fresco", "Postres de Piña"]
+      },
       url: "https://www.santarenahotel.com/dining/ponciana-bar-bocas/menu"
     },
   },
@@ -97,7 +103,10 @@ export const inTownRestaurants: Restaurant[] = [
     menu: {
       en: "Shade-grown organic espresso drinks, cold brew, freshly baked muffins, daily empanadas, and gelato. Non-dairy milk options available.",
       es: "Bebidas de espresso orgánico de sombra, cold brew, muffins recién horneados, empanadas diarias y helado. Opciones de leche sin lácteos disponibles.",
-      highlights: ["Organic Coffee", "Fresh Empanadas", "Bagels", "Gelato"],
+      highlights: {
+        en: ["Organic Coffee", "Fresh Empanadas", "Bagels", "Gelato"],
+        es: ["Café Orgánico", "Empanadas Frescas", "Bollos", "Helado"]
+      },
       url: "https://www.puravidaride.com/pura-vida-grind-cafe"
     },
   },
@@ -126,7 +135,10 @@ export const inTownRestaurants: Restaurant[] = [
     menu: {
       en: "Customizable healthy bowls, fresh ceviche, cold-pressed juices, smoothies (with plant-based milk options), and excellent coffee. Seafood from certified sustainable fishing.",
       es: "Ensalazones saludables personalizables, ceviche fresco, jugos recién exprimidos, batidos (con opciones de leche vegetal) y excelente café. Mariscos de pesca sostenible certificada.",
-      highlights: ["Fresh Ceviche", "Protein Bowls", "Cold-Pressed Juices", "Plant-Based Options"],
+      highlights: {
+        en: ["Fresh Ceviche", "Protein Bowls", "Cold-Pressed Juices", "Plant-Based Options"],
+        es: ["Ceviche Fresco", "Ensalazones de Proteína", "Jugos Recién Exprimidos", "Opciones sin Lácteos"]
+      },
       url: "https://www.potsandbowlscr.com/menu/las-catalinas/"
     },
   },
@@ -150,7 +162,10 @@ export const inTownRestaurants: Restaurant[] = [
     menu: {
       en: "Contemporary Costa Rican coastal cuisine celebrating local ingredients. Breakfast features smoothies, local fruits, eggs, and avocado. All-day menu showcases farm-to-table seafood and meat with creative presentations.",
       es: "Cocina costera costarricense contemporánea que celebra ingredientes locales. El desayuno presenta batidos, frutas locales, huevos y aguacate. El menú de todo el día destaca mariscos y carnes de la granja a la mesa.",
-      highlights: ["Fresh Seafood", "Local Ingredients", "Creative Cocktails", "Sunset Views"],
+      highlights: {
+        en: ["Fresh Seafood", "Local Ingredients", "Creative Cocktails", "Sunset Views"],
+        es: ["Mariscos Frescos", "Ingredientes Locales", "Cócteles Creativos", "Vistas del Atardecer"]
+      },
       url: "https://www.sentidonorterestaurant.com/menu/"
     },
   },
@@ -178,7 +193,10 @@ export const inTownRestaurants: Restaurant[] = [
     menu: {
       en: "International cuisine with Latin American influences. Fresh seafood, fish ceviche, locally caught fish, Angus beef, prawns, and creative cocktails. Gluten-free and vegetarian options available.",
       es: "Cocina internacional con influencias latinoamericanas. Mariscos frescos, ceviche de pez, pez capturado localmente, carne Angus, camarones y cócteles creativos. Opciones sin gluten y vegetarianas disponibles.",
-      highlights: ["Fish Ceviche", "Fresh Catch of the Day", "Signature Cocktails", "Beachfront Views"],
+      highlights: {
+        en: ["Fish Ceviche", "Fresh Catch of the Day", "Signature Cocktails", "Beachfront Views"],
+        es: ["Ceviche de Pez", "Pescado Fresco del Día", "Cócteles de Firma", "Vistas Frente a la Playa"]
+      },
     },
   },
   {
@@ -195,7 +213,10 @@ export const inTownRestaurants: Restaurant[] = [
     menu: {
       en: "Authentic Spanish tapas and traditional dishes. Croquetas, paella, gazpacho, boquerones, squid ink noodles, and an impressive wine selection. Mixology classes available Friday nights.",
       es: "Auténticas tapas españolas y platos tradicionales. Croquetas, paella, gazpacho, boquerones, fideos con tinta de calamar y una impresionante selección de vinos. Clases de coctelería disponibles los viernes.",
-      highlights: ["Spanish Croquetas", "Silky Paella", "Gazpacho", "Wine Selection"],
+      highlights: {
+        en: ["Spanish Croquetas", "Silky Paella", "Gazpacho", "Wine Selection"],
+        es: ["Croquetas Españolas", "Paella Sedosa", "Gazpacho", "Selección de Vinos"]
+      },
       url: "https://www.pascualcr.com/"
     },
   },
@@ -212,7 +233,10 @@ export const inTownRestaurants: Restaurant[] = [
     menu: {
       en: "Costa Rican craft beers including Beach Lager, Tropical IPA, Offshore Ale, and Passion Fruit Ale. Top-notch cocktails and casual pub food.",
       es: "Cervezas artesanales costarricenses incluyendo Beach Lager, Tropical IPA, Offshore Ale y Passion Fruit Ale. Cócteles excepcionales y comida casual de bar.",
-      highlights: ["Beach Lager", "Tropical IPA", "Craft Cocktails", "Casual Pub Food"],
+      highlights: {
+        en: ["Beach Lager", "Tropical IPA", "Craft Cocktails", "Casual Pub Food"],
+        es: ["Beach Lager", "Tropical IPA", "Cócteles Artesanales", "Comida de Bar Casual"]
+      },
       url: "https://papagayo-brewing.com/"
     },
   },
@@ -229,7 +253,10 @@ export const inTownRestaurants: Restaurant[] = [
     menu: {
       en: "Artisan sandwiches, fresh breads & pastries, prepared meals, organic smoothies, salads, and prime CAB cuts. Daily veggie and non-veggie specials. Fresh pizza every Friday.",
       es: "Sándwiches artesanales, panes y pasteles frescos, comidas preparadas, batidos orgánicos, ensaladas y cortes de carne CAB. Especiales vegetarianos y no vegetarianos diarios. Pizza fresca todos los viernes.",
-      highlights: ["Artisan Sandwiches", "Fresh Breads", "Friday Pizza", "Organic Smoothies"],
+      highlights: {
+        en: ["Artisan Sandwiches", "Fresh Breads", "Friday Pizza", "Organic Smoothies"],
+        es: ["Sándwiches Artesanales", "Panes Frescos", "Pizza los Viernes", "Batidos Orgánicos"]
+      },
       url: "https://copperandstonegourmet.com/"
     },
   },
@@ -246,7 +273,10 @@ export const inTownRestaurants: Restaurant[] = [
     menu: {
       en: "All-day bakery with sweet and savory baked goods, fresh breads, toast, fruits, yogurt, coffees, juices, and teas. Homemade jams and ferments available.",
       es: "Panadería de todo el día con repostería dulce y salada, panes frescos, tostadas, frutas, yogur, café, jugos y tés. Mermeladas caseras y fermentados disponibles.",
-      highlights: ["Breakfast Burrito", "Fresh Breads", "Coffee", "Grab-and-Go Options"],
+      highlights: {
+        en: ["Breakfast Burrito", "Fresh Breads", "Coffee", "Grab-and-Go Options"],
+        es: ["Burrito de Desayuno", "Panes Frescos", "Café", "Opciones para Llevar"]
+      },
       url: "https://www.santarenahotel.com/dining/4-calle-la-ronda/menu"
     },
   },
@@ -264,7 +294,10 @@ export const inTownRestaurants: Restaurant[] = [
     menu: {
       en: "Artisanal ice cream with flavors like Spiced Chocolate, Orange & Cardamom, Rose & Pistachio, and Caramelized Banana. Homemade Belgian waffles with fresh local ingredients.",
       es: "Helado artesanal con sabores como Chocolate Especiado, Naranja y Cardamomo, Rosa y Pistacho, y Plátano Caramelizado. Waffles belgas caseros con ingredientes locales frescos.",
-      highlights: ["Belgian Waffles", "Unique Flavors", "Homemade Ice Cream", "Local Ingredients"],
+      highlights: {
+        en: ["Belgian Waffles", "Unique Flavors", "Homemade Ice Cream", "Local Ingredients"],
+        es: ["Waffles Belgas", "Sabores Únicos", "Helado Casero", "Ingredientes Locales"]
+      },
     },
   },
   {
@@ -280,7 +313,10 @@ export const inTownRestaurants: Restaurant[] = [
     menu: {
       en: "Light, nutritious meals focused on wellness. Healthy bowls, salads, fresh juices, and plant-based options.",
       es: "Comidas ligeras y nutritivas enfocadas en el bienestar. Ensalazones saludables, ensaladas, jugos frescos y opciones a base de plantas.",
-      highlights: ["Healthy Bowls", "Fresh Juices", "Plant-Based", "Light Meals"],
+      highlights: {
+        en: ["Healthy Bowls", "Fresh Juices", "Plant-Based", "Light Meals"],
+        es: ["Ensalazones Saludables", "Jugos Frescos", "Opciones Veganas", "Comidas Ligeras"]
+      },
     },
   },
 ];
@@ -303,7 +339,10 @@ export interface NearbySpot {
     en?: string;
     es?: string;
     url?: string;
-    highlights?: string[];
+    highlights?: {
+      en?: string[];
+      es?: string[];
+    };
   };
 }
 
@@ -340,7 +379,10 @@ export const nearbyAreas: NearbyArea[] = [
         menu: {
           en: "Traditional Italian cuisine with hand-made pastas and brick-oven pizzas. Fresh, quality ingredients with authentic recipes.",
           es: "Cocina italiana tradicional con pastas hechas a mano y pizzas de horno de leña. Ingredientes frescos y de calidad con recetas auténticas.",
-          highlights: ["Hand-Made Pasta", "Brick-Oven Pizza", "Burrata Pizza", "Grilled Octopus"],
+          highlights: {
+            en: ["Hand-Made Pasta", "Brick-Oven Pizza", "Burrata Pizza", "Grilled Octopus"],
+            es: ["Pasta Hecha a Mano", "Pizza de Horno de Leña", "Pizza Burrata", "Pulpo a la Parrilla"]
+          },
           url: "https://laforketta.restaurant/"
         },
       },
@@ -363,7 +405,10 @@ export const nearbyAreas: NearbyArea[] = [
         menu: {
           en: "Contemporary American cuisine with beachside specialties. Featured dishes include crispy pork belly tacos with palmito cheese, fresh tuna poke, margaritas, and signature cocktails.",
           es: "Cocina estadounidense contemporánea con especialidades junto al mar. Los platos destacados incluyen tacos de panza de cerdo crujiente con queso palmito, poke de atún fresco, margaritas y cócteles de firma.",
-          highlights: ["Pork Belly Tacos", "Tuna Poke", "Signature Cocktails", "Live Music"],
+          highlights: {
+            en: ["Pork Belly Tacos", "Tuna Poke", "Signature Cocktails", "Live Music"],
+            es: ["Tacos de Panza de Cerdo", "Poke de Atún", "Cócteles de Firma", "Música en Vivo"]
+          },
         },
       },
       {
@@ -402,7 +447,10 @@ export const nearbyAreas: NearbyArea[] = [
         menu: {
           en: "Authentic Peruvian cuisine featuring fresh ceviche, curry mahi mahi, whole red snapper (pargo), and traditional dishes. Seafood and grilled specialties.",
           es: "Cocina peruana auténtica que presenta ceviche fresco, curry mahi mahi, pargo entero y platos tradicionales. Especialidades de mariscos a la parrilla.",
-          highlights: ["Fresh Ceviche", "Curry Mahi Mahi", "Whole Red Snapper", "Peruvian Traditions"],
+          highlights: {
+            en: ["Fresh Ceviche", "Curry Mahi Mahi", "Whole Red Snapper", "Peruvian Traditions"],
+            es: ["Ceviche Fresco", "Curry Mahi Mahi", "Pargo Entero", "Tradiciones Peruanas"]
+          },
           url: "https://www.ajiperuviancuisine.com/menus"
         },
       },
@@ -455,7 +503,10 @@ export const nearbyAreas: NearbyArea[] = [
         menu: {
           en: "Farm-to-table cuisine with inventive tapas and fresh seafood. Lunch menu features casual dining; dinner is more elegant. Famous key lime pie and unique dishes like Mahi Wulfe with grilled artichokes and sun-dried tomatoes.",
           es: "Cocina de la granja a la mesa con tapas inventivas y mariscos frescos. El menú de almuerzo presenta comida casual; la cena es más elegante. Famoso pay de lima clave y platos únicos como Mahi Wulfe con alcachofas a la parrilla y tomates secados al sol.",
-          highlights: ["Creative Tapas", "Mahi Wulfe", "Key Lime Pie", "Farm-to-Table"],
+          highlights: {
+            en: ["Creative Tapas", "Mahi Wulfe", "Key Lime Pie", "Farm-to-Table"],
+            es: ["Tapas Creativas", "Mahi Wulfe", "Pay de Lima Clave", "De la Granja a la Mesa"]
+          },
           url: "https://graciacostarica.com/mar-vista/"
         },
       },
@@ -483,7 +534,10 @@ export const nearbyAreas: NearbyArea[] = [
         menu: {
           en: "Premium seafood, sushi, steaks, and pasta. Appetizers include smoked grouper carpaccio, tuna tartar, and shrimp au gratin. Fresh ceviche, empanadas, and exceptional tuna poke. Extensive wine list.",
           es: "Mariscos premium, sushi, carnes y pasta. Los aperitivos incluyen carpaccio de mero ahumado, tartar de atún y camarones au gratin. Ceviche fresco, empanadas y poke de atún excepcional. Amplia lista de vinos.",
-          highlights: ["Fresh Ceviche", "Tuna Poke", "Smoked Grouper Carpaccio", "Wine Selection"],
+          highlights: {
+            en: ["Fresh Ceviche", "Tuna Poke", "Smoked Grouper Carpaccio", "Wine Selection"],
+            es: ["Ceviche Fresco", "Poke de Atún", "Carpaccio de Mero Ahumado", "Selección de Vinos"]
+          },
           url: "https://patagoniadelmar.the-menu.ca/english"
         },
       },
@@ -538,7 +592,10 @@ export const nearbyAreas: NearbyArea[] = [
         menu: {
           en: "Fresh sushi rolls, salmón fly (salmon fly), rock shrimp, baos, Asian fusion bowls, tempura, and Japanese-inspired street food. Daily specials available.",
           es: "Rollos de sushi fresco, salmón fly, camarones de roca, baos, tazones de fusión asiática, tempura y comida callejera inspirada en Japón. Especiales diarios disponibles.",
-          highlights: ["Fresh Sushi", "Salmón Fly", "Asian Baos", "Daily Specials"],
+          highlights: {
+            en: ["Fresh Sushi", "Salmón Fly", "Asian Baos", "Daily Specials"],
+            es: ["Sushi Fresco", "Salmón Fly", "Baos Asiáticos", "Especiales Diarios"]
+          },
           url: "https://sites.google.com/view/kotoy-origami-foodtrucks/inicio"
         },
       },
