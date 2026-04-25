@@ -26,7 +26,7 @@ export default function RestaurantDetail({ params }: { params: Promise<{ name: s
     );
   }
 
-  const images = "images" in restaurant ? restaurant.images : [];
+  const images = ("images" in restaurant && restaurant.images) ? restaurant.images : [];
   const fullDesc = "fullDescription" in restaurant ? restaurant.fullDescription : restaurant.description;
   const rating = "rating" in restaurant ? restaurant.rating : null;
   const email = "email" in restaurant ? restaurant.email : null;
