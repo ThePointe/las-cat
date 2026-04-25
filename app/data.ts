@@ -30,7 +30,11 @@ export interface Restaurant {
   description: string;
   hours: string;
   phone?: string;
+  email?: string;
   tags: string[];
+  images?: string[];
+  fullDescription?: string;
+  rating?: string;
 }
 
 export const inTownRestaurants: Restaurant[] = [
@@ -42,57 +46,105 @@ export const inTownRestaurants: Restaurant[] = [
     cuisine: "Italian Mediterranean",
     vibe: "All-Day Dining",
     description:
-      "The social heart of Las Catalinas — exceptional quality breakfast buffet, plus lunch and dinner. Indoor & outdoor seating in a welcoming cultural space. Make reservations.",
-    hours: "Breakfast, Lunch & Dinner",
-    phone: "+506 2654-4600 x 1062",
-    tags: ["Reservations Recommended", "Breakfast Buffet", "Happy Hour"],
+      "The social heart of Las Catalinas — exceptional quality breakfast, lunch & dinner. 4.7/5 ★, #1 of 7 in Las Catalinas.",
+    fullDescription:
+      "The social heart of Las Catalinas — exceptional quality breakfast buffet, plus lunch and dinner. Indoor & outdoor seating in a welcoming cultural space. Make reservations, especially for breakfast and dinner. Award-winning Mediterranean cuisine celebrating local ingredients.",
+    hours: "7am–10:30am Breakfast, 12pm–9pm Lunch & Dinner",
+    phone: "+506 2106 1500",
+    email: "ponciana@santarenahotel.com",
+    rating: "4.7/5 (200 reviews) • #1 of 7 in Las Catalinas",
+    tags: ["★ Top Rated", "Breakfast Buffet", "Reservations Recommended"],
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/01/d7/d9/outdoor-dinning-area.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/01/d7/d8/ponciana-bar.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/10/c6/e5/inside-and-menu.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/54/e1/b5/caption.jpg",
+    ],
   },
   {
     mustGo: true,
     icon: "coffee",
     name: "Pura Vida Ride",
     location: "In Town",
-    cuisine: "Coffee & Light Bites",
-    vibe: "Morning Ritual",
+    cuisine: "Coffee & Adventure Center",
+    vibe: "Morning Ritual + Water Sports",
     description:
-      "Get up early and head here — sit in the rocking chairs, listen to the ocean, and start the day right. Amazing coffee, great empanadas & muffins in the morning, gelato in the afternoon.",
-    hours: "Morning through afternoon",
-    tags: ["Best Coffee in Town", "Gelato", "Morning Must"],
+      "Organic coffee, empanadas, and adventure. Also mountain bikes, kayaks, paddleboards, e-foiling. 4.8/5 ★, Travelers' Choice 2025.",
+    fullDescription:
+      "Get up early and sit in the rocking chairs with fresh organic coffee, empanadas, and muffins. This is the heart of morning in Las Catalinas. In the afternoon, grab gelato or rent equipment for adventure: mountain bikes through the forest, kayaks in the bay, paddleboards, e-foiling, and more. A full-service adventure center.",
+    hours: "7am–5pm Daily",
+    phone: "+506 8584-6045",
+    rating: "4.8/5 (441 reviews) • #1 of 5 Activities in Las Catalinas • Travelers' Choice 2025",
+    tags: ["★ Top Rated", "Organic Coffee", "Equipment Rentals", "E-Foiling"],
+    images: [
+      "https://images.squarespace-cdn.com/content/v1/6803fa5f375c7e07e48fbc2c/1745091185730-VIIYA3JSD670YRVOZJNT/coffeeshop-costa-rica-pura-vida-ride.jpg",
+      "https://images.squarespace-cdn.com/content/v1/6803fa5f375c7e07e48fbc2c/1745091185754-1C020YDN7MB7C49H03TH/coffeeshop-pure-vida-ride-costa-rica+%281%29.jpg",
+      "https://images.squarespace-cdn.com/content/v1/6803fa5f375c7e07e48fbc2c/1745091185742-SFGWDQDADNVDCU8JLBRN/Ema-Mountain-Biking-Las-Catalinas.jpg",
+      "https://images.squarespace-cdn.com/content/v1/6803fa5f375c7e07e48fbc2c/953bbe2a-3c6a-41dd-bdad-99856d605421/MTB+Costa+Rica.JPG",
+    ],
   },
   {
     mustGo: true,
     icon: "soup",
     name: "Pots & Bowls",
-    location: "In Town",
-    cuisine: "International",
+    location: "In Town (Town Center)",
+    cuisine: "Health Café / Smoothie Bar",
     vibe: "Local Favorite",
     description:
-      "A beloved Las Catalinas staple. Creative bowls and comfort food done exceptionally well. Don't miss it.",
-    hours: "Check current hours",
-    tags: ["Must Go", "Local Favorite"],
+      "Creative bowls, ceviche, cold brew. 4.8/5 ★, Travelers' Choice 2025, #3 of 7 in Las Catalinas.",
+    fullDescription:
+      "A beloved Las Catalinas staple for healthy, delicious meals. Creative bowls, fresh ceviche, cold-pressed juices, smoothies, and excellent coffee. Perfect for breakfast, lunch, or a quick snack. Everything is made fresh daily with a focus on clean, nutritious ingredients.",
+    hours: "7:30am–8pm Daily",
+    phone: "+506 8500 5950",
+    email: "info@blossomgroupcr.com",
+    rating: "4.8/5 (128 reviews) • #3 of 7 in Las Catalinas • Travelers' Choice 2025",
+    tags: ["★ Top Rated", "Health Conscious", "Fresh Bowls", "Smoothies"],
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/10/9a/0a/cold-brew.jpg?w=1100&h=1100&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/10/99/f1/ceviche.jpg?w=1100&h=1100&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/cd/47/77/caption.jpg?w=1200&h=1200&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/ad/bb/83/caption.jpg?w=1100&h=1100&s=1",
+    ],
   },
   {
     icon: "star",
     name: "Sentido Norte",
     location: "Casa Chameleon Hotel",
     cuisine: "Costa Rican Coastal",
-    vibe: "Fine Dining",
+    vibe: "Award-Winning Fine Dining",
     description:
-      "The jewel of Casa Chameleon. Local ingredients reimagined with coastal flair — stunning ocean views, inventive cocktails, and unforgettable sunsets.",
-    hours: "Dinner nightly",
-    tags: ["Upscale", "Ocean Views", "Sunset Views"],
+      "Top 10% restaurants globally (2025). Local ingredients, coastal flair, stunning views.",
+    fullDescription:
+      "The jewel of Casa Chameleon Hotel — an award-winning fine dining destination in the top 10% of restaurants globally. Local ingredients reimagined with coastal flair, inventive cocktails, and unforgettable sunset views. Minimum $45 for sunset drinks. Adults and children 10+ only. Reservations required.",
+    hours: "Call for seasonal hours",
+    phone: "+506 2103 1200",
+    rating: "Top 10% globally (2025) • 5-star fine dining",
+    tags: ["★ Award-Winning", "Fine Dining", "Reservations Required", "Ocean Views"],
+    images: [
+      "https://www.casachameleonhotels.com/wp-content/uploads/2020/09/sentido-norte-restaurant-casa-chameleon-costa-rica.jpg",
+    ],
   },
   {
     icon: "waves",
     name: "Celeste",
-    location: "Seafront",
-    cuisine: "International",
-    vibe: "New · Jan 2024",
+    location: "Playa Danta (Beachfront)",
+    cuisine: "International / Latin American",
+    vibe: "Beachfront Dining",
     description:
-      "Newly opened in January 2024 — outdoor-indoor dining and cocktails by the sea. Elegant setting with beautiful ocean ambience. Reservations recommended.",
-    hours: "Check current hours",
-    phone: "Reservations: +506 2654 4600 ext. 4051",
-    tags: ["New 2024", "Seafront", "Cocktails"],
+      "Beachfront dining with exceptional cocktails. 4.8/5 ★, #4 of 7 in Las Catalinas.",
+    fullDescription:
+      "Outdoor-indoor beachfront dining on Playa Danta with stunning ocean views. Exceptional staff, creative cocktails, and excellent international cuisine with Latin American influences. Beautiful sunset ambience makes this a special evening destination. Note: Recent reports of occasional service delays during peak times.",
+    hours: "11:30am–8:30pm Daily (Tue closes 5pm)",
+    phone: "+506 2654 4600",
+    email: "celeste.restaurant@lascatalinascr.com",
+    rating: "4.8/5 (54 reviews) • #4 of 7 in Las Catalinas",
+    tags: ["★ Top Rated", "Beachfront", "Cocktails", "Sunset Views"],
+    images: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/6d/3c/d9/caption.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/7e/46/43/fines-de-semana-frente.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/fb/45/9b/caption.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/b0/83/8f/caption.jpg",
+    ],
   },
   {
     icon: "wine",
@@ -173,6 +225,9 @@ export interface NearbySpot {
   description: string;
   tags: string[];
   phone?: string;
+  images?: string[];
+  fullDescription?: string;
+  rating?: string;
 }
 
 export interface NearbyArea {
@@ -193,17 +248,35 @@ export const nearbyAreas: NearbyArea[] = [
         name: "La Forketta",
         cuisine: "Italian",
         description:
-          "Cozy Italian eatery with incredible pastas and brick-oven pizzas. Super friendly staff, mostly outdoor seating. Very popular — make reservations on WhatsApp.",
-        tags: ["Reservations Required", "Brick-Oven Pizza", "Pasta"],
-        phone: "WhatsApp +506 8437-5974",
+          "Incredible hand-made pastas and brick-oven pizzas. 4.7/5 ★, Travelers' Choice 2025, #5 of 47.",
+        fullDescription:
+          "A cozy Italian eatery in Potrero with incredible hand-made pastas and brick-oven pizzas. Super friendly staff, mostly outdoor seating, and a warm, welcoming atmosphere. Very popular — make reservations via WhatsApp. Every pizza is made with love and fresh, quality ingredients. The pasta dishes are exceptional and authentic.",
+        rating: "4.7/5 (296 reviews) • Travelers' Choice 2025 • #5 of 47 in Playa Potrero",
+        tags: ["★ Top Rated", "Brick-Oven Pizza", "Hand-Made Pasta"],
+        phone: "WhatsApp +506 2215 0226",
+        images: [
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/cb/e6/9c/nuestra-pizza-burrata.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/ab/20/21/les-esperamos.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/ab/1d/8e/pizza-hecha-a-la-lena.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/27/07/d9/la-forketta.jpg",
+        ],
       },
       {
         mustGo: true,
         name: "Hemingway's",
-        cuisine: "Bar & Grill",
+        cuisine: "Contemporary American / Bar & Grill",
         description:
-          "Beachside, direct sunset view, sand, bar and pool. Signature cocktails are outstanding. Tuna poke is awesome, chips & guacamole excellent. Beautiful view and great service.",
-        tags: ["Sunset Views", "Beachside", "Cocktails"],
+          "Beachside with direct sunset views. Outstanding cocktails and pork belly tacos. 4.2/5 ★.",
+        fullDescription:
+          "Beachside bar and grill with direct sunset views over Playa Potrero. Signature cocktails are outstanding, the pork belly tacos are amazing, and the tuna poke is excellent. Beautiful setting with sand under your feet, a full bar, and a pool. Live music adds to the vibrant atmosphere. Great for sunset drinks and dinner. Note: Some recent reports of occasional service delays during peak times.",
+        rating: "4.2/5 (158 reviews) • #15 of 47 in Playa Potrero",
+        tags: ["Sunset Views", "Beachside", "Live Music", "Cocktails"],
+        phone: "+506 2654 4300",
+        images: [
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/ad/4f/01/a-little-love-and-a-good.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/ad/4e/17/our-pork-belly-tacos.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/ad/4e/d2/live-music-with-local.jpg",
+        ],
       },
       {
         name: "The Beach House",
@@ -280,8 +353,10 @@ export const nearbyAreas: NearbyArea[] = [
         name: "Gracia at Mar Vista",
         cuisine: "International",
         description:
-          "Hilltop restaurant with stunning ocean views, infinity pool, and swim-up bar. Arrive early for the sunset — bring a towel! Excellent menu and a killer key lime pie. Tell the gate guard \"Vamos a Gracia.\"",
-        tags: ["Infinity Pool", "Sunset Views", "Hilltop", "Reservations Recommended"],
+          "Hilltop restaurant with stunning infinity pool. Arrive early for sunset — bring a swimsuit!",
+        fullDescription:
+          "Hilltop restaurant with a stunning infinity pool overlooking the ocean. Arrive early for sunset and bring a swimsuit so you can enjoy the pool and views. Excellent food, famous key lime pie, and an unforgettable experience. Tell the gate guard \"Vamos a Gracia.\" Reservations recommended.",
+        tags: ["Infinity Pool", "★ Sunset Views", "Hilltop", "Swimming"],
         phone: "WhatsApp +506 6110 1687",
       },
       {
@@ -411,13 +486,6 @@ export const activities: Activity[] = [
     tags: ["All Skill Levels", "Rentals Available", "Guided Tours"],
   },
   {
-    icon: "dumbbell",
-    title: "CORE by Chak Fitness",
-    description:
-      "An epic outdoor gym crafted from Guanacaste wood — weights made of stones and wood, with an ocean view. Classes daily at 9am. Pay per class or buy a week pass.",
-    tags: ["Daily 9am", "Outdoor Gym", "Pay-Per-Class"],
-  },
-  {
     icon: "activity",
     title: "Yoga at Casa Chameleon",
     description:
@@ -509,9 +577,9 @@ export const privateChefs = [
     icon: "utensils",
     name: "RLT Cuisine — Classes & Private Dinners",
     description:
-      "Award-winning cooking classes and private dinners with a culinary master in Potrero, just 10 minutes from Las Catalinas. An unforgettable culinary experience.",
-    phone: "rltcuisine.com",
-    tags: ["Cooking Classes", "Private Dinners", "10 min Away"],
+      "Award-winning culinary master offering hands-on cooking classes and private dinners in Potrero (~10 min away). Food Lab: 4-seat intimate restaurant experience. All skill levels welcome.",
+    phone: "+506 8735-1877 (WhatsApp) · rltcuisine.com",
+    tags: ["Award-Winning", "Cooking Classes", "Private Dinners", "Food Lab"],
   },
 ];
 
@@ -617,11 +685,11 @@ export const boating = [
   {
     icon: "anchor",
     name: "Panache Sailing",
-    type: "Catamaran Cruise",
+    type: "Catamaran Charters",
     description:
-      "Sunset catamaran cruise $85/person, or rent the whole boat for $1,700. Drinks, snacks, and snorkeling equipment all included.",
-    contact: "+506 8495-0039",
-    tags: ["$85/person", "Drinks & Snacks", "Snorkeling Included"],
+      "Professional catamaran tours and private charters since 2014. Shared morning/afternoon sails, full-day tours with snorkeling, beverages, and food included. Award-winning with excellent reviews.",
+    contact: "+506 8495-0039 (CR) · +1-888-987-4361 (US)",
+    tags: ["Award-Winning", "Snorkeling Included", "Beverages Included"],
   },
   {
     icon: "sailboat",
@@ -782,7 +850,7 @@ export const medicalInfo = [
     icon: "stethoscope",
     title: "Beachside Clinic — Huacas",
     description:
-      "Closest clinic to Las Catalinas, located in Huacas. Dr. Oscar Salas.",
+      "Closest clinic to Las Catalinas, located in Huacas. Dr. Oscar Salas. Primary contact for most medical issues.",
     contact: "+506 2653-9911",
     urgent: true,
   },
@@ -790,7 +858,7 @@ export const medicalInfo = [
     icon: "hospital",
     title: "Hospital — Flamingo",
     description:
-      "Full hospital in Flamingo for more serious situations. Dr. Enrique Baltodano Briceño.",
+      "Full hospital in Flamingo for more serious or emergency situations. Dr. Enrique Baltodano Briceño.",
     contact: "+506-2690-2300",
     urgent: true,
   },

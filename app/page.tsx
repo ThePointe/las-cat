@@ -358,27 +358,35 @@ export default function Home() {
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {inTownRestaurants.map(r => (
-              <div key={r.name} className={`${t.cardOnAlt} rounded-2xl p-6 flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]`}>
-                <div className="flex items-start justify-between mb-5">
-                  <div className={`w-10 h-10 rounded-2xl ${t.accentMid} flex items-center justify-center`}>
-                    <Icon name={r.icon} className={`w-5 h-5 ${t.accent}`} />
+              <a key={r.name} href={`/restaurant/${encodeURIComponent(r.name)}`} className={`${t.cardOnAlt} rounded-2xl overflow-hidden flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] cursor-pointer group`}>
+                {/* Image */}
+                {r.images && r.images.length > 0 && (
+                  <div className="relative h-40 overflow-hidden bg-gray-200">
+                    <img src={r.images[0]} alt={r.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
                   </div>
-                  <div className="flex gap-2 flex-wrap justify-end">
-                    {r.mustGo && <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full ${t.mustGoBadge}`}>★ Must Go</span>}
+                )}
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-start justify-between mb-5">
+                    <div className={`w-10 h-10 rounded-2xl ${t.accentMid} flex items-center justify-center flex-shrink-0`}>
+                      <Icon name={r.icon} className={`w-5 h-5 ${t.accent}`} />
+                    </div>
+                    <div className="flex gap-2 flex-wrap justify-end">
+                      {r.mustGo && <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full ${t.mustGoBadge}`}>★ Must Go</span>}
+                    </div>
                   </div>
+                  <p className={`text-[17px] font-semibold ${t.heading} mb-0.5`}>{r.name}</p>
+                  <p className={`text-[13px] font-medium ${t.accent} mb-1`}>{r.cuisine}</p>
+                  <p className={`text-[13px] ${t.muted} mb-3`}>{r.location}</p>
+                  <p className={`text-[14px] ${t.body} leading-relaxed mb-5 flex-1`}>{r.description}</p>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {r.tags.map(tag => <span key={tag} className={`text-[12px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
+                  </div>
+                  <div className={`text-[13px] ${t.muted} flex items-center gap-1.5`}>
+                    <Clock className="w-3.5 h-3.5 flex-shrink-0" />{r.hours}
+                  </div>
+                  {r.phone && <div className={`text-[13px] ${t.muted} flex items-center gap-1.5 mt-1`}><Phone className="w-3.5 h-3.5 flex-shrink-0" />{r.phone}</div>}
                 </div>
-                <p className={`text-[17px] font-semibold ${t.heading} mb-0.5`}>{r.name}</p>
-                <p className={`text-[13px] font-medium ${t.accent} mb-1`}>{r.cuisine}</p>
-                <p className={`text-[13px] ${t.muted} mb-3`}>{r.location}</p>
-                <p className={`text-[14px] ${t.body} leading-relaxed mb-5 flex-1`}>{r.description}</p>
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {r.tags.map(tag => <span key={tag} className={`text-[12px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
-                </div>
-                <div className={`text-[13px] ${t.muted} flex items-center gap-1.5`}>
-                  <Clock className="w-3.5 h-3.5 flex-shrink-0" />{r.hours}
-                </div>
-                {r.phone && <div className={`text-[13px] ${t.muted} flex items-center gap-1.5 mt-1`}><Phone className="w-3.5 h-3.5 flex-shrink-0" />{r.phone}</div>}
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -402,18 +410,26 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {nearbyAreas[activeArea]?.spots.map(spot => (
-              <div key={spot.name} className={`${t.cardBg} rounded-2xl p-6 flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)]`}>
-                <div className="flex items-start justify-between mb-3">
-                  <p className={`text-[17px] font-semibold ${t.heading}`}>{spot.name}</p>
-                  {spot.mustGo && <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full flex-shrink-0 ml-2 ${t.mustGoBadge}`}>★ Must Go</span>}
+              <a key={spot.name} href={`/restaurant/${encodeURIComponent(spot.name)}`} className={`${t.cardBg} rounded-2xl overflow-hidden flex flex-col transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] cursor-pointer group`}>
+                {/* Image */}
+                {spot.images && spot.images.length > 0 && (
+                  <div className="relative h-40 overflow-hidden bg-gray-200">
+                    <img src={spot.images[0]} alt={spot.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                  </div>
+                )}
+                <div className="p-6 flex flex-col flex-1">
+                  <div className="flex items-start justify-between mb-3">
+                    <p className={`text-[17px] font-semibold ${t.heading}`}>{spot.name}</p>
+                    {spot.mustGo && <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full flex-shrink-0 ml-2 ${t.mustGoBadge}`}>★ Must Go</span>}
+                  </div>
+                  <p className={`text-[13px] font-medium ${t.accent} mb-3`}>{spot.cuisine}</p>
+                  <p className={`text-[14px] ${t.body} leading-relaxed mb-4 flex-1`}>{spot.description}</p>
+                  <div className="flex flex-wrap gap-1.5 mb-3">
+                    {spot.tags.map(tag => <span key={tag} className={`text-[12px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
+                  </div>
+                  {spot.phone && <div className={`text-[13px] ${t.muted} flex items-center gap-1.5`}><Phone className="w-3 h-3 flex-shrink-0" />{spot.phone}</div>}
                 </div>
-                <p className={`text-[13px] font-medium ${t.accent} mb-3`}>{spot.cuisine}</p>
-                <p className={`text-[14px] ${t.body} leading-relaxed mb-4 flex-1`}>{spot.description}</p>
-                <div className="flex flex-wrap gap-1.5 mb-3">
-                  {spot.tags.map(tag => <span key={tag} className={`text-[12px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
-                </div>
-                {spot.phone && <div className={`text-[13px] ${t.muted} flex items-center gap-1.5`}><Phone className="w-3 h-3 flex-shrink-0" />{spot.phone}</div>}
-              </div>
+              </a>
             ))}
           </div>
         </div>
