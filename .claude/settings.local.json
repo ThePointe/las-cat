@@ -3,7 +3,13 @@
     "allow": [
       "Bash(export PATH=\"/opt/homebrew/bin:$PATH\")",
       "Bash(npm run *)",
-      "Bash(echo \"PID: $!\")"
+      "Bash(echo \"PID: $!\")",
+      "WebSearch",
+      "WebFetch",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git push *)",
+      "Bash(git diff *)"
     ]
   }
 }

@@ -26,11 +26,13 @@ export default function RestaurantDetail({ params }: { params: Promise<{ name: s
     );
   }
 
-  const images = ("images" in restaurant && restaurant.images) ? restaurant.images : [];
-  const fullDesc = "fullDescription" in restaurant ? restaurant.fullDescription : restaurant.description;
-  const rating = "rating" in restaurant ? restaurant.rating : null;
-  const email = "email" in restaurant ? restaurant.email : null;
-  const phone = restaurant.phone || null;
+  const images: string[] = (restaurant as any).images || [];
+  const fullDesc: string = (restaurant as any).fullDescription || restaurant.description;
+  const rating: string | null = (restaurant as any).rating || null;
+  const email: string | null = (restaurant as any).email || null;
+  const phone: string | null = restaurant.phone || null;
+  const location: string | null = (restaurant as any).location || null;
+  const hours: string | null = (restaurant as any).hours || null;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -106,26 +108,30 @@ export default function RestaurantDetail({ params }: { params: Promise<{ name: s
               <h3 className="font-semibold text-gray-900 mb-4">Details</h3>
 
               {/* Location */}
-              <div className="mb-4 pb-4 border-b border-gray-200">
-                <div className="flex gap-3">
-                  <MapPin className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-sm font-medium text-gray-600">Location</p>
-                    <p className="text-gray-900">{restaurant.location}</p>
+              {location ? (
+                <div className="mb-4 pb-4 border-b border-gray-200">
+                  <div className="flex gap-3">
+                    <MapPin className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-sm font-medium text-gray-600">Location</p>
+                      <p className="text-gray-900">{location}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ) : null}
 
               {/* Hours */}
-              <div className="mb-4 pb-4 border-b border-gray-200">
-                <div className="flex gap-3">
-                  <Clock className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <p className="text-sm font-medium text-gray-600">Hours</p>
-                    <p className="text-gray-900 text-sm">{restaurant.hours}</p>
+              {hours ? (
+                <div className="mb-4 pb-4 border-b border-gray-200">
+                  <div className="flex gap-3">
+                    <Clock className="w-5 h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <p className="text-sm font-medium text-gray-600">Hours</p>
+                      <p className="text-gray-900 text-sm">{hours}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              ) : null}
 
               {/* Phone */}
               {phone && (
