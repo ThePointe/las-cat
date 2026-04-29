@@ -342,6 +342,7 @@ export interface NearbySpot {
   hours?: string;
   tags: string[];
   phone?: string;
+  email?: string;
   images?: string[];
   fullDescription?: string;
   rating?: string;
