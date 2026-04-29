@@ -1,28 +1,53 @@
-// ─── Beach Club ───────────────────────────────────────────────────────────────
+// ─── The Club ──────────────────────────────────────────────────────────────
 
-export const beachClub = {
-  note: "Brand new renovation & new ownership as of 2024",
+export const theClub = {
+  mustGo: false,
+  icon: ["swimmer", "utensils", "waves"],
+  name: "The Club at Las Catalinas",
+  location: "Across the bridge at the end of Paseo El Mar",
+  cuisine: "Mediterranean · Costa Rican",
+  vibe: "All-Day Beachfront Dining & Recreation",
+  description:
+    "Recently renovated with new ownership. Stunning beach club featuring a full-service restaurant, Olympic-size pools, spa, and fitness center with exceptional ocean views.",
+  fullDescription:
+    "The Club at Las Catalinas is a premier beachfront destination offering world-class amenities and dining. The newly renovated property features Mediterranean-inspired cuisine with fresh local ingredients, an outdoor bar overlooking the bay, and attentive service. The facility includes a 25-meter Olympic lap pool with multiple lounging areas, hot spa with plunge pool, kids' pool, complete fitness center, and towel service. Guests enjoy beachfront dining with sunset views, creative cocktails, and fresh seafood specialties. Day-use available with meal minimum. Perfect for both casual lunch and elegant evening dining.",
+  hours: "8am–8pm Daily",
+  phone: "+506 8526-1881",
+  rating: "4.7/5 • Recently Renovated 2024",
+  tags: ["Beachfront", "Olympic Pool", "Full Bar", "Fine Dining", "Spa & Fitness", "Day Use Welcome"],
+  images: [
+    "/beach-club.jpg",
+  ],
   pricing: [
     { who: "Adults",      full: "$30 + 13% VAT", deal: "Only $15 if you spend $15+ on food or drinks" },
     { who: "Kids (8–12)", full: "$15 + 13% VAT", deal: "Only $5 if they spend $10+ on food or drinks" },
   ],
   amenities: [
-    "25-meter lap pool with 4 swim lanes",
+    "25-meter Olympic lap pool with 4 swim lanes",
     "Adult lounging pool",
     "Hot spa jacuzzi & plunge pool",
     "Kids' play pool",
     "Lounge chairs with towel service",
-    "Restaurant & full cocktail bar",
+    "Full-service restaurant & cocktail bar",
     "Exercise room with weights & cardio",
+    "Mediterranean menu with fresh seafood",
   ],
-  tip: "The Beach Club is across the bridge at the end of Paseo El Mar.",
+  menu: {
+    en: "Mediterranean cuisine celebrating fresh Costa Rican seafood and local ingredients. Menu includes fresh fish, ceviche, salads, pasta, and creative cocktails.",
+    es: "Cocina mediterránea que celebra mariscos frescos de Costa Rica e ingredientes locales. El menú incluye pescado fresco, ceviche, ensaladas, pasta y cócteles creativos.",
+    highlights: {
+      en: ["Fresh Ceviche", "Grilled Fish", "Local Seafood", "Signature Cocktails", "Sunset Views"],
+      es: ["Ceviche Fresco", "Pescado a la Parrilla", "Mariscos Locales", "Cócteles de Firma", "Vistas al Atardecer"]
+    },
+  },
 };
 
 // ─── In-Town Restaurants ──────────────────────────────────────────────────────
 
 export interface Restaurant {
   mustGo?: boolean;
-  icon: string;
+  badge?: string;
+  icon: string | string[];
   name: string;
   location: string;
   cuisine: string;
@@ -48,8 +73,9 @@ export interface Restaurant {
 
 export const inTownRestaurants: Restaurant[] = [
   {
-    mustGo: true,
-    icon: "utensils",
+    mustGo: false,
+    badge: "Award-Winning",
+    icon: ["wine", "utensils"],
     name: "Ponciana",
     location: "Santarena Hotel, Main Plaza",
     cuisine: "Mediterranean · Costa Rican Fusion",
@@ -80,12 +106,12 @@ export const inTownRestaurants: Restaurant[] = [
     },
   },
   {
-    mustGo: true,
-    icon: "coffee",
+    mustGo: false,
+    icon: ["coffee", "bike"],
     name: "Pura Vida Ride",
     location: "In Town (Main Street)",
     cuisine: "Specialty Coffee & Adventure Outfitter",
-    vibe: "Morning Coffee + Afternoon Adventures",
+    vibe: "Coffee Roastery & Adventure Center",
     description:
       "World-class organic coffee, empanadas, and a full adventure center. Mountain biking, kayaking, paddleboarding, e-foiling — all in one place. 4.8/5 ★, Travelers' Choice 2025.",
     fullDescription:
@@ -111,7 +137,7 @@ export const inTownRestaurants: Restaurant[] = [
     },
   },
   {
-    mustGo: true,
+    mustGo: false,
     icon: "soup",
     name: "Pots & Bowls",
     location: "In Town (Town Center)",
@@ -143,7 +169,8 @@ export const inTownRestaurants: Restaurant[] = [
     },
   },
   {
-    icon: "star",
+    icon: ["star", "sunset"],
+    badge: "CNN's Most Romantic",
     name: "Sentido Norte",
     location: "Casa Chameleon Hotel, Ocean Bluff",
     cuisine: "Contemporary Costa Rican · Sea-to-Table",
@@ -171,7 +198,7 @@ export const inTownRestaurants: Restaurant[] = [
     },
   },
   {
-    icon: "waves",
+    icon: ["utensils", "waves", "sunset"],
     name: "Celeste",
     location: "Playa Danta (Beachfront)",
     cuisine: "International / Latin American",
@@ -200,7 +227,7 @@ export const inTownRestaurants: Restaurant[] = [
     },
   },
   {
-    icon: "wine",
+    icon: ["utensils", "palm-tree"],
     name: "Pascual",
     location: "Plaza Mercado, Heart of Town",
     cuisine: "Authentic Spanish · Tapas",
@@ -223,7 +250,7 @@ export const inTownRestaurants: Restaurant[] = [
     },
   },
   {
-    icon: "beer",
+    icon: ["beer", "palm-tree"],
     name: "Papagayo Taphouse",
     location: "Playa Danta — Beachfront",
     cuisine: "Craft Brewery · Pub Food",
@@ -269,7 +296,7 @@ export const inTownRestaurants: Restaurant[] = [
     },
   },
   {
-    icon: "coffee",
+    icon: ["coffee", "croissant"],
     name: "Cuatro Calle La Ronda",
     location: "Santarena Hotel",
     cuisine: "Café & Snacks",
@@ -289,7 +316,7 @@ export const inTownRestaurants: Restaurant[] = [
     },
   },
   {
-    mustGo: true,
+    mustGo: false,
     icon: "ice-cream",
     name: "Coquelicot",
     location: "Food Truck — In Town",
@@ -335,6 +362,8 @@ export const inTownRestaurants: Restaurant[] = [
 
 export interface NearbySpot {
   mustGo?: boolean;
+  badge?: string;
+  icon?: string | string[];
   name: string;
   cuisine: string;
   description: string;
@@ -371,11 +400,11 @@ export const nearbyAreas: NearbyArea[] = [
     icon: "map-pin",
     spots: [
       {
-        mustGo: true,
+        mustGo: false,
         name: "La Forketta",
         cuisine: "Traditional Italian · Mediterranean",
         description:
-          "Incredible hand-made pastas and brick-oven pizzas in a cozy Potrero setting. 4.7/5 ★, Travelers' Choice 2025, #5 of 47.",
+          "Incredible hand-made pastas and brick-oven pizzas in a cozy Potrero setting. 4.7/5 ★, #5 of 47 in Playa Potrero.",
         fullDescription:
           "A beloved Italian gem in Potrero where healthy and delicious go hand-in-hand in Mediterranean cuisine. Every hand-made pasta celebrates traditional Italian preparations with fresh, quality ingredients. Brick-oven pizzas emerge with crispy, wood-fired perfection. Super friendly staff creates a warm, welcoming atmosphere in mostly-outdoor seating overlooking the Potrero coast. Specialties include Spaghetti alla Carbonara with eggs and bacon, Lasagne alla Bolognese with housemade pasta, and Burrata Pizza. The seafood options (fish soup, grilled octopus) showcase local Pacific catches. Very popular — make reservations in advance via WhatsApp.",
         hours: "Lunch & Dinner Daily (Call for exact hours)",
@@ -399,7 +428,8 @@ export const nearbyAreas: NearbyArea[] = [
         },
       },
       {
-        mustGo: true,
+        mustGo: false,
+        icon: ["utensils", "sunset", "music"],
         name: "Hemingway's",
         cuisine: "Contemporary American / Bar & Grill",
         description:
@@ -494,16 +524,17 @@ export const nearbyAreas: NearbyArea[] = [
     icon: "anchor",
     spots: [
       {
-        mustGo: true,
+        mustGo: false,
         name: "Marina Flamingo",
         cuisine: "Waterfront Complex",
         description:
           "Brand new crown jewel of Playa Flamingo — a vibrant walkable waterfront with restaurants, retail, sailboats, and incredible views. Free parking 2 hours in their new garage.",
-        tags: ["New!", "Waterfront", "Free Parking 2hrs"],
+        tags: ["Waterfront", "Free Parking 2hrs"],
         phone: "visitmarinaflamingo.com",
       },
       {
-        mustGo: true,
+        mustGo: false,
+        icon: ["sunset", "utensils"],
         name: "Gracia at Mar Vista",
         cuisine: "Globally-Inspired · Farm-to-Table",
         description:
@@ -597,12 +628,12 @@ export const nearbyAreas: NearbyArea[] = [
     icon: "zap",
     spots: [
       {
-        mustGo: true,
+        mustGo: false,
         name: "Origami & Kotoy Food Trucks",
         cuisine: "Japanese Fusion Sushi",
         description:
           "Two outstanding sushi food trucks at the El Cruce intersection. Exceptional quality for street-food prices. Check Instagram for daily menus.",
-        tags: ["Sushi Trucks", "Street Food", "Outstanding Value"],
+        tags: ["Sushi Trucks", "Street Food"],
         menu: {
           en: "Fresh sushi rolls, salmón fly (salmon fly), rock shrimp, baos, Asian fusion bowls, tempura, and Japanese-inspired street food. Daily specials available.",
           es: "Rollos de sushi fresco, salmón fly, camarones de roca, baos, tazones de fusión asiática, tempura y comida callejera inspirada en Japón. Especiales diarios disponibles.",

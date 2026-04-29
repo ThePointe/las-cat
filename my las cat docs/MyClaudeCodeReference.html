@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use Claude Code - Complete Reference</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f0f9ff;
+        }
+
+        /* Quick Links Bar */
+        .quick-links-bar {
+            background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 100%);
+            padding: 1.5rem 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 200;
+        }
+
+        .quick-links-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .quick-links-title {
+            color: #cffafe;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .quick-links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .quick-link-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.15);
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .quick-link-btn:hover {
+            background: rgba(255,255,255,0.25);
+            border-color: rgba(255,255,255,0.5);
+            transform: translateY(-2px);
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        nav .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        nav h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: opacity 0.3s;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+            border-bottom-color: white;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #001f3f 0%, #0c4a6e 100%);
+            color: #ffffff;
+            padding: 5rem 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            color: #ffffff;
+            text-shadow: 0 0 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9), 2px 2px 4px rgba(0,0,0,1);
+            line-height: 1.1;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        section {
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        h2 {
+            color: #0c4a6e;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #0369a1;
+            padding-bottom: 0.5rem;
+        }
+
+        h3 {
+            color: #0284c7;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        h4 {
+            color: #1f2937;
+            margin: 1rem 0 0.5rem 0;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+            overflow-x: auto;
+            position: relative;
+            border: 1px solid #444;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .code-block code {
+            display: block;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background: #0369a1;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #0c4a6e;
+        }
+
+        .copy-btn.copied {
+            background: #059669;
+        }
+
+        .step-container {
+            background: #f0f9ff;
+            border-left: 5px solid #0369a1;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+        }
+
+        .step-container h3 {
+            margin-top: 0;
+            color: #0c4a6e;
+        }
+
+        .next-time-box {
+            background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+            border: 2px solid #0369a1;
+            border-left: 5px solid #0369a1;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+        }
+
+        .next-time-title {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #0c4a6e;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .next-time-title::before {
+            content: "💡";
+            font-size: 1.2rem;
+        }
+
+        .next-time-box ul {
+            margin-left: 1.5rem;
+            color: #1f2937;
+        }
+
+        .next-time-box li {
+            margin-bottom: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .next-time-box strong {
+            color: #0369a1;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 1.5rem 0;
+        }
+
+        .card {
+            background: #f0f9ff;
+            padding: 1.5rem;
+            border-radius: 6px;
+            border-left: 4px solid #0369a1;
+        }
+
+        .card h4 {
+            color: #0c4a6e;
+            margin-top: 0;
+        }
+
+        a {
+            color: #0369a1;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #0c4a6e;
+            text-decoration: underline;
+        }
+
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #0369a1 0%, #0c4a6e 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: transform 0.3s;
+            margin: 0.5rem;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        .info-box {
+            background: #cffafe;
+            border-left: 4px solid #0369a1;
+            padding: 1.5rem;
+            border-radius: 6px;
+            margin: 1rem 0;
+        }
+
+        .code-instruction {
+            background: #ede9fe;
+            border-left: 4px solid #7c3aed;
+            padding: 1rem;
+            border-radius: 4px;
+            margin: 1rem 0;
+            font-style: italic;
+            color: #6b21a8;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #0369a1;
+            color: white;
+            font-weight: 600;
+        }
+
+        footer {
+            background: #0c4a6e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            font-size: 0.95rem;
+        }
+
+        footer a {
+            color: #06b6d4;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .quick-links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            margin-bottom: 1rem;
+            margin-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Quick Links Bar -->
+    <div class="quick-links-bar">
+        <div class="quick-links-container">
+            <div class="quick-links-title">⚡ Quick Links</div>
+            <div class="quick-links-grid">
+                <a href="https://github.com/ThePointe/las-cat" class="quick-link-btn" target="_blank">📂 GitHub Repo</a>
+                <a href="https://las-cat.vercel.app" class="quick-link-btn" target="_blank">🌐 Live Site</a>
+                <a href="https://claude.ai" class="quick-link-btn" target="_blank">🤖 Claude AI</a>
+                <a href="https://claude.ai/code" class="quick-link-btn" target="_blank">💻 Claude Code</a>
+                <a href="https://nextjs.org/docs" class="quick-link-btn" target="_blank">📚 Docs</a>
+                <a href="https://lovable.dev/projects/d3dba1a7-fc26-4720-8e97-d8572f9a2590" class="quick-link-btn" target="_blank">💜 Loveable</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <h1>🚀 Claude Code</h1>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#typescript">TypeScript</a></li>
+                <li><a href="#photos">Photos</a></li>
+                <li><a href="#next">Next</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero">
+        <h2>How to Use Claude Code</h2>
+        <p>Build your next web project</p>
+    </div>
+
+    <div class="container">
+        <!-- Overview -->
+        <section id="overview">
+            <h2>What You Built</h2>
+            <p>A complete web application: Next.js + React + TypeScript + Tailwind CSS. Every technical step was handled by Claude Code.</p>
+
+            <h3>The pattern</h3>
+            <p><strong>Describe → Claude Code executes → Fix issues → Deploy</strong></p>
+        </section>
+
+        <!-- Process -->
+        <section id="process">
+            <h2>Step-by-Step</h2>
+
+            <div class="step-container">
+                <h3>Step 1: Initialize</h3>
+                <p>You said: "Create a Next.js project with TypeScript and Tailwind CSS"</p>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    <code>npx create-next-app@latest las-cat --typescript --tailwind</code>
+                </div>
+                <p><a href="https://github.com/ThePointe/las-cat" target="_blank">View commit →</a></p>
+                <div class="next-time-box">
+                    <div class="next-time-title">Next Time</div>
+                    <ul>
+                        <li><strong>Deploy after Step 2:</strong> Get a live URL from the start.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-container">
+                <h3>Step 2: Build Homepage</h3>
+                <p>You said: "Create a homepage with sections for restaurants, activities, shopping, services. Make it responsive."</p>
+                <p><a href="https://github.com/ThePointe/las-cat" target="_blank">View commit →</a></p>
+                <div class="next-time-box">
+                    <div class="next-time-title">Next Time</div>
+                    <ul>
+                        <li><strong>Deploy here:</strong> Get that live URL running.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-container">
+                <h3>Step 3: Design Overhaul</h3>
+                <p>You said: "Redesign with Apple-style principles and 4 beautiful color themes."</p>
+                <p><a href="https://github.com/ThePointe/las-cat" target="_blank">View commit →</a></p>
+                <div class="next-time-box">
+                    <div class="next-time-title">Next Time</div>
+                    <ul>
+                        <li><strong>Centralize theme colors:</strong> Save in tailwind.config.js for instant global changes.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-container">
+                <h3>Step 4: Medical Info</h3>
+                <p>You said: "Add doctor names and medical facility details."</p>
+                <p><a href="https://github.com/ThePointe/las-cat" target="_blank">View commit →</a></p>
+            </div>
+
+            <div class="step-container">
+                <h3>Step 5: Real Business Data & Photos</h3>
+                <p>You said: "Add this real business data. Use these real image URLs. Create data structure and update components."</p>
+                <p><a href="https://github.com/ThePointe/las-cat" target="_blank">View commit →</a></p>
+                <div class="next-time-box">
+                    <div class="next-time-title">Next Time</div>
+                    <ul>
+                        <li><strong>Define TypeScript types first:</strong> Create types for Restaurant, Activity, Business before integrating data.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-container">
+                <h3>Step 6: Fix TypeScript Errors</h3>
+                <p>You said: "Fix this error: [paste error message]"</p>
+                <p><a href="https://github.com/ThePointe/las-cat" target="_blank">View commits →</a></p>
+                <div class="next-time-box">
+                    <div class="next-time-title">Next Time</div>
+                    <ul>
+                        <li><strong>Enable strict mode in Step 1:</strong> "Set 'strict: true' in tsconfig.json" — catch errors immediately.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-container">
+                <h3>Step 7: Bilingual Content</h3>
+                <p>You said: "Add Spanish and English menus. Create language toggle."</p>
+                <p><a href="https://github.com/ThePointe/las-cat" target="_blank">View commit →</a></p>
+                <div class="next-time-box">
+                    <div class="next-time-title">Next Time</div>
+                    <ul>
+                        <li><strong>Build bilingual from Step 2:</strong> Create translations structure from the start. Avoid refactoring later.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-container">
+                <h3>Step 8: Detail Pages</h3>
+                <p>You said: "Create reusable detail pages for any business category."</p>
+                <p><a href="https://github.com/ThePointe/las-cat" target="_blank">View commit →</a></p>
+            </div>
+
+            <div class="step-container">
+                <h3>Step 9: Business Verification</h3>
+                <p>Research phase (you did this, not Claude Code). Verified businesses and collected contact info.</p>
+                <div class="next-time-box">
+                    <div class="next-time-title">Next Time</div>
+                    <ul>
+                        <li><strong>Outsource:</strong> Hire someone on Fiverr while you code.</li>
+                        <li><strong>Or use APIs:</strong> Integrate Google Places or TripAdvisor API to pull data automatically.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="step-container">
+                <h3>Step 10: Deploy</h3>
+                <p>You said: "Build and deploy to Vercel"</p>
+                <p>Live: <a href="https://las-cat.vercel.app" target="_blank">las-cat.vercel.app</a></p>
+                <div class="next-time-box">
+                    <div class="next-time-title">Next Time</div>
+                    <ul>
+                        <li><strong>Deploy after Step 2:</strong> Get live URL from the start. Test on real devices.</li>
+                        <li><strong>Auto-deploy:</strong> Ask Claude Code to create GitHub Actions for automatic deployment.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Git -->
+            <h3 style="margin-top: 2rem;">Git Commits</h3>
+            <p>All commits visible in <a href="https://github.com/ThePointe/las-cat" target="_blank">your GitHub repository</a>.</p>
+
+            <table>
+                <tr>
+                    <th>Commit</th>
+                    <th>What Changed</th>
+                </tr>
+                <tr>
+                    <td>Initial commit from Create Next App</td>
+                    <td>Project setup</td>
+                </tr>
+                <tr>
+                    <td>Initial site with 4 themes</td>
+                    <td>Homepage + structure</td>
+                </tr>
+                <tr>
+                    <td>Apple-style redesign with 4 themes</td>
+                    <td>Design overhaul</td>
+                </tr>
+                <tr>
+                    <td>Add doctor names to medical section</td>
+                    <td>Medical info</td>
+                </tr>
+                <tr>
+                    <td>Add verified business data, real images</td>
+                    <td>Real content + photos</td>
+                </tr>
+                <tr>
+                    <td>Fix TypeScript errors</td>
+                    <td>Type fixes</td>
+                </tr>
+                <tr>
+                    <td>Add comprehensive bilingual menus</td>
+                    <td>EN/ES content</td>
+                </tr>
+                <tr>
+                    <td>Add universal detail pages</td>
+                    <td>Detail templates</td>
+                </tr>
+            </table>
+
+            <p><strong>Tell Claude Code:</strong> "Save my work: 'Add [what you changed]'"</p>
+
+            <div class="next-time-box">
+                <div class="next-time-title">Next Time — Git</div>
+                <ul>
+                    <li><strong>Use branches:</strong> Ask Claude Code to create 'feature/[name]' branch for experimental changes.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TypeScript -->
+        <section id="typescript">
+            <h2>TypeScript Errors</h2>
+
+            <h3>What is it?</h3>
+            <p>Type checking — catches mistakes before you run code.</p>
+
+            <h3>What they looked like</h3>
+            <div class="code-block">
+                <code>Type 'string | undefined' is not assignable to type 'string'
+Property 'hours' does not exist on type 'Restaurant'
+Expected 2 arguments, but got 1</code>
+            </div>
+
+            <h3>How you fixed them</h3>
+            <p>You said: "Fix this error: [paste exact error message]"</p>
+
+            <h3>Pattern for next time</h3>
+            <div class="info-box">
+                1. Run `npm run dev`<br>
+                2. Copy any TypeScript error<br>
+                3. Tell Claude Code: "Fix this: [error]"<br>
+                4. Repeat if needed
+            </div>
+
+            <h3>Common errors</h3>
+            <table>
+                <tr>
+                    <th>Error</th>
+                    <th>Meaning</th>
+                </tr>
+                <tr>
+                    <td>is not assignable to type</td>
+                    <td>Wrong data type</td>
+                </tr>
+                <tr>
+                    <td>Property X does not exist</td>
+                    <td>Missing field on object</td>
+                </tr>
+                <tr>
+                    <td>Cannot find module</td>
+                    <td>Missing import or file</td>
+                </tr>
+                <tr>
+                    <td>Expected X arguments, got Y</td>
+                    <td>Wrong number of parameters</td>
+                </tr>
+            </table>
+
+            <div class="next-time-box">
+                <div class="next-time-title">Next Time</div>
+                <ul>
+                    <li><strong>Enable strict mode in Step 1:</strong> "Set 'strict: true' in tsconfig.json"</li>
+                    <li><strong>Define types before coding:</strong> Create types.ts with all business object types upfront.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Photos -->
+        <section id="photos">
+            <h2>Real Business Photos</h2>
+
+            <p>You manually collected real image URLs. You said: "Replace placeholders with these real image URLs. Create data structure mapping businesses to photos. Update components."</p>
+
+            <h3>Sources that worked</h3>
+            <ul>
+                <li>TripAdvisor (right-click → copy link)</li>
+                <li>Business websites</li>
+                <li>Google Business</li>
+                <li>Instagram business pages</li>
+            </ul>
+
+            <div class="next-time-box">
+                <div class="next-time-title">Next Time</div>
+                <ul>
+                    <li><strong>Use APIs:</strong> Ask Claude Code to integrate Google Places or TripAdvisor API. Automatic forever.</li>
+                    <li><strong>Optimize:</strong> Ask for next/image with lazy loading to prevent slow load times.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Next Project -->
+        <section id="next">
+            <h2>Your Next Project</h2>
+
+            <p>Same pattern. Replace details:</p>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>1. Initialize</h4>
+                    <p>"Create a Next.js project with TypeScript and Tailwind"</p>
+                </div>
+                <div class="card">
+                    <h4>2. Build</h4>
+                    <p>"Create homepage with [sections]"</p>
+                </div>
+                <div class="card">
+                    <h4>3. Design</h4>
+                    <p>"Make it beautiful with [style]"</p>
+                </div>
+                <div class="card">
+                    <h4>4. Data</h4>
+                    <p>"Add this data. Use these images"</p>
+                </div>
+                <div class="card">
+                    <h4>5. Fix</h4>
+                    <p>"Fix this error" or "Fix this bug"</p>
+                </div>
+                <div class="card">
+                    <h4>6. Deploy</h4>
+                    <p>"Push to GitHub and deploy to Vercel"</p>
+                </div>
+            </div>
+
+            <h3>Key principles</h3>
+            <ul>
+                <li>Deploy early (Step 2)</li>
+                <li>Separate data from code</li>
+                <li>Define TypeScript types first</li>
+                <li>Commit frequently</li>
+                <li>Use real data, not placeholders</li>
+                <li>Test on actual devices</li>
+            </ul>
+
+            <div class="next-time-box">
+                <div class="next-time-title">Next Time</div>
+                <ul>
+                    <li><strong>Define scope:</strong> "This will do [one thing]. Won't do [X, Y, Z]"</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Quick Reference -->
+        <section>
+            <h2>Quick Instructions</h2>
+
+            <table>
+                <tr>
+                    <th>You Want</th>
+                    <th>Tell Claude Code</th>
+                </tr>
+                <tr>
+                    <td>Add feature</td>
+                    <td>"Add [feature] to [section]"</td>
+                </tr>
+                <tr>
+                    <td>Fix bug</td>
+                    <td>"There's a bug where [problem]. Fix it."</td>
+                </tr>
+                <tr>
+                    <td>Fix TypeScript</td>
+                    <td>"Fix this: [paste error]"</td>
+                </tr>
+                <tr>
+                    <td>Add data</td>
+                    <td>"Add [fields]. Here's the data: [data]"</td>
+                </tr>
+                <tr>
+                    <td>Redesign</td>
+                    <td>"Redesign [section] with [style]. Keep same features."</td>
+                </tr>
+                <tr>
+                    <td>Responsive</td>
+                    <td>"Make sure this works on mobile, tablet, desktop"</td>
+                </tr>
+                <tr>
+                    <td>Commit</td>
+                    <td>"Save my progress: 'Add [what]'"</td>
+                </tr>
+                <tr>
+                    <td>Deploy</td>
+                    <td>"Build and deploy to Vercel"</td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Links -->
+        <section>
+            <h2>Resources</h2>
+            <div class="grid-2">
+                <a href="https://github.com/ThePointe/las-cat" class="button" target="_blank">📂 Your GitHub</a>
+                <a href="https://las-cat.vercel.app" class="button" target="_blank">🌐 Your Site</a>
+                <a href="https://claude.ai" class="button" target="_blank">🤖 Claude AI</a>
+                <a href="https://nextjs.org/docs" class="button" target="_blank">📚 Next.js</a>
+                <a href="https://tailwindcss.com" class="button" target="_blank">🎨 Tailwind</a>
+                <a href="https://github.com" class="button" target="_blank">🔗 GitHub</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>How to Use Claude Code for Web Projects</strong></p>
+        <p>Your personal reference for every project you build.</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(link.getAttribute('href'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        function copyCode(button) {
+            const codeBlock = button.nextElementSibling;
+            const text = codeBlock.textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.textContent;
+                button.textContent = '✅ Copied!';
+                button.classList.add('copied');
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            document.querySelectorAll('section').forEach(section => {
+                if (pageYOffset >= section.offsetTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            document.querySelectorAll('nav a').forEach(link => {
+                link.style.borderBottom = 'none';
+                if (link.getAttribute('href') === '#' + current) {
+                    link.style.borderBottom = '2px solid white';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

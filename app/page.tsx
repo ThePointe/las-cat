@@ -7,10 +7,11 @@ import {
   ShoppingBag, Package, Heart, Shield, Sun, Flame, Droplets, Cloud,
   Zap, Target, MapPin, ChevronRight, Palette, Phone, Globe, Clock,
   Menu, X, AlertCircle, CheckCircle2, Building2, Sailboat, Sandwich,
-  Wine, IceCream, Soup, MessageCircle, Stethoscope, Hospital,
+  Wine, IceCream, Soup, MessageCircle, Stethoscope, Hospital, Music,
+  Sunset, Users, Croissant,
 } from "lucide-react";
 import {
-  beachClub, inTownRestaurants, nearbyAreas, activities,
+  theClub, inTownRestaurants, nearbyAreas, activities,
   privateChefs, dayTrips, boating, transport,
   groceriesEnRoute, groceriesNearLC, medicalInfo,
 } from "./data";
@@ -28,11 +29,24 @@ const ICONS: Record<string, React.ElementType> = {
   sailboat: Sailboat, sandwich: Sandwich, wine: Wine, "ice-cream": IceCream,
   soup: Soup, "message-circle": MessageCircle, stethoscope: Stethoscope,
   hospital: Hospital, "chef-hat": Utensils, volleyball: Target,
+  music: Music, sunset: Sunset, swimmer: Users, croissant: Croissant,
+  martini: Wine, "palm-tree": TreePine,
 };
 
 function Icon({ name, className }: { name: string; className?: string }) {
   const C = ICONS[name] ?? Utensils;
   return <C className={className} />;
+}
+
+function MultiIcon({ names, className }: { names: string | string[]; className?: string }) {
+  const iconArray = Array.isArray(names) ? names : [names];
+  return (
+    <div className="flex items-center justify-center gap-1">
+      {iconArray.map((name, idx) => (
+        <Icon key={idx} name={name} className={className} />
+      ))}
+    </div>
+  );
 }
 
 /* ─── Themes ────────────────────────────────────────────────────────────────── */
@@ -315,35 +329,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Beach Club ──────────────────────────────────────────────────── */}
+      {/* ── The Club ──────────────────────────────────────────────────── */}
       <section className={`${t.pageBg} py-20 sm:py-28 px-5 sm:px-8`}>
-        <div className="max-w-5xl mx-auto">
-          <SectionHead eyebrow="In Town" title="The Beach Club" sub={`${beachClub.note} — cross the bridge at the end of Paseo El Mar.`} t={t} />
-          <div className={`${t.cardBg} rounded-3xl overflow-hidden shadow-[0_2px_20px_rgba(0,0,0,0.07)]`}>
-            <div className="relative h-56 sm:h-72 overflow-hidden">
-              <img src="/beach-club.jpg" alt="Beach Club" className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-            </div>
+        <div className="max-w-7xl mx-auto">
+          <SectionHead eyebrow="In Town" title={theClub.name} sub={theClub.fullDescription} t={t} />
+          <a href={`/restaurant/${encodeURIComponent(theClub.name)}`} className={`${t.cardBg} rounded-3xl overflow-hidden flex flex-col transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] cursor-pointer group`}>
+            {/* Image */}
+            {theClub.images && theClub.images.length > 0 && (
+              <div className="relative h-56 sm:h-72 overflow-hidden">
+                <img src={theClub.images[0]} alt={theClub.name} className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+              </div>
+            )}
             <div className="p-6 sm:p-10">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
-                {beachClub.pricing.map(p => (
-                  <div key={p.who} className={`${t.accentLight} rounded-2xl p-5`}>
-                    <p className={`text-[13px] font-semibold ${t.muted} mb-1`}>{p.who}</p>
-                    <p className={`text-[13px] line-through ${t.muted}`}>{p.full}</p>
-                    <p className={`text-[17px] font-semibold ${t.accent} mt-1`}>{p.deal}</p>
+              {/* Header with icon and badge */}
+              <div className="flex items-start justify-between mb-5">
+                <div className={`w-11 h-11 rounded-2xl ${t.accentMid} flex items-center justify-center flex-shrink-0`}>
+                  {Array.isArray(theClub.icon) ? <MultiIcon names={theClub.icon} className={`w-4 h-4 ${t.accent}`} /> : <Icon name={theClub.icon} className={`w-5 h-5 ${t.accent}`} />}
+                </div>
+              </div>
+
+              <p className={`text-[20px] font-semibold ${t.heading} mb-2`}>{theClub.name}</p>
+              <p className={`text-[14px] font-medium ${t.accent} mb-2`}>{theClub.cuisine}</p>
+              <p className={`text-[13px] ${t.muted} mb-4`}>{theClub.location}</p>
+
+              {/* Description */}
+              <p className={`text-[14px] ${t.body} leading-relaxed mb-6`}>{theClub.fullDescription}</p>
+
+              {/* Contact info */}
+              <div className="flex flex-col gap-2 mb-8 pb-8 border-b border-gray-200">
+                <div className={`text-[13px] ${t.muted} flex items-center gap-2`}>
+                  <Clock className="w-3.5 h-3.5 flex-shrink-0" />{theClub.hours}
+                </div>
+                <div className={`text-[13px] ${t.muted} flex items-center gap-2`}>
+                  <Phone className="w-3.5 h-3.5 flex-shrink-0" />{theClub.phone}
+                </div>
+              </div>
+
+              {/* Pricing */}
+              <p className={`text-[13px] font-semibold ${t.heading} mb-3 uppercase tracking-wide`}>Day Use Pricing</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                {theClub.pricing.map(p => (
+                  <div key={p.who} className={`${t.accentLight} rounded-2xl p-4`}>
+                    <p className={`text-[12px] font-semibold ${t.muted} mb-1`}>{p.who}</p>
+                    <p className={`text-[12px] line-through ${t.muted}`}>{p.full}</p>
+                    <p className={`text-[16px] font-semibold ${t.accent} mt-1`}>{p.deal}</p>
                   </div>
                 ))}
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {beachClub.amenities.map(a => (
-                  <div key={a} className="flex items-center gap-3">
-                    <CheckCircle2 className={`w-4 h-4 flex-shrink-0 ${t.checkIcon}`} />
-                    <span className={`text-[15px] ${t.body}`}>{a}</span>
+
+              {/* Amenities */}
+              <p className={`text-[13px] font-semibold ${t.heading} mb-3 uppercase tracking-wide`}>Facilities & Amenities</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {theClub.amenities.map(a => (
+                  <div key={a} className="flex items-start gap-2">
+                    <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 ${t.checkIcon}`} />
+                    <span className={`text-[13px] ${t.body}`}>{a}</span>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
+          </a>
         </div>
       </section>
 
@@ -352,8 +398,9 @@ export default function Home() {
         <div className="max-w-7xl mx-auto">
           <SectionHead
             eyebrow="Where to Eat"
-            title="Dining in Las Catalinas"
-            sub="Zero chain restaurants. Eleven chef-driven kitchens celebrating Costa Rica's extraordinary ingredients."
+            title="On-Site Dining in Las Catalinas"
+            sub="Zero chain restaurants. Eleven chef-driven kitchens
+celebrating Costa Rica's extraordinary ingredients."
             t={t}
           />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -368,10 +415,10 @@ export default function Home() {
                 <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-start justify-between mb-5">
                     <div className={`w-10 h-10 rounded-2xl ${t.accentMid} flex items-center justify-center flex-shrink-0`}>
-                      <Icon name={r.icon} className={`w-5 h-5 ${t.accent}`} />
+                      {Array.isArray(r.icon) ? <MultiIcon names={r.icon} className={`w-4 h-4 ${t.accent}`} /> : <Icon name={r.icon} className={`w-5 h-5 ${t.accent}`} />}
                     </div>
                     <div className="flex gap-2 flex-wrap justify-end">
-                      {r.mustGo && <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full ${t.mustGoBadge}`}>★ Must Go</span>}
+                      {r.badge && <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full ${t.mustGoBadge}`}>★ {r.badge}</span>}
                     </div>
                   </div>
                   <p className={`text-[17px] font-semibold ${t.heading} mb-0.5`}>{r.name}</p>
@@ -418,10 +465,17 @@ export default function Home() {
                   </div>
                 )}
                 <div className="p-6 flex flex-col flex-1">
-                  <div className="flex items-start justify-between mb-3">
-                    <p className={`text-[17px] font-semibold ${t.heading}`}>{spot.name}</p>
-                    {spot.mustGo && <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full flex-shrink-0 ml-2 ${t.mustGoBadge}`}>★ Must Go</span>}
+                  <div className="flex items-start justify-between mb-3 gap-3">
+                    <div className="flex-1">
+                      <p className={`text-[17px] font-semibold ${t.heading}`}>{spot.name}</p>
+                    </div>
+                    {spot.badge && <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full flex-shrink-0 ${t.mustGoBadge}`}>★ {spot.badge}</span>}
                   </div>
+                  {spot.icon && (
+                    <div className={`w-8 h-8 rounded-lg ${t.accentLight} flex items-center justify-center mb-3`}>
+                      {Array.isArray(spot.icon) ? <MultiIcon names={spot.icon} className={`w-3.5 h-3.5 ${t.accent}`} /> : <Icon name={spot.icon} className={`w-4 h-4 ${t.accent}`} />}
+                    </div>
+                  )}
                   <p className={`text-[13px] font-medium ${t.accent} mb-3`}>{spot.cuisine}</p>
                   <p className={`text-[14px] ${t.body} leading-relaxed mb-4 flex-1`}>{spot.description}</p>
                   <div className="flex flex-wrap gap-1.5 mb-3">
