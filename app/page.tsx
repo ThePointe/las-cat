@@ -259,7 +259,7 @@ export default function Home() {
           </p>
           <h1 className="animate-fade-up-d1 text-5xl sm:text-6xl lg:text-[80px] xl:text-[96px] font-bold leading-[1.02] tracking-[-0.02em] mb-6">
             Welcome to<br />
-            <span className="font-light italic">Las Catalinas</span>
+            <span className="font-light italic">Seabranch at Las Catalinas</span>
           </h1>
           <p className="animate-fade-up-d2 text-lg sm:text-xl text-white/70 max-w-lg mb-3 leading-relaxed">
             Car-free. Walkable. Absolutely magical.
@@ -321,7 +321,7 @@ export default function Home() {
           <SectionHead eyebrow="In Town" title="The Beach Club" sub={`${beachClub.note} — cross the bridge at the end of Paseo El Mar.`} t={t} />
           <div className={`${t.cardBg} rounded-3xl overflow-hidden shadow-[0_2px_20px_rgba(0,0,0,0.07)]`}>
             <div className="relative h-56 sm:h-72 overflow-hidden">
-              <img src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?w=1200&q=85" alt="Beach Club" className="w-full h-full object-cover" />
+              <img src="/beach-club.jpg" alt="Beach Club" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
             </div>
             <div className="p-6 sm:p-10">
@@ -362,7 +362,7 @@ export default function Home() {
                 {/* Image */}
                 {r.images && r.images.length > 0 && (
                   <div className="relative h-40 overflow-hidden bg-gray-200">
-                    <img src={r.images[0]} alt={r.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img src={r.images[0]} alt={r.name} className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
                   </div>
                 )}
                 <div className="p-6 flex flex-col flex-1">
@@ -414,7 +414,7 @@ export default function Home() {
                 {/* Image */}
                 {spot.images && spot.images.length > 0 && (
                   <div className="relative h-40 overflow-hidden bg-gray-200">
-                    <img src={spot.images[0]} alt={spot.name} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+                    <img src={spot.images[0]} alt={spot.name} className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
                   </div>
                 )}
                 <div className="p-6 flex flex-col flex-1">

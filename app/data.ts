@@ -186,10 +186,9 @@ export const inTownRestaurants: Restaurant[] = [
     rating: "4.8/5 (54 reviews) • #4 of 7 in Las Catalinas",
     tags: ["★ Top Rated", "Beachfront", "Cocktails", "Sunset Views"],
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2c/6d/3c/d9/caption.jpg",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/7e/46/43/fines-de-semana-frente.jpg",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/fb/45/9b/caption.jpg",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/b0/83/8f/caption.jpg",
+      "/celeste-1.jpg",
+      "/celeste-2.jpg",
+      "/celeste-3.jpg",
     ],
     menu: {
       en: "International cuisine with Latin American influences. Fresh seafood, fish ceviche, locally caught fish, Angus beef, prawns, and creative cocktails. Gluten-free and vegetarian options available.",
