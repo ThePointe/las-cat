@@ -5,7 +5,7 @@ import {
   Utensils, Coffee, Beer, Star, Waves, Mountain, Bike, Dumbbell,
   Activity, Fish, Anchor, TreePine, Leaf, Car, Plane, ShoppingCart,
   ShoppingBag, Package, Heart, Shield, Sun, Flame, Droplets, Cloud,
-  Zap, Target, MapPin, ChevronRight, Palette, Phone, Globe, Clock,
+  Zap, Target, MapPin, ChevronRight, ChevronLeft, Palette, Phone, Globe, Clock,
   Menu, X, AlertCircle, CheckCircle2, Building2, Sailboat, Sandwich,
   Wine, IceCream, Soup, MessageCircle, Stethoscope, Hospital, Music,
   Sunset, Users, Croissant, FileText,
@@ -51,6 +51,62 @@ function MultiIcon({ names, className, circleClass }: {
           <Icon name={name} className={className} />
         </div>
       ))}
+    </div>
+  );
+}
+
+/* ─── Image Carousel ────────────────────────────────────────────────────────── */
+
+function ImageCarousel({ images, alt, className }: { images: string[]; alt: string; className?: string }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  if (!images || images.length === 0) return null;
+  if (images.length === 1) {
+    return <img src={images[0]} alt={alt} className={className} />;
+  }
+
+  const next = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const goToSlide = (index: number, e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setCurrentIndex(index);
+  };
+
+  return (
+    <div className="relative w-full h-full group">
+      <img src={images[currentIndex]} alt={alt} className={className} />
+
+      {/* Next button */}
+      {images.length > 1 && (
+        <button
+          onClick={next}
+          className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-white/90 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity shadow-lg hover:bg-white z-10"
+          aria-label="Next image"
+        >
+          <ChevronRight className="w-5 h-5 text-gray-800" />
+        </button>
+      )}
+
+      {/* Dot indicators */}
+      {images.length > 1 && (
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+          {images.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={(e) => goToSlide(idx, e)}
+              className={`w-1.5 h-1.5 rounded-full transition-all ${
+                idx === currentIndex ? 'bg-white w-2' : 'bg-white/60'
+              }`}
+              aria-label={`Go to image ${idx + 1}`}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -346,13 +402,13 @@ export default function Home() {
       {/* ── The Club ──────────────────────────────────────────────────── */}
       <section className={`${t.pageBg} py-20 sm:py-28 px-5 sm:px-8`}>
         <div className="max-w-7xl mx-auto">
-          <SectionHead eyebrow="In Town" title={theClub.name} sub={theClub.fullDescription} t={t} />
+          <SectionHead eyebrow="On-Site Beach Club" title={theClub.name} t={t} />
           <a href={`/restaurant/${encodeURIComponent(theClub.name)}`} className={`${t.cardBg} rounded-3xl overflow-hidden flex flex-col transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] cursor-pointer group`}>
             {/* Image */}
             {theClub.images && theClub.images.length > 0 && (
               <div className="relative h-56 sm:h-72 overflow-hidden">
-                <img src={theClub.images[0]} alt={theClub.name} className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                <ImageCarousel images={theClub.images} alt={theClub.name} className="w-full h-full object-cover object-center" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
               </div>
             )}
             <div className="p-6 sm:p-10">
@@ -435,7 +491,7 @@ celebrating Costa Rica's extraordinary ingredients."
                 {/* Image */}
                 {r.images && r.images.length > 0 && (
                   <div className="relative h-40 overflow-hidden bg-gray-200">
-                    <img src={r.images[0]} alt={r.name} className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+                    <ImageCarousel images={r.images} alt={r.name} className="w-full h-full object-cover object-center" />
                   </div>
                 )}
                 <div className="p-6 flex flex-col flex-1">
@@ -490,7 +546,7 @@ celebrating Costa Rica's extraordinary ingredients."
                 {/* Image */}
                 {spot.images && spot.images.length > 0 && (
                   <div className="relative h-40 overflow-hidden bg-gray-200">
-                    <img src={spot.images[0]} alt={spot.name} className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-300" />
+                    <ImageCarousel images={spot.images} alt={spot.name} className="w-full h-full object-cover object-center" />
                   </div>
                 )}
                 <div className="p-6 flex flex-col flex-1">

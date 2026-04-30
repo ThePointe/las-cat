@@ -10,7 +10,7 @@ export const theClub = {
   description:
     "Recently renovated with new ownership. Stunning beach club featuring a full-service restaurant, Olympic-size pools, spa, and fitness center with exceptional ocean views.",
   fullDescription:
-    "The Club at Las Catalinas is a premier beachfront destination offering world-class amenities and dining. The newly renovated property features Mediterranean-inspired cuisine with fresh local ingredients, an outdoor bar overlooking the bay, and attentive service. The facility includes a 25-meter Olympic lap pool with multiple lounging areas, hot spa with plunge pool, kids' pool, complete fitness center, and towel service. Guests enjoy beachfront dining with sunset views, creative cocktails, and fresh seafood specialties. Day-use available with meal minimum. Perfect for both casual lunch and elegant evening dining.",
+    "Beachfront beach club with Olympic lap pool, hot spa, fitness center, and full-service restaurant. Enjoy fresh seafood, creative cocktails, and sunset views. Day-use available with meal minimum.",
   hours: "8am–8pm Daily",
   phone: "+506 8526-1881",
   rating: "4.7/5 • Recently Renovated 2024",
@@ -249,7 +249,6 @@ export const inTownRestaurants: Restaurant[] = [
         en: ["Spanish Croquetas", "Paella", "Gazpacho", "Jamón Ibérico", "Wine Selection", "Mixology Classes"],
         es: ["Croquetas Españolas", "Paella", "Gazpacho", "Jamón Ibérico", "Selección de Vinos", "Clases de Coctelería"]
       },
-      url: "https://www.pascualcr.com/"
     },
   },
   {
@@ -264,6 +263,9 @@ export const inTownRestaurants: Restaurant[] = [
       "Papagayo Brewing offers quality craft beer \"as refreshing as it is flavorful — made to accentuate the Guanacaste climate and culture, from brewery to beach.\" Sit in iconic swing seats directly on Playa Danta with feet in the sand, cold beers in hand, and unbeatable sunset energy. Signature brews include Beach Lager (perfect for the tropics), Tropical IPA, Offshore Ale, and Passion Fruit Ale. Top-notch cocktails crafted to complement the beers. Casual pub food pairs with your brew. Big TVs for sports. This is where Las Catalinas comes to celebrate, unwind, and catch the sunset with fellow travelers and locals.",
     hours: "Midday through Evening Daily",
     tags: ["Craft Beer", "Beachfront", "Swing Seats", "Sports on TV", "Sunset Views", "Local Favorite"],
+    images: [
+      "https://images.squarespace-cdn.com/content/v1/5cdec5a7d718890001214928/1631625489463-BSN207RIRSJO66QLH67M/052A2517.jpg",
+    ],
     menu: {
       en: "Handcrafted Costa Rican craft beers: Beach Lager, Tropical IPA, Offshore Ale, Passion Fruit Ale. Top-notch cocktails and casual pub food perfectly paired with cold beer and tropical sunsets.",
       es: "Cervezas artesanales de Costa Rica elaboradas a mano: Beach Lager, Tropical IPA, Offshore Ale, Passion Fruit Ale. Cócteles excepcionales y comida casual de bar perfectamente combinados con cerveza fría y atardeceres tropicales.",
