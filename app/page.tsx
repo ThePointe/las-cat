@@ -57,12 +57,18 @@ function MultiIcon({ names, className, circleClass }: {
 
 /* ─── Image Carousel ────────────────────────────────────────────────────────── */
 
-function ImageCarousel({ images, alt, className }: { images: string[]; alt: string; className?: string }) {
+function ImageCarousel({ images, alt, className, objectPositions }: {
+  images: string[];
+  alt: string;
+  className?: string;
+  objectPositions?: string[];
+}) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   if (!images || images.length === 0) return null;
   if (images.length === 1) {
-    return <img src={images[0]} alt={alt} className={className} />;
+    const position = objectPositions?.[0] || 'object-center';
+    return <img src={images[0]} alt={alt} className={`${className} ${position}`} />;
   }
 
   const next = (e: React.MouseEvent) => {
@@ -77,9 +83,11 @@ function ImageCarousel({ images, alt, className }: { images: string[]; alt: stri
     setCurrentIndex(index);
   };
 
+  const currentPosition = objectPositions?.[currentIndex] || 'object-center';
+
   return (
     <div className="relative w-full h-full group">
-      <img src={images[currentIndex]} alt={alt} className={className} />
+      <img src={images[currentIndex]} alt={alt} className={`${className} ${currentPosition}`} />
 
       {/* Next button */}
       {images.length > 1 && (
@@ -403,11 +411,11 @@ export default function Home() {
       <section className={`${t.pageBg} py-20 sm:py-28 px-5 sm:px-8`}>
         <div className="max-w-7xl mx-auto">
           <SectionHead eyebrow="On-Site Beach Club" title={theClub.name} t={t} />
-          <a href={`/restaurant/${encodeURIComponent(theClub.name)}`} className={`${t.cardBg} rounded-3xl overflow-hidden flex flex-col transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] cursor-pointer group`}>
+          <div className={`${t.cardBg} rounded-3xl overflow-hidden flex flex-col`}>
             {/* Image */}
             {theClub.images && theClub.images.length > 0 && (
               <div className="relative h-56 sm:h-72 overflow-hidden">
-                <ImageCarousel images={theClub.images} alt={theClub.name} className="w-full h-full object-cover object-center" />
+                <img src={theClub.images[0]} alt={theClub.name} className="w-full h-full object-cover object-center" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
               </div>
             )}
@@ -430,7 +438,7 @@ export default function Home() {
               <p className={`text-[14px] ${t.body} leading-relaxed mb-6`}>{theClub.fullDescription}</p>
 
               {/* Contact info */}
-              <div className="flex flex-col gap-2 mb-6">
+              <div className="flex flex-col gap-2 mb-8">
                 <div className={`text-[13px] ${t.muted} flex items-center gap-2`}>
                   <Clock className="w-3.5 h-3.5 flex-shrink-0" />{theClub.hours}
                 </div>
@@ -439,18 +447,30 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Menu Viewer */}
-              {theClub.menu?.images && theClub.menu.images.length > 0 && (
+              {/* Text-based Menu */}
+              {theClub.menu?.sections && (
                 <div className="mb-8">
-                  <p className={`text-[13px] font-semibold ${t.heading} mb-3 uppercase tracking-wide`}>Full Menu</p>
-                  <div className="max-h-[600px] overflow-y-auto rounded-2xl border border-gray-200 bg-gray-50 p-4 space-y-4">
-                    {theClub.menu.images.map((img, idx) => (
-                      <img
-                        key={idx}
-                        src={img}
-                        alt={`Menu page ${idx + 1}`}
-                        className="w-full rounded-lg shadow-sm"
-                      />
+                  <p className={`text-[15px] font-semibold ${t.heading} mb-5 uppercase tracking-wide`}>Menu</p>
+                  <div className="space-y-8">
+                    {theClub.menu.sections.map((section: any) => (
+                      <div key={section.title}>
+                        <h3 className={`text-[14px] font-bold ${t.accent} mb-4 uppercase tracking-wider`}>{section.title}</h3>
+                        <div className="space-y-3">
+                          {section.items.map((item: any, idx: number) => (
+                            <div key={idx} className="flex justify-between items-start gap-4">
+                              <div className="flex-1">
+                                <p className={`text-[14px] font-medium ${t.heading}`}>
+                                  {item.name}
+                                  {item.price && <span className={`ml-2 ${t.muted} font-normal`}>₡{item.price}</span>}
+                                </p>
+                                {item.desc && <p className={`text-[13px] ${t.body} mt-1 leading-relaxed`}>{item.desc}</p>}
+                                {item.addOn && <p className={`text-[12px] ${t.accent} mt-1 italic`}>{item.addOn}</p>}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        {section.note && <p className={`text-[12px] ${t.muted} italic mt-3`}>{section.note}</p>}
+                      </div>
                     ))}
                   </div>
                 </div>
@@ -479,7 +499,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </a>
+          </div>
         </div>
       </section>
 
@@ -499,7 +519,7 @@ celebrating Costa Rica's extraordinary ingredients."
                 {/* Image */}
                 {r.images && r.images.length > 0 && (
                   <div className="relative h-40 overflow-hidden bg-gray-200">
-                    <ImageCarousel images={r.images} alt={r.name} className="w-full h-full object-cover object-center" />
+                    <ImageCarousel images={r.images} alt={r.name} className="w-full h-full object-cover" objectPositions={r.imagePositions} />
                   </div>
                 )}
                 <div className="p-6 flex flex-col flex-1">
@@ -554,7 +574,7 @@ celebrating Costa Rica's extraordinary ingredients."
                 {/* Image */}
                 {spot.images && spot.images.length > 0 && (
                   <div className="relative h-40 overflow-hidden bg-gray-200">
-                    <ImageCarousel images={spot.images} alt={spot.name} className="w-full h-full object-cover object-center" />
+                    <ImageCarousel images={spot.images} alt={spot.name} className="w-full h-full object-cover" objectPositions={spot.imagePositions} />
                   </div>
                 )}
                 <div className="p-6 flex flex-col flex-1">

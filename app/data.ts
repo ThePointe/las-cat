@@ -35,18 +35,51 @@ export const theClub = {
   menu: {
     en: "Mediterranean cuisine celebrating fresh Costa Rican seafood and local ingredients. Menu includes fresh fish, ceviche, salads, pasta, and creative cocktails.",
     es: "Cocina mediterránea que celebra mariscos frescos de Costa Rica e ingredientes locales. El menú incluye pescado fresco, ceviche, ensaladas, pasta y cócteles creativos.",
-    images: [
-      "/club-menu-page-1.jpg",
-      "/club-menu-page-2.jpg",
-      "/club-menu-page-3.jpg",
-      "/club-menu-page-4.jpg",
-      "/club-menu-page-5.jpg",
-      "/club-menu-page-6.jpg",
-      "/club-menu-page-7.jpg",
+    sections: [
+      {
+        title: "Breakfast",
+        items: [
+          { name: "Danita Wrap", price: "8,900", desc: "Scrambled eggs, bacon, gallo pinto, and mozzarella cheese wrapped in a flour tortilla, served with pickled onions, avocado, pico de gallo, and sour cream" },
+          { name: "Chunky Monkey Pancakes", price: "8,400", desc: "Almond milk pancakes topped with peanut butter, banana, chocolate syrup, and cacao nibs" },
+          { name: "Greek Avocado Toast", price: "7,800", desc: "Sourdough toast with avocado hummus, cherry tomatoes, Montchevre cheese, pistachios, pickled onions, basil, and a balsamic vinegar reduction", addOn: "Add eggs 2,100" },
+          { name: "Fruit Bowl", price: "6,800", desc: "Seasonal fruits, Greek yogurt, homemade compote, granola" },
+        ]
+      },
+      {
+        title: "Pizza",
+        items: [
+          { name: "Pepperoni", price: "9,900", desc: "Pomodoro sauce, mozzarella cheese, pepperoni" },
+          { name: "Margarita", price: "8,800", desc: "Pomodoro sauce, mozzarella cheese, cherry tomatoes, bocconcini, and fresh basil" },
+          { name: "Veggie", price: "10,900", desc: "Pomodoro sauce, mozzarella & goat cheese, zucchini, eggplant, carrots, mushrooms and balsamic vinegar reduction" },
+          { name: "BBQ Chicken", price: "12,500", desc: "Pomodoro sauce, mozzarella cheese, grilled chicken breast, bacon, pico de gallo, pickled red onions, homemade barbecue sauce, and cilantro" },
+          { name: "The Hot Head", price: "12,500", desc: "Pomodoro sauce, mozzarella cheese, pepperoni, Italian sausage, hot soppressata, jalapenos" },
+        ]
+      },
+      {
+        title: "Kids Menu",
+        items: [
+          { name: "Chicken Mac & Trees", desc: "Creamy Mac & Cheese mixed with tender chicken and tiny broccoli 'trees'" },
+          { name: "Grilled Cheese Sandwich", desc: "Toasted (buttery) sourdough, cheddar and provolone" },
+          { name: "Surfside Tenders", desc: "Crispy Chicken Tenders & dipping sauce (BBQ / Honey mustard / Ranch)" },
+          { name: "Hot Dog", desc: "100% Beef Hot Dog served on a soft bun" },
+          { name: "Pasta Bolognese", desc: "Handmade pomodoro and angus beef sauce" },
+          { name: "Cheeseburger", desc: "Wagyu Beef Pattie, cheddar cheese, buttered burger brioche bun" },
+        ],
+        note: "Served with a side of your choice"
+      },
+      {
+        title: "Sides",
+        items: [
+          { name: "French Fries" },
+          { name: "Potato Wedges" },
+          { name: "Vegetable Sticks" },
+          { name: "Fruit Bowl" },
+        ]
+      }
     ],
     highlights: {
-      en: ["Fresh Ceviche", "Grilled Fish", "Local Seafood", "Signature Cocktails", "Sunset Views"],
-      es: ["Ceviche Fresco", "Pescado a la Parrilla", "Mariscos Locales", "Cócteles de Firma", "Vistas al Atardecer"]
+      en: ["Fresh Breakfast", "Brick-Oven Pizza", "Kids Menu", "All-Day Dining"],
+      es: ["Desayuno Fresco", "Pizza de Horno", "Menú Infantil", "Servicio Todo el Día"]
     },
   },
 };
@@ -67,6 +100,7 @@ export interface Restaurant {
   email?: string;
   tags: string[];
   images?: string[];
+  imagePositions?: string[];
   fullDescription?: string;
   rating?: string;
   menu?: {
@@ -104,6 +138,7 @@ export const inTownRestaurants: Restaurant[] = [
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/10/c6/e5/inside-and-menu.jpg",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/54/e1/b5/caption.jpg",
     ],
+    imagePositions: ["object-center", "object-center", "object-top", "object-center"],
     menu: {
       en: "Mediterranean cuisine inspired by Basque traditions with fresh Costa Rican ingredients. Features vegetarian, vegan, and gluten-free options.",
       es: "Cocina mediterránea inspirada en tradiciones vascas con ingredientes frescos de Costa Rica. Opciones vegetarianas, veganas y sin gluten.",
@@ -135,6 +170,7 @@ export const inTownRestaurants: Restaurant[] = [
       "https://images.squarespace-cdn.com/content/v1/6803fa5f375c7e07e48fbc2c/1745091185742-SFGWDQDADNVDCU8JLBRN/Ema-Mountain-Biking-Las-Catalinas.jpg",
       "https://images.squarespace-cdn.com/content/v1/6803fa5f375c7e07e48fbc2c/953bbe2a-3c6a-41dd-bdad-99856d605421/MTB+Costa+Rica.JPG",
     ],
+    imagePositions: ["object-center", "object-center", "object-[center_35%]", "object-center"],
     menu: {
       en: "Shade-grown organic espresso drinks, cold brew, freshly baked muffins, daily empanadas, and gelato. Non-dairy milk options available.",
       es: "Bebidas de espresso orgánico de sombra, cold brew, muffins recién horneados, empanadas diarias y helado. Opciones de leche sin lácteos disponibles.",
@@ -162,10 +198,11 @@ export const inTownRestaurants: Restaurant[] = [
     rating: "4.8/5 (128 reviews) • #3 of 7 in Las Catalinas • Travelers' Choice 2025",
     tags: ["★ Top Rated", "Sustainable Seafood", "Plant-Based Options", "Cold-Pressed Juice", "Private Events"],
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/10/99/f1/ceviche.jpg?w=1100&h=1100&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/cd/47/77/caption.jpg?w=1200&h=1200&s=1",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/ad/bb/83/caption.jpg?w=1100&h=1100&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/10/99/f1/ceviche.jpg?w=1100&h=1100&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/ad/bb/86/caption.jpg?w=1100&h=1100&s=1",
     ],
+    imagePositions: ["object-center", "object-center", "object-center"],
     menu: {
       en: "Customizable healthy bowls, fresh ceviche, cold-pressed juices, smoothies (with plant-based milk options), and excellent coffee. Seafood from certified sustainable fishing.",
       es: "Ensalazones saludables personalizables, ceviche fresco, jugos recién exprimidos, batidos (con opciones de leche vegetal) y excelente café. Mariscos de pesca sostenible certificada.",
@@ -198,6 +235,7 @@ export const inTownRestaurants: Restaurant[] = [
       "https://www.nrinternational.com/wp-content/uploads/2024/09/casa-chameleon-at-las-catalinas-private-dining.jpg",
       "https://www.nrinternational.com/wp-content/uploads/2024/09/casa-chameleon-at-las-catalinas-main-pool-view.jpg",
     ],
+    imagePositions: ["object-center", "object-center", "object-center", "object-[center_40%]"],
     menu: {
       en: "Contemporary Costa Rican coastal cuisine celebrating local ingredients. Breakfast features smoothies, local fruits, eggs, and avocado. All-day menu showcases farm-to-table seafood and meat with creative presentations.",
       es: "Cocina costera costarricense contemporánea que celebra ingredientes locales. El desayuno presenta batidos, frutas locales, huevos y aguacate. El menú de todo el día destaca mariscos y carnes de la granja a la mesa.",
