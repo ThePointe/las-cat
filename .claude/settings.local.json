@@ -10,7 +10,9 @@
       "Bash(git commit *)",
       "Bash(git push *)",
       "Bash(git diff *)",
-      "Bash(curl -s http://localhost:3000)"
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -s \"https://www.google.com/search?q=Tamaki+sushi+Guanacaste+Costa+Rica\")",
+      "Bash(curl -s \"https://www.lascatalinascr.com/shopping-and-dining/tamaki\")"
     ]
   }
 }
