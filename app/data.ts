@@ -16,9 +16,7 @@ export const theClub = {
   rating: "4.7/5 • Recently Renovated 2024",
   tags: ["Beachfront", "Olympic Pool", "Full Bar", "Fine Dining", "Spa & Fitness", "Day Use Welcome"],
   images: [
-    "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=1200&q=85",
-    "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=85",
-    "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=85",
+    "/beach-club-hero.jpg",
   ],
   pricing: [
     { who: "Adults",      full: "$30 + 13% VAT", deal: "Only $15 if you spend $15+ on food or drinks" },
@@ -93,10 +91,10 @@ export const inTownRestaurants: Restaurant[] = [
     rating: "4.7/5 (200 reviews) • #1 of 7 in Las Catalinas",
     tags: ["★ Top Rated", "Breakfast Buffet", "Award-Winning", "Reservations Required"],
     images: [
-      "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=1200&q=85",
-      "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=85",
-      "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=1200&q=85",
-      "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=1200&q=85",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/01/d7/d9/outdoor-dinning-area.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/01/d7/d8/ponciana-bar.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/10/c6/e5/inside-and-menu.jpg",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/54/e1/b5/caption.jpg",
     ],
     menu: {
       en: "Mediterranean cuisine inspired by Basque traditions with fresh Costa Rican ingredients. Features vegetarian, vegan, and gluten-free options.",
@@ -156,10 +154,9 @@ export const inTownRestaurants: Restaurant[] = [
     rating: "4.8/5 (128 reviews) • #3 of 7 in Las Catalinas • Travelers' Choice 2025",
     tags: ["★ Top Rated", "Sustainable Seafood", "Plant-Based Options", "Cold-Pressed Juice", "Private Events"],
     images: [
-      "https://images.unsplash.com/photo-1590301157890-4810ed352733?w=1200&q=85",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/10/99/f1/ceviche.jpg?w=1100&h=1100&s=1",
-      "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=1200&q=85",
-      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200&q=85",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/cd/47/77/caption.jpg?w=1200&h=1200&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/ad/bb/83/caption.jpg?w=1100&h=1100&s=1",
     ],
     menu: {
       en: "Customizable healthy bowls, fresh ceviche, cold-pressed juices, smoothies (with plant-based milk options), and excellent coffee. Seafood from certified sustainable fishing.",
@@ -219,10 +216,9 @@ export const inTownRestaurants: Restaurant[] = [
     rating: "4.8/5 (54 reviews) • #4 of 7 in Las Catalinas",
     tags: ["★ Top Rated", "Beachfront", "Cocktails", "Sunset Views"],
     images: [
-      "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=85",
-      "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1200&q=85",
-      "https://images.unsplash.com/photo-1515443961218-a51367888e4b?w=1200&q=85",
-      "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?w=1200&q=85",
+      "/celeste-1.jpg",
+      "/celeste-2.jpg",
+      "/celeste-3.jpg",
     ],
     menu: {
       en: "International cuisine with Latin American influences. Fresh seafood, fish ceviche, locally caught fish, Angus beef, prawns, and creative cocktails. Gluten-free and vegetarian options available.",
@@ -246,12 +242,6 @@ export const inTownRestaurants: Restaurant[] = [
     hours: "2pm–10pm Daily",
     phone: "+506 6440 3850",
     tags: ["Tapas", "Spanish Wine", "Paella", "Evening Only", "Mixology Fridays", "Social Atmosphere"],
-    images: [
-      "https://images.unsplash.com/photo-1534080564583-6be75777b70a?w=1200&q=85",
-      "https://images.unsplash.com/photo-1625938145312-387d71280f35?w=1200&q=85",
-      "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=1200&q=85",
-      "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=1200&q=85",
-    ],
     menu: {
       en: "Authentic Spanish tapas and traditional dishes. Croquetas (crispy and creamy), paella with seafood, chilled gazpacho, boquerones, squid ink noodles, jamón ibérico, and an impressive wine selection. Mixology classes Friday nights.",
       es: "Auténticas tapas españolas y platos tradicionales. Croquetas (crujientes y cremosas), paella con mariscos, gazpacho frío, boquerones, fideos con tinta de calamar, jamón ibérico, y una impresionante selección de vinos. Clases de coctelería los viernes.",
@@ -274,11 +264,6 @@ export const inTownRestaurants: Restaurant[] = [
       "Papagayo Brewing offers quality craft beer \"as refreshing as it is flavorful — made to accentuate the Guanacaste climate and culture, from brewery to beach.\" Sit in iconic swing seats directly on Playa Danta with feet in the sand, cold beers in hand, and unbeatable sunset energy. Signature brews include Beach Lager (perfect for the tropics), Tropical IPA, Offshore Ale, and Passion Fruit Ale. Top-notch cocktails crafted to complement the beers. Casual pub food pairs with your brew. Big TVs for sports. This is where Las Catalinas comes to celebrate, unwind, and catch the sunset with fellow travelers and locals.",
     hours: "Midday through Evening Daily",
     tags: ["Craft Beer", "Beachfront", "Swing Seats", "Sports on TV", "Sunset Views", "Local Favorite"],
-    images: [
-      "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=85",
-      "https://images.unsplash.com/photo-1615332231599-96e4d583e7e4?w=1200&q=85",
-      "https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=1200&q=85",
-    ],
     menu: {
       en: "Handcrafted Costa Rican craft beers: Beach Lager, Tropical IPA, Offshore Ale, Passion Fruit Ale. Top-notch cocktails and casual pub food perfectly paired with cold beer and tropical sunsets.",
       es: "Cervezas artesanales de Costa Rica elaboradas a mano: Beach Lager, Tropical IPA, Offshore Ale, Passion Fruit Ale. Cócteles excepcionales y comida casual de bar perfectamente combinados con cerveza fría y atardeceres tropicales.",
@@ -303,11 +288,6 @@ export const inTownRestaurants: Restaurant[] = [
     phone: "+506 2106 1551",
     email: "orders@copperandstonegourmet.com",
     tags: ["Prepared Meals", "Grab & Go", "Prime Meats & Cheeses", "Friday Pizza", "Organic Smoothies", "Convenient"],
-    images: [
-      "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=1200&q=85",
-      "https://images.unsplash.com/photo-1560759524-1c23af8d5078?w=1200&q=85",
-      "https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=1200&q=85",
-    ],
     menu: {
       en: "World-class prepared cuisine: proteins, sides, vegetables, soups, and salads. Artisan sandwiches, deli staples, prime CAB beef cuts, fresh breads and pastries, organic smoothies and juices, coffee service. Weekly rotating vegetarian and non-vegetarian specials. Fresh pizza every Friday.",
       es: "Cocina preparada de clase mundial: proteínas, acompañamientos, vegetales, sopas y ensaladas. Sándwiches artesanales, productos de delicatessen, cortes de carne CAB prime, panes y pasteles frescos, batidos y jugos orgánicos, servicio de café. Especiales semanales vegetarianos y no vegetarianos. Pizza fresca todos los viernes.",
@@ -328,11 +308,6 @@ export const inTownRestaurants: Restaurant[] = [
       "Cozy café with an outdoor terrace. Coffees, smoothies, breakfast, lunch, and snacks on the go. The breakfast burrito is amazing.",
     hours: "All day",
     tags: ["Coffee", "Breakfast Burrito", "Casual"],
-    images: [
-      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1200&q=85",
-      "https://images.unsplash.com/photo-1626083664997-bbbf61f19bfe?w=1200&q=85",
-      "https://images.unsplash.com/photo-1619540255532-c523da93e1a1?w=1200&q=85",
-    ],
     menu: {
       en: "All-day bakery with sweet and savory baked goods, fresh breads, toast, fruits, yogurt, coffees, juices, and teas. Homemade jams and ferments available.",
       es: "Panadería de todo el día con repostería dulce y salada, panes frescos, tostadas, frutas, yogur, café, jugos y tés. Mermeladas caseras y fermentados disponibles.",
@@ -354,11 +329,6 @@ export const inTownRestaurants: Restaurant[] = [
       "A must for kids — and honestly for adults too. Ice cream and Belgian waffles from a beloved food truck right in town. Don't miss it.",
     hours: "Check current hours",
     tags: ["Kids Must Go!", "Ice Cream", "Belgian Waffles"],
-    images: [
-      "https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=1200&q=85",
-      "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=1200&q=85",
-      "https://images.unsplash.com/photo-1558326567-98ae2405596b?w=1200&q=85",
-    ],
     menu: {
       en: "Artisanal ice cream with flavors like Spiced Chocolate, Orange & Cardamom, Rose & Pistachio, and Caramelized Banana. Homemade Belgian waffles with fresh local ingredients.",
       es: "Helado artesanal con sabores como Chocolate Especiado, Naranja y Cardamomo, Rosa y Pistacho, y Plátano Caramelizado. Waffles belgas caseros con ingredientes locales frescos.",
@@ -380,12 +350,6 @@ export const inTownRestaurants: Restaurant[] = [
       "Tamaki brings authentic Nikkei cuisine to Las Catalinas under the expert guidance of Chef Brian Tan, an original student of the Nikkei movement. Nikkei cuisine is a fusion that blends Japanese culinary traditions with the bold flavors of Peruvian ingredients — affectionately describing immigrants of Japanese origin in Peru and the delightful dishes they create. Expect a tantalizing array of classic Nikkei creations: tiradito (a marriage of sushi and ceviche), comforting ramen, Yakimeshi (Japanese-style fried rice), and inventive fusion plates. The restaurant features an excellent sake and cocktail selection perfectly paired with the bold, umami-rich flavors of Nikkei cuisine. Each dish celebrates the harmony between Japanese technique and Peruvian ingredients.",
     hours: "Check for current hours",
     tags: ["Nikkei Fusion", "Japanese-Peruvian", "Sake Selection", "Tiradito", "Ramen"],
-    images: [
-      "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=1200&q=85",
-      "https://images.unsplash.com/photo-1617196034796-73dfa7b1fd56?w=1200&q=85",
-      "https://images.unsplash.com/photo-1564489563601-c53cfc451e93?w=1200&q=85",
-      "https://images.unsplash.com/photo-1628191011227-f34f5c34647a?w=1200&q=85",
-    ],
     menu: {
       en: "Authentic Nikkei fusion featuring tiradito (sushi meets ceviche), comforting ramen, Yakimeshi (Japanese-style fried rice), and inventive Japanese-Peruvian creations. Excellent sake and cocktail selection.",
       es: "Fusión Nikkei auténtica con tiradito (sushi con ceviche), ramen reconfortante, Yakimeshi (arroz frito estilo japonés) y creaciones japonesas-peruanas inventivas. Excelente selección de sake y cócteles.",
@@ -407,11 +371,6 @@ export const inTownRestaurants: Restaurant[] = [
       "Nature's Table brings wellness to the heart of Las Catalinas' vibrant Center of Joy. Meticulously-prepared light, nutritious meals designed for those prioritizing health without sacrificing taste. Create custom healthy bowls with fresh vegetables, proteins, and house-made dressings. Cold-pressed fresh juices packed with whole fruits and vegetables. Salads feature local produce, legumes, and creative combinations. Plant-based options throughout the menu. Smoothie bowls with granola and fresh toppings. The café atmosphere invites lingering over a healthy meal or quick refueling between activities. Perfect before or after yoga, hiking, or water sports.",
     hours: "7am–6pm Daily",
     tags: ["Plant-Based", "Fresh Juices", "Healthy Bowls", "Wellness", "Quick Service"],
-    images: [
-      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=1200&q=85",
-      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=1200&q=85",
-      "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=1200&q=85",
-    ],
     menu: {
       en: "Light, nutritious meals focused on wellness and plant-based options. Customizable healthy bowls, fresh green salads with local vegetables, cold-pressed juices, smoothie bowls, protein-rich legume dishes, and light meals for the health-conscious.",
       es: "Comidas ligeras y nutritivas enfocadas en el bienestar y opciones a base de plantas. Ensalazones saludables personalizables, ensaladas verdes frescas con vegetales locales, jugos recién exprimidos, tazones de batido, platos de legumbres ricos en proteínas, y comidas ligeras.",
@@ -477,10 +436,10 @@ export const nearbyAreas: NearbyArea[] = [
         tags: ["★ Top Rated", "Brick-Oven Pizza", "Hand-Made Pasta", "Mediterranean", "Family-Friendly"],
         phone: "WhatsApp +506 2215 0226",
         images: [
-          "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=85",
-          "https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=1200&q=85",
-          "https://images.unsplash.com/photo-1563379926898-05f4575a45d8?w=1200&q=85",
-          "https://images.unsplash.com/photo-1612927601601-6638404737ce?w=1200&q=85",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2e/cb/e6/9c/nuestra-pizza-burrata.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/ab/20/21/les-esperamos.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/ab/1d/8e/pizza-hecha-a-la-lena.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/14/27/07/d9/la-forketta.jpg",
         ],
         menu: {
           en: "Traditional Mediterranean Italian cuisine where fresh ingredients meet housemade preparations. Hand-made pastas (Carbonara, Bolognese Lasagne, seafood varieties). Brick-oven pizzas include Burrata. Soups, salads, fish dishes, and fresh seafood from local fishermen.",
@@ -505,9 +464,9 @@ export const nearbyAreas: NearbyArea[] = [
         tags: ["Sunset Views", "Beachside", "Live Music", "Cocktails"],
         phone: "+506 2654 4300",
         images: [
-          "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=85",
-          "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=1200&q=85",
-          "https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=85",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/ad/4f/01/a-little-love-and-a-good.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/ad/4e/17/our-pork-belly-tacos.jpg",
+          "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1d/ad/4e/d2/live-music-with-local.jpg",
         ],
         menu: {
           en: "Contemporary American cuisine with beachside specialties. Featured dishes include crispy pork belly tacos with palmito cheese, fresh tuna poke, margaritas, and signature cocktails.",
@@ -524,10 +483,6 @@ export const nearbyAreas: NearbyArea[] = [
         description:
           "On Playa Potrero overlooking the marina. Good seafood and American fare. Amazing Tuna Poke Bowl. They'll even cook fish you catch.",
         tags: ["Seafood", "Tuna Poke Bowl", "Will Cook Your Fish"],
-        images: [
-          "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=85",
-          "https://images.unsplash.com/photo-1546069901-d5bfd2cbfb1f?w=1200&q=85",
-        ],
       },
       {
         name: "NASU Restaurant",
@@ -555,10 +510,6 @@ export const nearbyAreas: NearbyArea[] = [
         cuisine: "Peruvian",
         description: "Authentic Peruvian restaurant with fresh ceviche and traditional dishes.",
         tags: ["Peruvian", "Ceviche"],
-        images: [
-          "https://images.unsplash.com/photo-1628191011227-f34f5c34647a?w=1200&q=85",
-          "https://images.unsplash.com/photo-1623318931221-1eeb3c9ea588?w=1200&q=85",
-        ],
         menu: {
           en: "Authentic Peruvian cuisine featuring fresh ceviche, curry mahi mahi, whole red snapper (pargo), and traditional dishes. Seafood and grilled specialties.",
           es: "Cocina peruana auténtica que presenta ceviche fresco, curry mahi mahi, pargo entero y platos tradicionales. Especialidades de mariscos a la parrilla.",
@@ -618,12 +569,6 @@ export const nearbyAreas: NearbyArea[] = [
         phone: "WhatsApp +506 6110 1687",
         email: "reservations@graciacostarica.com",
         hours: "Mon-Sun 12pm–8:30pm (last seating 8:30pm)",
-        images: [
-          "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=85",
-          "https://images.unsplash.com/photo-1544148103-0773bf10d330?w=1200&q=85",
-          "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=1200&q=85",
-          "https://images.unsplash.com/photo-1551218808-94e220e084d2?w=1200&q=85",
-        ],
         menu: {
           en: "Simple yet exquisite dishes with depth and layers of flavor. Globally-inspired with locally-sourced ingredients from the on-site organic garden. Fresh seafood, inventive tapas, famous key lime pie, and creative cocktails.",
           es: "Platos simples pero exquisitos con profundidad y capas de sabor. Inspirado globalmente con ingredientes locales del jardín orgánico in situ. Mariscos frescos, tapas inventivas, famoso pay de lima clave y cócteles creativos.",
@@ -655,11 +600,6 @@ export const nearbyAreas: NearbyArea[] = [
           "Excellent seafood, steaks, sushi, and great wine selection. Their tuna poke is exceptional. Happy hour and pool on site. Covered outdoor dining.",
         tags: ["Sushi", "Tuna Poke", "Happy Hour", "Pool"],
         phone: "WhatsApp +506-8800-0005",
-        images: [
-          "https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?w=1200&q=85",
-          "https://images.unsplash.com/photo-1546069901-d5bfd2cbfb1f?w=1200&q=85",
-          "https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=1200&q=85",
-        ],
         menu: {
           en: "Premium seafood, sushi, steaks, and pasta. Appetizers include smoked grouper carpaccio, tuna tartar, and shrimp au gratin. Fresh ceviche, empanadas, and exceptional tuna poke. Extensive wine list.",
           es: "Mariscos premium, sushi, carnes y pasta. Los aperitivos incluyen carpaccio de mero ahumado, tartar de atún y camarones au gratin. Ceviche fresco, empanadas y poke de atún excepcional. Amplia lista de vinos.",
