@@ -35,6 +35,7 @@ export const theClub = {
   menu: {
     en: "Mediterranean cuisine celebrating fresh Costa Rican seafood and local ingredients. Menu includes fresh fish, ceviche, salads, pasta, and creative cocktails.",
     es: "Cocina mediterránea que celebra mariscos frescos de Costa Rica e ingredientes locales. El menú incluye pescado fresco, ceviche, ensaladas, pasta y cócteles creativos.",
+    url: "/club-menu-2026.pdf",
     highlights: {
       en: ["Fresh Ceviche", "Grilled Fish", "Local Seafood", "Signature Cocktails", "Sunset Views"],
       es: ["Ceviche Fresco", "Pescado a la Parrilla", "Mariscos Locales", "Cócteles de Firma", "Vistas al Atardecer"]
@@ -75,7 +76,7 @@ export const inTownRestaurants: Restaurant[] = [
   {
     mustGo: false,
     badge: "Award-Winning",
-    icon: ["wine", "utensils"],
+    icon: ["wine", "martini", "utensils"],
     name: "Ponciana",
     location: "Santarena Hotel, Main Plaza",
     cuisine: "Mediterranean · Costa Rican Fusion",
@@ -107,7 +108,7 @@ export const inTownRestaurants: Restaurant[] = [
   },
   {
     mustGo: false,
-    icon: ["coffee", "bike"],
+    icon: ["coffee", "bike", "waves"],
     name: "Pura Vida Ride",
     location: "In Town (Main Street)",
     cuisine: "Specialty Coffee & Adventure Outfitter",
@@ -153,10 +154,10 @@ export const inTownRestaurants: Restaurant[] = [
     rating: "4.8/5 (128 reviews) • #3 of 7 in Las Catalinas • Travelers' Choice 2025",
     tags: ["★ Top Rated", "Sustainable Seafood", "Plant-Based Options", "Cold-Pressed Juice", "Private Events"],
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/10/9a/0a/cold-brew.jpg?w=1100&h=1100&s=1",
+      "https://images.unsplash.com/photo-1590301157890-4810ed352733?w=1200&q=85",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/10/99/f1/ceviche.jpg?w=1100&h=1100&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/cd/47/77/caption.jpg?w=1200&h=1200&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/ad/bb/83/caption.jpg?w=1100&h=1100&s=1",
+      "https://images.unsplash.com/photo-1623428187969-5da2dcea5ebf?w=1200&q=85",
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200&q=85",
     ],
     menu: {
       en: "Customizable healthy bowls, fresh ceviche, cold-pressed juices, smoothies (with plant-based milk options), and excellent coffee. Seafood from certified sustainable fishing.",
@@ -185,7 +186,10 @@ export const inTownRestaurants: Restaurant[] = [
     rating: "Top 10% globally (2025) • CNN's Most Romantic Restaurants",
     tags: ["★ Award-Winning", "Sea-to-Table", "One World's Most Romantic", "Fine Dining", "Reservations Required"],
     images: [
-      "https://www.casachameleonhotels.com/wp-content/uploads/2020/09/sentido-norte-restaurant-casa-chameleon-costa-rica.jpg",
+      "https://www.nrinternational.com/wp-content/uploads/2024/09/casa-chameleon-at-las-catalinas-sentido-norte.jpg",
+      "https://www.casachameleonhotels.com/wp-content/uploads/2022/04/sentido-norte-costa-rica-1024x683.jpeg",
+      "https://www.nrinternational.com/wp-content/uploads/2024/09/casa-chameleon-at-las-catalinas-private-dining.jpg",
+      "https://www.nrinternational.com/wp-content/uploads/2024/09/casa-chameleon-at-las-catalinas-main-pool-view.jpg",
     ],
     menu: {
       en: "Contemporary Costa Rican coastal cuisine celebrating local ingredients. Breakfast features smoothies, local fruits, eggs, and avocado. All-day menu showcases farm-to-table seafood and meat with creative presentations.",
@@ -272,7 +276,7 @@ export const inTownRestaurants: Restaurant[] = [
     },
   },
   {
-    icon: "sandwich",
+    icon: ["shopping-cart", "sandwich"],
     name: "The Deli at Copper & Stone",
     location: "In Town, Main Plaza",
     cuisine: "Gourmet Deli · Prepared Cuisine",
@@ -296,7 +300,7 @@ export const inTownRestaurants: Restaurant[] = [
     },
   },
   {
-    icon: ["coffee", "croissant"],
+    icon: ["coffee", "croissant", "sandwich"],
     name: "Cuatro Calle La Ronda",
     location: "Santarena Hotel",
     cuisine: "Café & Snacks",
@@ -336,7 +340,7 @@ export const inTownRestaurants: Restaurant[] = [
     },
   },
   {
-    icon: "leaf",
+    icon: "soup",
     name: "Nature's Table",
     location: "Center of Joy, Main Plaza",
     cuisine: "Health & Wellness Café",

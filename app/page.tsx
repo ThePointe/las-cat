@@ -8,7 +8,7 @@ import {
   Zap, Target, MapPin, ChevronRight, Palette, Phone, Globe, Clock,
   Menu, X, AlertCircle, CheckCircle2, Building2, Sailboat, Sandwich,
   Wine, IceCream, Soup, MessageCircle, Stethoscope, Hospital, Music,
-  Sunset, Users, Croissant,
+  Sunset, Users, Croissant, FileText,
 } from "lucide-react";
 import {
   theClub, inTownRestaurants, nearbyAreas, activities,
@@ -38,12 +38,18 @@ function Icon({ name, className }: { name: string; className?: string }) {
   return <C className={className} />;
 }
 
-function MultiIcon({ names, className }: { names: string | string[]; className?: string }) {
-  const iconArray = Array.isArray(names) ? names : [names];
+function MultiIcon({ names, className, circleClass }: {
+  names: string | string[];
+  className?: string;
+  circleClass: string;
+}) {
+  const iconArray = Array.isArray(names) ? names.slice(0, 3) : [names];
   return (
-    <div className="flex items-center justify-center gap-1">
+    <div className="flex items-center gap-2">
       {iconArray.map((name, idx) => (
-        <Icon key={idx} name={name} className={className} />
+        <div key={idx} className={circleClass}>
+          <Icon name={name} className={className} />
+        </div>
       ))}
     </div>
   );
@@ -216,6 +222,14 @@ export default function Home() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
+  // Prevent scroll restoration - always start at top
+  useEffect(() => {
+    if (typeof window !== 'undefined' && 'scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className={`min-h-screen transition-colors duration-500 ${t.pageBg} overflow-x-hidden`}>
 
@@ -344,9 +358,12 @@ export default function Home() {
             <div className="p-6 sm:p-10">
               {/* Header with icon and badge */}
               <div className="flex items-start justify-between mb-5">
-                <div className={`w-11 h-11 rounded-2xl ${t.accentMid} flex items-center justify-center flex-shrink-0`}>
-                  {Array.isArray(theClub.icon) ? <MultiIcon names={theClub.icon} className={`w-4 h-4 ${t.accent}`} /> : <Icon name={theClub.icon} className={`w-5 h-5 ${t.accent}`} />}
-                </div>
+                {Array.isArray(theClub.icon)
+                  ? <MultiIcon names={theClub.icon} className={`w-5 h-5 ${t.accent}`} circleClass={`w-11 h-11 rounded-2xl ${t.accentMid} flex items-center justify-center flex-shrink-0`} />
+                  : <div className={`w-11 h-11 rounded-2xl ${t.accentMid} flex items-center justify-center flex-shrink-0`}>
+                      <Icon name={theClub.icon} className={`w-5 h-5 ${t.accent}`} />
+                    </div>
+                }
               </div>
 
               <p className={`text-[20px] font-semibold ${t.heading} mb-2`}>{theClub.name}</p>
@@ -357,7 +374,7 @@ export default function Home() {
               <p className={`text-[14px] ${t.body} leading-relaxed mb-6`}>{theClub.fullDescription}</p>
 
               {/* Contact info */}
-              <div className="flex flex-col gap-2 mb-8 pb-8 border-b border-gray-200">
+              <div className="flex flex-col gap-2 mb-6">
                 <div className={`text-[13px] ${t.muted} flex items-center gap-2`}>
                   <Clock className="w-3.5 h-3.5 flex-shrink-0" />{theClub.hours}
                 </div>
@@ -365,6 +382,15 @@ export default function Home() {
                   <Phone className="w-3.5 h-3.5 flex-shrink-0" />{theClub.phone}
                 </div>
               </div>
+
+              {/* Menu PDF Download */}
+              {theClub.menu?.url && (
+                <a href={theClub.menu.url} target="_blank" rel="noopener noreferrer" download
+                  className={`inline-flex items-center gap-2 px-5 py-3 rounded-xl ${t.accentBg} text-white text-[14px] font-medium hover:opacity-90 transition-opacity mb-8`}>
+                  <FileText className="w-4 h-4" />
+                  View Full Menu (PDF)
+                </a>
+              )}
 
               {/* Pricing */}
               <p className={`text-[13px] font-semibold ${t.heading} mb-3 uppercase tracking-wide`}>Day Use Pricing</p>
@@ -414,9 +440,12 @@ celebrating Costa Rica's extraordinary ingredients."
                 )}
                 <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-start justify-between mb-5">
-                    <div className={`w-10 h-10 rounded-2xl ${t.accentMid} flex items-center justify-center flex-shrink-0`}>
-                      {Array.isArray(r.icon) ? <MultiIcon names={r.icon} className={`w-4 h-4 ${t.accent}`} /> : <Icon name={r.icon} className={`w-5 h-5 ${t.accent}`} />}
-                    </div>
+                    {Array.isArray(r.icon)
+                      ? <MultiIcon names={r.icon} className={`w-5 h-5 ${t.accent}`} circleClass={`w-10 h-10 rounded-2xl ${t.accentMid} flex items-center justify-center flex-shrink-0`} />
+                      : <div className={`w-10 h-10 rounded-2xl ${t.accentMid} flex items-center justify-center flex-shrink-0`}>
+                          <Icon name={r.icon} className={`w-5 h-5 ${t.accent}`} />
+                        </div>
+                    }
                     <div className="flex gap-2 flex-wrap justify-end">
                       {r.badge && <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full ${t.mustGoBadge}`}>★ {r.badge}</span>}
                     </div>
@@ -472,9 +501,13 @@ celebrating Costa Rica's extraordinary ingredients."
                     {spot.badge && <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full flex-shrink-0 ${t.mustGoBadge}`}>★ {spot.badge}</span>}
                   </div>
                   {spot.icon && (
-                    <div className={`w-8 h-8 rounded-lg ${t.accentLight} flex items-center justify-center mb-3`}>
-                      {Array.isArray(spot.icon) ? <MultiIcon names={spot.icon} className={`w-3.5 h-3.5 ${t.accent}`} /> : <Icon name={spot.icon} className={`w-4 h-4 ${t.accent}`} />}
-                    </div>
+                    Array.isArray(spot.icon)
+                      ? <div className="mb-3">
+                          <MultiIcon names={spot.icon} className={`w-4 h-4 ${t.accent}`} circleClass={`w-8 h-8 rounded-lg ${t.accentLight} flex items-center justify-center flex-shrink-0`} />
+                        </div>
+                      : <div className={`w-8 h-8 rounded-lg ${t.accentLight} flex items-center justify-center mb-3`}>
+                          <Icon name={spot.icon} className={`w-4 h-4 ${t.accent}`} />
+                        </div>
                   )}
                   <p className={`text-[13px] font-medium ${t.accent} mb-3`}>{spot.cuisine}</p>
                   <p className={`text-[14px] ${t.body} leading-relaxed mb-4 flex-1`}>{spot.description}</p>
