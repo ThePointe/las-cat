@@ -15,7 +15,10 @@
       "Bash(curl -s \"https://www.lascatalinascr.com/shopping-and-dining/tamaki\")",
       "Bash(curl -I \"https://www.pascualcr.com/\")",
       "Bash(curl -s \"https://www.instagram.com/potsandbowlscr/\")",
-      "Bash(curl -s \"https://papagayo-brewing.com\")"
+      "Bash(curl -s \"https://papagayo-brewing.com\")",
+      "Bash(python3 *)",
+      "Bash(pip3 install *)",
+      "Bash(brew install *)"
     ]
   }
 }

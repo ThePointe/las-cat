@@ -35,7 +35,15 @@ export const theClub = {
   menu: {
     en: "Mediterranean cuisine celebrating fresh Costa Rican seafood and local ingredients. Menu includes fresh fish, ceviche, salads, pasta, and creative cocktails.",
     es: "Cocina mediterránea que celebra mariscos frescos de Costa Rica e ingredientes locales. El menú incluye pescado fresco, ceviche, ensaladas, pasta y cócteles creativos.",
-    url: "/club-menu-2026.pdf",
+    images: [
+      "/club-menu-page-1.jpg",
+      "/club-menu-page-2.jpg",
+      "/club-menu-page-3.jpg",
+      "/club-menu-page-4.jpg",
+      "/club-menu-page-5.jpg",
+      "/club-menu-page-6.jpg",
+      "/club-menu-page-7.jpg",
+    ],
     highlights: {
       en: ["Fresh Ceviche", "Grilled Fish", "Local Seafood", "Signature Cocktails", "Sunset Views"],
       es: ["Ceviche Fresco", "Pescado a la Parrilla", "Mariscos Locales", "Cócteles de Firma", "Vistas al Atardecer"]

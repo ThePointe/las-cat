@@ -439,13 +439,21 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Menu PDF Download */}
-              {theClub.menu?.url && (
-                <a href={theClub.menu.url} target="_blank" rel="noopener noreferrer" download
-                  className={`inline-flex items-center gap-2 px-5 py-3 rounded-xl ${t.accentBg} text-white text-[14px] font-medium hover:opacity-90 transition-opacity mb-8`}>
-                  <FileText className="w-4 h-4" />
-                  View Full Menu (PDF)
-                </a>
+              {/* Menu Viewer */}
+              {theClub.menu?.images && theClub.menu.images.length > 0 && (
+                <div className="mb-8">
+                  <p className={`text-[13px] font-semibold ${t.heading} mb-3 uppercase tracking-wide`}>Full Menu</p>
+                  <div className="max-h-[600px] overflow-y-auto rounded-2xl border border-gray-200 bg-gray-50 p-4 space-y-4">
+                    {theClub.menu.images.map((img, idx) => (
+                      <img
+                        key={idx}
+                        src={img}
+                        alt={`Menu page ${idx + 1}`}
+                        className="w-full rounded-lg shadow-sm"
+                      />
+                    ))}
+                  </div>
+                </div>
               )}
 
               {/* Pricing */}
