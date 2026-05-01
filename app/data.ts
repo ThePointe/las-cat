@@ -157,9 +157,9 @@ export const inTownRestaurants: Restaurant[] = [
     rating: "4.8/5 (128 reviews) • #3 of 7 in Las Catalinas • Travelers' Choice 2025",
     tags: ["★ Top Rated", "Sustainable Seafood", "Plant-Based Options", "Cold-Pressed Juice", "Private Events"],
     images: [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/ad/bb/83/caption.jpg?w=1100&h=1100&s=1",
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/23/6e/e0/3b/spirulina-bowls-with.jpg?w=1200&h=800&s=1",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/10/99/f1/ceviche.jpg?w=1100&h=1100&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/30/ad/bb/86/caption.jpg?w=1100&h=1100&s=1",
+      "/pots-bowls-poke.jpg",
     ],
     imagePositions: ["object-center", "object-center", "object-center"],
     menu: {
