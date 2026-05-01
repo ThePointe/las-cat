@@ -447,33 +447,13 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Text-based Menu */}
-              {theClub.menu?.sections && (
-                <div className="mb-8">
-                  <p className={`text-[15px] font-semibold ${t.heading} mb-5 uppercase tracking-wide`}>Menu</p>
-                  <div className="space-y-8">
-                    {theClub.menu.sections.map((section: any) => (
-                      <div key={section.title}>
-                        <h3 className={`text-[14px] font-bold ${t.accent} mb-4 uppercase tracking-wider`}>{section.title}</h3>
-                        <div className="space-y-3">
-                          {section.items.map((item: any, idx: number) => (
-                            <div key={idx} className="flex justify-between items-start gap-4">
-                              <div className="flex-1">
-                                <p className={`text-[14px] font-medium ${t.heading}`}>
-                                  {item.name}
-                                  {item.price && <span className={`ml-2 ${t.muted} font-normal`}>₡{item.price}</span>}
-                                </p>
-                                {item.desc && <p className={`text-[13px] ${t.body} mt-1 leading-relaxed`}>{item.desc}</p>}
-                                {item.addOn && <p className={`text-[12px] ${t.accent} mt-1 italic`}>{item.addOn}</p>}
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                        {section.note && <p className={`text-[12px] ${t.muted} italic mt-3`}>{section.note}</p>}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+              {/* Menu PDF */}
+              {theClub.menu?.url && (
+                <a href={theClub.menu.url} target="_blank" rel="noopener noreferrer"
+                  className={`inline-flex items-center gap-2 px-5 py-3 rounded-xl ${t.accentBg} text-white text-[14px] font-medium hover:opacity-90 transition-opacity mb-8`}>
+                  <FileText className="w-4 h-4" />
+                  View Full Menu (PDF)
+                </a>
               )}
 
               {/* Pricing */}

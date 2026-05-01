@@ -33,50 +33,9 @@ export const theClub = {
     "Mediterranean menu with fresh seafood",
   ],
   menu: {
+    url: "/club-menu-2026.pdf",
     en: "Mediterranean cuisine celebrating fresh Costa Rican seafood and local ingredients. Menu includes fresh fish, ceviche, salads, pasta, and creative cocktails.",
     es: "Cocina mediterránea que celebra mariscos frescos de Costa Rica e ingredientes locales. El menú incluye pescado fresco, ceviche, ensaladas, pasta y cócteles creativos.",
-    sections: [
-      {
-        title: "Breakfast",
-        items: [
-          { name: "Danita Wrap", price: "8,900", desc: "Scrambled eggs, bacon, gallo pinto, and mozzarella cheese wrapped in a flour tortilla, served with pickled onions, avocado, pico de gallo, and sour cream" },
-          { name: "Chunky Monkey Pancakes", price: "8,400", desc: "Almond milk pancakes topped with peanut butter, banana, chocolate syrup, and cacao nibs" },
-          { name: "Greek Avocado Toast", price: "7,800", desc: "Sourdough toast with avocado hummus, cherry tomatoes, Montchevre cheese, pistachios, pickled onions, basil, and a balsamic vinegar reduction", addOn: "Add eggs 2,100" },
-          { name: "Fruit Bowl", price: "6,800", desc: "Seasonal fruits, Greek yogurt, homemade compote, granola" },
-        ]
-      },
-      {
-        title: "Pizza",
-        items: [
-          { name: "Pepperoni", price: "9,900", desc: "Pomodoro sauce, mozzarella cheese, pepperoni" },
-          { name: "Margarita", price: "8,800", desc: "Pomodoro sauce, mozzarella cheese, cherry tomatoes, bocconcini, and fresh basil" },
-          { name: "Veggie", price: "10,900", desc: "Pomodoro sauce, mozzarella & goat cheese, zucchini, eggplant, carrots, mushrooms and balsamic vinegar reduction" },
-          { name: "BBQ Chicken", price: "12,500", desc: "Pomodoro sauce, mozzarella cheese, grilled chicken breast, bacon, pico de gallo, pickled red onions, homemade barbecue sauce, and cilantro" },
-          { name: "The Hot Head", price: "12,500", desc: "Pomodoro sauce, mozzarella cheese, pepperoni, Italian sausage, hot soppressata, jalapenos" },
-        ]
-      },
-      {
-        title: "Kids Menu",
-        items: [
-          { name: "Chicken Mac & Trees", desc: "Creamy Mac & Cheese mixed with tender chicken and tiny broccoli 'trees'" },
-          { name: "Grilled Cheese Sandwich", desc: "Toasted (buttery) sourdough, cheddar and provolone" },
-          { name: "Surfside Tenders", desc: "Crispy Chicken Tenders & dipping sauce (BBQ / Honey mustard / Ranch)" },
-          { name: "Hot Dog", desc: "100% Beef Hot Dog served on a soft bun" },
-          { name: "Pasta Bolognese", desc: "Handmade pomodoro and angus beef sauce" },
-          { name: "Cheeseburger", desc: "Wagyu Beef Pattie, cheddar cheese, buttered burger brioche bun" },
-        ],
-        note: "Served with a side of your choice"
-      },
-      {
-        title: "Sides",
-        items: [
-          { name: "French Fries" },
-          { name: "Potato Wedges" },
-          { name: "Vegetable Sticks" },
-          { name: "Fruit Bowl" },
-        ]
-      }
-    ],
     highlights: {
       en: ["Fresh Breakfast", "Brick-Oven Pizza", "Kids Menu", "All-Day Dining"],
       es: ["Desayuno Fresco", "Pizza de Horno", "Menú Infantil", "Servicio Todo el Día"]
