@@ -404,6 +404,7 @@ export interface NearbySpot {
   phone?: string;
   email?: string;
   images?: string[];
+  imagePositions?: string[];
   fullDescription?: string;
   rating?: string;
   menu?: {
