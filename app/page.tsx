@@ -5,12 +5,14 @@ import {
   Utensils, Coffee, Beer, Star, Waves, Mountain, Bike, Dumbbell,
   Activity, Fish, Anchor, TreePine, Leaf, Car, Plane, ShoppingCart,
   ShoppingBag, Package, Heart, Shield, Sun, Flame, Droplets, Cloud,
-  Zap, Target, MapPin, ChevronRight, ChevronLeft, Palette, Phone, Globe, Clock,
+  Zap, Target, MapPin, ChevronRight, ChevronLeft, ChevronDown, Palette, Phone, Globe, Clock,
   Menu, X, AlertCircle, CheckCircle2, Building2, Sailboat, Sandwich,
   Wine, IceCream, Soup, MessageCircle, Stethoscope, Hospital, Music,
   Sunset, Users, Croissant, FileText,
+  Bed, Bath, Wind, Wifi, Home as HomeIcon, Map as MapIcon, Navigation,
 } from "lucide-react";
 import {
+  casaSeabranch,
   theClub, inTownRestaurants, nearbyAreas, activities,
   privateChefs, dayTrips, boating, transport,
   groceriesEnRoute, groceriesNearLC, medicalInfo,
@@ -31,6 +33,7 @@ const ICONS: Record<string, React.ElementType> = {
   hospital: Hospital, "chef-hat": Utensils, volleyball: Target,
   music: Music, sunset: Sunset, swimmer: Users, croissant: Croissant,
   martini: Wine, "palm-tree": TreePine,
+  bed: Bed, bath: Bath, wind: Wind, wifi: Wifi, home: HomeIcon,
 };
 
 function Icon({ name, className }: { name: string; className?: string }) {
@@ -278,6 +281,7 @@ export default function Home() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeArea, setActiveArea] = useState(0);
+  const [seabranchOpen, setSeabranchOpen] = useState(false);
   const t = themes[themeKey];
 
   useEffect(() => {
@@ -366,6 +370,268 @@ export default function Home() {
             <a href="#explore" className={`inline-flex items-center justify-center px-7 py-3.5 rounded-full text-[15px] font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${t.btnGhost}`}>
               Things To Do
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Casa Seabranch — Property Feature Card ─────────────────────── */}
+      <section className={`${t.pageBg} py-24 sm:py-32 px-5 sm:px-8`}>
+        <div className="max-w-7xl mx-auto">
+          <div className={`${t.cardBg} rounded-[28px] sm:rounded-[32px] overflow-hidden shadow-[0_20px_60px_-15px_rgba(0,0,0,0.18)]`}>
+            {/* Top: 60/40 image + content split — gives the sketch real width to live in */}
+            <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr]">
+              {/* Left: sketch + CTA — visual/action side. Sketch on #fafafa matte, primary CTA centered beneath it. */}
+              <div className="bg-[#fafafa] flex flex-col items-center justify-center aspect-square lg:aspect-auto py-6 sm:py-8 lg:py-10">
+                <img
+                  src={casaSeabranch.sketch.src}
+                  alt={casaSeabranch.sketch.alt}
+                  className="w-[95%] max-w-none h-auto max-h-[70%] object-contain object-center"
+                />
+
+                {/* CTA — drawer toggle, lives directly under the sketch */}
+                <button
+                  type="button"
+                  onClick={() => setSeabranchOpen(o => !o)}
+                  aria-expanded={seabranchOpen}
+                  aria-controls="casa-seabranch-details"
+                  className={`group mt-6 sm:mt-8 lg:mt-10 inline-flex items-center gap-2.5 px-8 py-4 rounded-full text-[16px] font-medium transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] ${t.btnPrimary}`}
+                >
+                  <span>{seabranchOpen ? "Close" : "Step Inside Casa Seabranch"}</span>
+                  <ChevronDown
+                    className={`w-[18px] h-[18px] transition-transform duration-300 ${seabranchOpen ? "rotate-180" : "group-hover:translate-y-0.5"}`}
+                  />
+                </button>
+              </div>
+
+              {/* Right: title + tagline + description + highlights + CTA — tighter rhythm */}
+              <div className="p-7 sm:p-9 lg:p-10 xl:p-12 flex flex-col justify-center">
+                <h2 className={`text-[clamp(2.25rem,3.5vw,3.125rem)] font-bold ${t.heading} leading-[1.05] tracking-[-0.02em] mb-3`}>
+                  {casaSeabranch.name}
+                </h2>
+                <p className={`text-xl sm:text-2xl lg:text-2xl font-light italic ${t.body} mb-4 leading-snug max-w-xl whitespace-pre-line`}>
+                  {casaSeabranch.tagline}
+                </p>
+                <span className={`self-start inline-flex items-center gap-2 text-[13px] font-medium px-4 py-2 rounded-full ${t.accentLight} ${t.accent} mb-4`}>
+                  <MapPin className="w-3.5 h-3.5" />
+                  {casaSeabranch.locationChip}
+                </span>
+                <p className={`text-[15px] sm:text-[16px] ${t.body} leading-[1.6] mb-6 max-w-xl`}>
+                  {casaSeabranch.shortDescription}
+                </p>
+
+                {/* Highlights chip grid — tighter row gap, 2-up at lg keeps labels readable. CTA now lives in the left panel. */}
+                <div className="grid grid-cols-2 gap-x-4 gap-y-3">
+                  {casaSeabranch.highlights.map(h => (
+                    <div key={h.label} className="flex items-center gap-2.5">
+                      <div className={`w-10 h-10 rounded-xl ${t.accentLight} flex items-center justify-center flex-shrink-0`}>
+                        <Icon name={h.icon} className={`w-[18px] h-[18px] ${t.accent}`} />
+                      </div>
+                      <span className={`text-[14px] font-medium ${t.heading} leading-tight`}>{h.label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Drawer — animates height via grid-rows trick */}
+            <div
+              id="casa-seabranch-details"
+              className={`grid transition-[grid-template-rows] duration-500 ease-out ${seabranchOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+              aria-hidden={!seabranchOpen}
+            >
+              <div className="overflow-hidden">
+                <div className={`border-t ${t.border} p-6 sm:p-10 lg:p-12 flex flex-col gap-12`}>
+
+                  {/* About */}
+                  <div>
+                    <p className={`text-[11px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-4`}>
+                      Welcome
+                    </p>
+                    <h3 className={`text-2xl sm:text-3xl font-bold ${t.heading} mb-5 leading-tight`}>
+                      Step inside Casa Seabranch
+                    </h3>
+                    <div className={`text-[15px] ${t.body} leading-relaxed space-y-4 max-w-3xl`}>
+                      {casaSeabranch.about.map((p, i) => <p key={i}>{p}</p>)}
+                    </div>
+                  </div>
+
+                  {/* Arrival & Wayfinding — inline video + supporting action buttons */}
+                  <div>
+                    <p className={`text-[11px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-4`}>
+                      Arrival & Wayfinding
+                    </p>
+
+                    {/* Inline arrival video — compact phone-video preview, height-capped */}
+                    <div className="rounded-2xl overflow-hidden bg-black mb-5 w-fit max-w-full shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+                      <video
+                        controls
+                        preload="metadata"
+                        playsInline
+                        className="block w-auto h-auto max-w-full max-h-[60vh] sm:max-h-[55vh] lg:max-h-[480px] xl:max-h-[520px] object-contain"
+                        aria-label="Casa Seabranch arrival video — drive-up directions to 14 BTN Flats"
+                      >
+                        <source src={casaSeabranch.actions.arrivalVideo} type="video/mp4" />
+                        Your browser does not support inline video.{" "}
+                        <a href={casaSeabranch.actions.arrivalVideo} className="underline">
+                          Download the arrival video
+                        </a>
+                        .
+                      </video>
+                    </div>
+
+                    {/* Supporting action buttons */}
+                    <div className="flex flex-wrap gap-3 mb-3">
+                      <a href={casaSeabranch.actions.customMap} target="_blank" rel="noopener noreferrer"
+                        className={`inline-flex items-center gap-2 px-5 py-3 rounded-xl ${t.accentBg} text-white text-[14px] font-medium hover:opacity-90 transition-opacity`}>
+                        <MapIcon className="w-4 h-4" />
+                        Open Custom Map
+                      </a>
+                      <a href={casaSeabranch.actions.floorPlan} target="_blank" rel="noopener noreferrer"
+                        className={`inline-flex items-center gap-2 px-5 py-3 rounded-xl border ${t.border} ${t.heading} text-[14px] font-medium hover:opacity-90 transition-opacity`}>
+                        <FileText className="w-4 h-4" />
+                        View Floor Plan
+                      </a>
+                      <a href={casaSeabranch.actions.googleMaps} target="_blank" rel="noopener noreferrer"
+                        className={`inline-flex items-center gap-2 px-5 py-3 rounded-xl border ${t.border} ${t.heading} text-[14px] font-medium hover:opacity-90 transition-opacity`}>
+                        <Navigation className="w-4 h-4" />
+                        Open in Google Maps
+                      </a>
+                    </div>
+                    <p className={`text-[12px] ${t.muted} leading-relaxed`}>
+                      Coordinates: {casaSeabranch.actions.coordinates} · Google Maps can be imprecise inside Las Catalinas — use the custom map once you arrive.
+                    </p>
+                  </div>
+
+                  {/* Look for this Building — arrival image */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start">
+                    <a href={casaSeabranch.arrivalImage.src} target="_blank" rel="noopener noreferrer"
+                      className="group block rounded-2xl overflow-hidden bg-[#fafafa]"
+                      aria-label="Open larger view of the 14 BTN FLATS building">
+                      <img
+                        src={casaSeabranch.arrivalImage.src}
+                        alt={casaSeabranch.arrivalImage.alt}
+                        className="w-full h-full object-cover aspect-video group-hover:scale-[1.02] transition-transform duration-500"
+                      />
+                    </a>
+                    <div className="lg:py-2">
+                      <p className={`text-[11px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-3`}>
+                        Look for This Building
+                      </p>
+                      <h3 className={`text-xl sm:text-2xl font-bold ${t.heading} mb-3 leading-tight`}>
+                        14 BTN Flats — the blue one
+                      </h3>
+                      <p className={`text-[14px] ${t.body} leading-relaxed`}>
+                        {casaSeabranch.arrivalImage.caption}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* What You'll Love */}
+                  <div>
+                    <p className={`text-[11px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-6`}>
+                      What You'll Love
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      {casaSeabranch.whatYoullLove.map(item => (
+                        <div key={item.title} className={`${t.accentLight} rounded-2xl p-5 sm:p-6`}>
+                          <div className={`w-11 h-11 rounded-2xl ${t.accentMid} flex items-center justify-center mb-4`}>
+                            <Icon name={item.icon} className={`w-5 h-5 ${t.accent}`} />
+                          </div>
+                          <p className={`text-[16px] font-semibold ${t.heading} mb-2`}>{item.title}</p>
+                          <p className={`text-[14px] ${t.body} leading-relaxed`}>{item.body}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Property Snapshot */}
+                  <div>
+                    <p className={`text-[11px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-6`}>
+                      Property Snapshot
+                    </p>
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
+                      <div>
+                        <p className={`text-[14px] font-semibold ${t.heading} mb-4 flex items-center gap-2`}>
+                          <HomeIcon className={`w-4 h-4 ${t.accent}`} />
+                          Inside the Home
+                        </p>
+                        <ul className="flex flex-col gap-2.5">
+                          {casaSeabranch.propertySnapshot.inside.map(item => (
+                            <li key={item} className="flex items-start gap-2">
+                              <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 ${t.checkIcon}`} />
+                              <span className={`text-[13px] ${t.body} leading-relaxed`}>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className={`text-[14px] font-semibold ${t.heading} mb-4 flex items-center gap-2`}>
+                          <Sun className={`w-4 h-4 ${t.accent}`} />
+                          Outdoor Living
+                        </p>
+                        <ul className="flex flex-col gap-2.5">
+                          {casaSeabranch.propertySnapshot.outside.map(item => (
+                            <li key={item} className="flex items-start gap-2">
+                              <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 ${t.checkIcon}`} />
+                              <span className={`text-[13px] ${t.body} leading-relaxed`}>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                      <div>
+                        <p className={`text-[14px] font-semibold ${t.heading} mb-4 flex items-center gap-2`}>
+                          <MapPin className={`w-4 h-4 ${t.accent}`} />
+                          Just Steps Away
+                        </p>
+                        <ul className="flex flex-col gap-2.5">
+                          {casaSeabranch.propertySnapshot.nearby.map(item => (
+                            <li key={item} className="flex items-start gap-2">
+                              <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 ${t.checkIcon}`} />
+                              <span className={`text-[13px] ${t.body} leading-relaxed`}>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Sleeping Layout */}
+                  <div>
+                    <p className={`text-[11px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-4`}>
+                      Sleeping Layout
+                    </p>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      {casaSeabranch.sleepingLayout.map(s => (
+                        <div key={s.suite} className={`rounded-2xl p-5 border ${t.border}`}>
+                          <div className={`w-10 h-10 rounded-xl ${t.accentLight} flex items-center justify-center mb-3`}>
+                            <Bed className={`w-5 h-5 ${t.accent}`} />
+                          </div>
+                          <p className={`text-[14px] font-semibold ${t.heading} mb-1`}>{s.suite}</p>
+                          <p className={`text-[13px] ${t.body} leading-relaxed`}>{s.config}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Good to Know */}
+                  <div className={`${t.accentLight} rounded-2xl p-5 sm:p-6`}>
+                    <p className={`text-[11px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-4 flex items-center gap-2`}>
+                      <AlertCircle className={`w-3.5 h-3.5 ${t.accent}`} />
+                      Good to Know
+                    </p>
+                    <ul className="flex flex-col gap-2.5">
+                      {casaSeabranch.goodToKnow.map(item => (
+                        <li key={item} className="flex items-start gap-2.5">
+                          <span className={`w-1.5 h-1.5 rounded-full ${t.accentBg} mt-2 flex-shrink-0`} />
+                          <span className={`text-[13px] ${t.body} leading-relaxed`}>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
