@@ -266,7 +266,7 @@ function SectionHead({ eyebrow, title, sub, t, center = true }: {
 }) {
   return (
     <div className={`mb-12 sm:mb-16 ${center ? "text-center" : ""}`}>
-      <p className={`text-[12px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-3`}>{eyebrow}</p>
+      <p className={`text-[13px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-3`}>{eyebrow}</p>
       <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-bold ${t.heading} leading-tight mb-4`}>{title}</h2>
       {sub && <p className={`text-base sm:text-lg ${t.body} max-w-2xl ${center ? "mx-auto" : ""}`}>{sub}</p>}
     </div>
@@ -307,7 +307,7 @@ export default function Home() {
           <a href="#" className={`text-[15px] font-semibold tracking-tight transition-colors duration-300 ${scrolled ? t.navLogo : "text-white"}`}>
             Las Catalinas
           </a>
-          <nav className={`hidden lg:flex items-center gap-7 text-[13px] font-medium transition-colors duration-300 ${scrolled ? t.navText : "text-white/85"}`}>
+          <nav className={`hidden lg:flex items-center gap-7 text-[14px] font-medium transition-colors duration-300 ${scrolled ? t.navText : "text-white/85"}`}>
             {NAV_LINKS.map(l => (
               <a key={l.href} href={l.href} className="hover:opacity-50 transition-opacity">{l.label}</a>
             ))}
@@ -349,7 +349,7 @@ export default function Home() {
         <div className={`absolute inset-0 ${t.heroOverlay}`} />
 
         <div className="relative z-10 w-full max-w-5xl mx-auto px-5 sm:px-8 pt-24 pb-20 text-white">
-          <p className="animate-fade-up text-[13px] font-medium tracking-[0.1em] uppercase text-white/60 mb-5 flex items-center gap-2">
+          <p className="animate-fade-up text-[14px] font-medium tracking-[0.1em] uppercase text-white/60 mb-5 flex items-center gap-2">
             <MapPin className="w-3.5 h-3.5" />
             Guanacaste, Costa Rica
           </p>
@@ -411,7 +411,7 @@ export default function Home() {
                 <p className={`text-xl sm:text-2xl lg:text-2xl font-light italic ${t.body} mb-4 leading-snug max-w-xl whitespace-pre-line`}>
                   {casaSeabranch.tagline}
                 </p>
-                <span className={`self-start inline-flex items-center gap-2 text-[13px] font-medium px-4 py-2 rounded-full ${t.accentLight} ${t.accent} mb-4`}>
+                <span className={`self-start inline-flex items-center gap-2 text-[14px] font-medium px-4 py-2 rounded-full ${t.accentLight} ${t.accent} mb-4`}>
                   <MapPin className="w-3.5 h-3.5" />
                   {casaSeabranch.locationChip}
                 </span>
@@ -444,7 +444,7 @@ export default function Home() {
 
                   {/* About */}
                   <div>
-                    <p className={`text-[12px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-4`}>
+                    <p className={`text-[13px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-4`}>
                       Welcome
                     </p>
                     <h3 className={`text-2xl sm:text-3xl font-bold ${t.heading} mb-5 leading-tight`}>
@@ -457,11 +457,11 @@ export default function Home() {
 
                   {/* Arrival & Wayfinding — video + building photo side-by-side, buttons below */}
                   <div>
-                    <p className={`text-[12px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-4`}>
+                    <p className={`text-[13px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-4`}>
                       Arrival & Wayfinding
                     </p>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-start mb-6">
+                    <div className="flex flex-col lg:flex-row gap-5 lg:gap-6 items-start mb-6">
                       {/* LEFT: arrival video — compact phone-video preview, height-capped */}
                       <div className="rounded-2xl overflow-hidden bg-black w-fit max-w-full shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
                         <video
@@ -518,14 +518,14 @@ export default function Home() {
                         Open in Google Maps
                       </a>
                     </div>
-                    <p className={`text-[13px] ${t.muted} leading-relaxed`}>
+                    <p className={`text-[14px] ${t.muted} leading-relaxed`}>
                       Coordinates: {casaSeabranch.actions.coordinates} · Google Maps can be imprecise inside Las Catalinas — use the custom map once you arrive.
                     </p>
                   </div>
 
                   {/* What You'll Love */}
                   <div>
-                    <p className={`text-[12px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-6`}>
+                    <p className={`text-[13px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-6`}>
                       What You'll Love
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -543,7 +543,7 @@ export default function Home() {
 
                   {/* Property Snapshot */}
                   <div>
-                    <p className={`text-[12px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-6`}>
+                    <p className={`text-[13px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-6`}>
                       Property Snapshot
                     </p>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
@@ -556,7 +556,7 @@ export default function Home() {
                           {casaSeabranch.propertySnapshot.inside.map(item => (
                             <li key={item} className="flex items-start gap-2">
                               <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 ${t.checkIcon}`} />
-                              <span className={`text-[13px] ${t.body} leading-relaxed`}>{item}</span>
+                              <span className={`text-[14px] ${t.body} leading-relaxed`}>{item}</span>
                             </li>
                           ))}
                         </ul>
@@ -570,7 +570,7 @@ export default function Home() {
                           {casaSeabranch.propertySnapshot.outside.map(item => (
                             <li key={item} className="flex items-start gap-2">
                               <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 ${t.checkIcon}`} />
-                              <span className={`text-[13px] ${t.body} leading-relaxed`}>{item}</span>
+                              <span className={`text-[14px] ${t.body} leading-relaxed`}>{item}</span>
                             </li>
                           ))}
                         </ul>
@@ -584,7 +584,7 @@ export default function Home() {
                           {casaSeabranch.propertySnapshot.nearby.map(item => (
                             <li key={item} className="flex items-start gap-2">
                               <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 ${t.checkIcon}`} />
-                              <span className={`text-[13px] ${t.body} leading-relaxed`}>{item}</span>
+                              <span className={`text-[14px] ${t.body} leading-relaxed`}>{item}</span>
                             </li>
                           ))}
                         </ul>
@@ -594,7 +594,7 @@ export default function Home() {
 
                   {/* Sleeping Layout */}
                   <div>
-                    <p className={`text-[12px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-4`}>
+                    <p className={`text-[13px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-4`}>
                       Sleeping Layout
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -604,7 +604,7 @@ export default function Home() {
                             <Bed className={`w-5 h-5 ${t.accent}`} />
                           </div>
                           <p className={`text-[14px] font-semibold ${t.heading} mb-1`}>{s.suite}</p>
-                          <p className={`text-[13px] ${t.body} leading-relaxed`}>{s.config}</p>
+                          <p className={`text-[14px] ${t.body} leading-relaxed`}>{s.config}</p>
                         </div>
                       ))}
                     </div>
@@ -612,7 +612,7 @@ export default function Home() {
 
                   {/* Good to Know */}
                   <div className={`${t.accentLight} rounded-2xl p-5 sm:p-6`}>
-                    <p className={`text-[12px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-4 flex items-center gap-2`}>
+                    <p className={`text-[13px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-4 flex items-center gap-2`}>
                       <AlertCircle className={`w-3.5 h-3.5 ${t.accent}`} />
                       Good to Know
                     </p>
@@ -620,7 +620,7 @@ export default function Home() {
                       {casaSeabranch.goodToKnow.map(item => (
                         <li key={item} className="flex items-start gap-2.5">
                           <span className={`w-1.5 h-1.5 rounded-full ${t.accentBg} mt-2 flex-shrink-0`} />
-                          <span className={`text-[13px] ${t.body} leading-relaxed`}>{item}</span>
+                          <span className={`text-[14px] ${t.body} leading-relaxed`}>{item}</span>
                         </li>
                       ))}
                     </ul>
@@ -637,7 +637,7 @@ export default function Home() {
       <div className={`${t.stripBg} py-3.5 overflow-hidden`}>
         <div className={`flex animate-marquee whitespace-nowrap ${t.stripText}`}>
           {[...HIGHLIGHTS, ...HIGHLIGHTS].map((item, i) => (
-            <span key={i} className="flex-shrink-0 text-[13px] font-medium px-8">
+            <span key={i} className="flex-shrink-0 text-[14px] font-medium px-8">
               {item}
             </span>
           ))}
@@ -662,7 +662,7 @@ export default function Home() {
               </div>
               <div className="flex-1 min-w-0">
                 <p className={`text-[15px] font-semibold ${t.heading}`}>{card.title}</p>
-                <p className={`text-[13px] ${t.body} mt-0.5 leading-snug`}>{card.desc}</p>
+                <p className={`text-[14px] ${t.body} mt-0.5 leading-snug`}>{card.desc}</p>
               </div>
               <ChevronRight className={`w-4 h-4 ${t.muted} group-hover:translate-x-0.5 transition-transform flex-shrink-0`} />
             </a>
@@ -695,17 +695,17 @@ export default function Home() {
 
               <p className={`text-[20px] font-semibold ${t.heading} mb-2`}>{theClub.name}</p>
               <p className={`text-[14px] font-medium ${t.accent} mb-2`}>{theClub.cuisine}</p>
-              <p className={`text-[13px] ${t.muted} mb-4`}>{theClub.location}</p>
+              <p className={`text-[14px] ${t.muted} mb-4`}>{theClub.location}</p>
 
               {/* Description */}
               <p className={`text-[14px] ${t.body} leading-relaxed mb-6`}>{theClub.fullDescription}</p>
 
               {/* Contact info */}
               <div className="flex flex-col gap-2 mb-8">
-                <div className={`text-[13px] ${t.muted} flex items-center gap-2`}>
+                <div className={`text-[14px] ${t.muted} flex items-center gap-2`}>
                   <Clock className="w-3.5 h-3.5 flex-shrink-0" />{theClub.hours}
                 </div>
-                <div className={`text-[13px] ${t.muted} flex items-center gap-2`}>
+                <div className={`text-[14px] ${t.muted} flex items-center gap-2`}>
                   <Phone className="w-3.5 h-3.5 flex-shrink-0" />{theClub.phone}
                 </div>
               </div>
@@ -720,24 +720,24 @@ export default function Home() {
               )}
 
               {/* Pricing */}
-              <p className={`text-[13px] font-semibold ${t.heading} mb-3 uppercase tracking-wide`}>Day Use Pricing</p>
+              <p className={`text-[14px] font-semibold ${t.heading} mb-3 uppercase tracking-wide`}>Day Use Pricing</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                 {theClub.pricing.map(p => (
                   <div key={p.who} className={`${t.accentLight} rounded-2xl p-4`}>
-                    <p className={`text-[13px] font-semibold ${t.muted} mb-1`}>{p.who}</p>
-                    <p className={`text-[13px] line-through ${t.muted}`}>{p.full}</p>
+                    <p className={`text-[14px] font-semibold ${t.muted} mb-1`}>{p.who}</p>
+                    <p className={`text-[14px] line-through ${t.muted}`}>{p.full}</p>
                     <p className={`text-[16px] font-semibold ${t.accent} mt-1`}>{p.deal}</p>
                   </div>
                 ))}
               </div>
 
               {/* Amenities */}
-              <p className={`text-[13px] font-semibold ${t.heading} mb-3 uppercase tracking-wide`}>Facilities & Amenities</p>
+              <p className={`text-[14px] font-semibold ${t.heading} mb-3 uppercase tracking-wide`}>Facilities & Amenities</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {theClub.amenities.map(a => (
                   <div key={a} className="flex items-start gap-2">
                     <CheckCircle2 className={`w-4 h-4 flex-shrink-0 mt-0.5 ${t.checkIcon}`} />
-                    <span className={`text-[13px] ${t.body}`}>{a}</span>
+                    <span className={`text-[14px] ${t.body}`}>{a}</span>
                   </div>
                 ))}
               </div>
@@ -774,20 +774,20 @@ celebrating Costa Rica's extraordinary ingredients."
                         </div>
                     }
                     <div className="flex gap-2 flex-wrap justify-end">
-                      {r.badge && <span className={`text-[12px] font-semibold px-2.5 py-1 rounded-full ${t.mustGoBadge}`}>★ {r.badge}</span>}
+                      {r.badge && <span className={`text-[13px] font-semibold px-2.5 py-1 rounded-full ${t.mustGoBadge}`}>★ {r.badge}</span>}
                     </div>
                   </div>
                   <p className={`text-[17px] font-semibold ${t.heading} mb-0.5`}>{r.name}</p>
-                  <p className={`text-[13px] font-medium ${t.accent} mb-1`}>{r.cuisine}</p>
-                  <p className={`text-[13px] ${t.muted} mb-3`}>{r.location}</p>
+                  <p className={`text-[14px] font-medium ${t.accent} mb-1`}>{r.cuisine}</p>
+                  <p className={`text-[14px] ${t.muted} mb-3`}>{r.location}</p>
                   <p className={`text-[14px] ${t.body} leading-relaxed mb-5 flex-1`}>{r.description}</p>
                   <div className="flex flex-wrap gap-1.5 mb-4">
-                    {r.tags.map(tag => <span key={tag} className={`text-[13px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
+                    {r.tags.map(tag => <span key={tag} className={`text-[14px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
                   </div>
-                  <div className={`text-[13px] ${t.muted} flex items-center gap-1.5`}>
+                  <div className={`text-[14px] ${t.muted} flex items-center gap-1.5`}>
                     <Clock className="w-3.5 h-3.5 flex-shrink-0" />{r.hours}
                   </div>
-                  {r.phone && <div className={`text-[13px] ${t.muted} flex items-center gap-1.5 mt-1`}><Phone className="w-3.5 h-3.5 flex-shrink-0" />{r.phone}</div>}
+                  {r.phone && <div className={`text-[14px] ${t.muted} flex items-center gap-1.5 mt-1`}><Phone className="w-3.5 h-3.5 flex-shrink-0" />{r.phone}</div>}
                 </div>
               </a>
             ))}
@@ -804,9 +804,9 @@ celebrating Costa Rica's extraordinary ingredients."
           <div className="flex gap-2 overflow-x-auto scrollbar-hide pb-1 mb-8">
             {nearbyAreas.map((area, i) => (
               <button key={area.label} onClick={() => setActiveArea(i)}
-                className={`flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-full text-[13px] font-medium transition-all duration-200 ${activeArea === i ? t.tabActive : t.tabInactive}`}>
+                className={`flex-shrink-0 flex items-center gap-2 px-4 py-2 rounded-full text-[14px] font-medium transition-all duration-200 ${activeArea === i ? t.tabActive : t.tabInactive}`}>
                 <span>{area.label}</span>
-                <span className={`text-[12px] ${activeArea === i ? "opacity-60" : t.muted}`}>{area.distance}</span>
+                <span className={`text-[13px] ${activeArea === i ? "opacity-60" : t.muted}`}>{area.distance}</span>
               </button>
             ))}
           </div>
@@ -825,7 +825,7 @@ celebrating Costa Rica's extraordinary ingredients."
                     <div className="flex-1">
                       <p className={`text-[17px] font-semibold ${t.heading}`}>{spot.name}</p>
                     </div>
-                    {spot.badge && <span className={`text-[12px] font-semibold px-2.5 py-1 rounded-full flex-shrink-0 ${t.mustGoBadge}`}>★ {spot.badge}</span>}
+                    {spot.badge && <span className={`text-[13px] font-semibold px-2.5 py-1 rounded-full flex-shrink-0 ${t.mustGoBadge}`}>★ {spot.badge}</span>}
                   </div>
                   {spot.icon && (
                     Array.isArray(spot.icon)
@@ -836,12 +836,12 @@ celebrating Costa Rica's extraordinary ingredients."
                           <Icon name={spot.icon} className={`w-4 h-4 ${t.accent}`} />
                         </div>
                   )}
-                  <p className={`text-[13px] font-medium ${t.accent} mb-3`}>{spot.cuisine}</p>
+                  <p className={`text-[14px] font-medium ${t.accent} mb-3`}>{spot.cuisine}</p>
                   <p className={`text-[14px] ${t.body} leading-relaxed mb-4 flex-1`}>{spot.description}</p>
                   <div className="flex flex-wrap gap-1.5 mb-3">
-                    {spot.tags.map(tag => <span key={tag} className={`text-[13px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
+                    {spot.tags.map(tag => <span key={tag} className={`text-[14px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
                   </div>
-                  {spot.phone && <div className={`text-[13px] ${t.muted} flex items-center gap-1.5`}><Phone className="w-3 h-3 flex-shrink-0" />{spot.phone}</div>}
+                  {spot.phone && <div className={`text-[14px] ${t.muted} flex items-center gap-1.5`}><Phone className="w-3 h-3 flex-shrink-0" />{spot.phone}</div>}
                 </div>
               </a>
             ))}
@@ -862,9 +862,9 @@ celebrating Costa Rica's extraordinary ingredients."
                 <p className={`text-[17px] font-semibold ${t.heading} mb-2`}>{c.name}</p>
                 <p className={`text-[14px] ${t.body} leading-relaxed mb-4 flex-1`}>{c.description}</p>
                 <div className="flex flex-wrap gap-1.5 mb-3">
-                  {c.tags.map(tag => <span key={tag} className={`text-[13px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
+                  {c.tags.map(tag => <span key={tag} className={`text-[14px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
                 </div>
-                {c.phone && <div className={`text-[13px] ${t.muted} flex items-center gap-1.5`}><Phone className="w-3 h-3 flex-shrink-0" />{c.phone}</div>}
+                {c.phone && <div className={`text-[14px] ${t.muted} flex items-center gap-1.5`}><Phone className="w-3 h-3 flex-shrink-0" />{c.phone}</div>}
               </a>
             ))}
           </div>
@@ -882,11 +882,11 @@ celebrating Costa Rica's extraordinary ingredients."
                   <Icon name={a.icon} className={`w-5 h-5 ${t.accent}`} />
                 </div>
                 <p className={`text-[15px] font-semibold ${t.heading} mb-2`}>{a.title}</p>
-                <p className={`text-[13px] ${t.body} leading-relaxed mb-4 flex-1`}>{a.description}</p>
+                <p className={`text-[14px] ${t.body} leading-relaxed mb-4 flex-1`}>{a.description}</p>
                 <div className="flex flex-wrap gap-1.5 mb-2">
-                  {a.tags.map(tag => <span key={tag} className={`text-[12px] px-2 py-0.5 rounded-full ${t.pill}`}>{tag}</span>)}
+                  {a.tags.map(tag => <span key={tag} className={`text-[13px] px-2 py-0.5 rounded-full ${t.pill}`}>{tag}</span>)}
                 </div>
-                {a.phone && <div className={`text-[13px] ${t.muted} flex items-center gap-1.5 mt-1`}><Phone className="w-3 h-3 flex-shrink-0" />{a.phone}</div>}
+                {a.phone && <div className={`text-[14px] ${t.muted} flex items-center gap-1.5 mt-1`}><Phone className="w-3 h-3 flex-shrink-0" />{a.phone}</div>}
               </a>
             ))}
           </div>
@@ -920,10 +920,10 @@ celebrating Costa Rica's extraordinary ingredients."
                 </div>
                 <div className="p-6 sm:p-8">
                   <p className={`text-[20px] font-semibold ${t.heading} mb-1`}>{beach.name}</p>
-                  <p className={`text-[13px] font-medium ${t.accent} mb-3`}>{beach.sub}</p>
+                  <p className={`text-[14px] font-medium ${t.accent} mb-3`}>{beach.sub}</p>
                   <p className={`text-[14px] ${t.body} leading-relaxed mb-4`}>{beach.desc}</p>
                   <div className="flex flex-wrap gap-2">
-                    {beach.tags.map(tag => <span key={tag} className={`text-[13px] px-3 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
+                    {beach.tags.map(tag => <span key={tag} className={`text-[14px] px-3 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
                   </div>
                 </div>
               </div>
@@ -943,12 +943,12 @@ celebrating Costa Rica's extraordinary ingredients."
                   <div className={`w-10 h-10 rounded-2xl ${t.accentMid} flex items-center justify-center`}>
                     <Icon name={trip.icon} className={`w-5 h-5 ${t.accent}`} />
                   </div>
-                  <span className={`text-[12px] font-semibold px-2.5 py-1 rounded-full ${t.pill}`}>{trip.distance}</span>
+                  <span className={`text-[13px] font-semibold px-2.5 py-1 rounded-full ${t.pill}`}>{trip.distance}</span>
                 </div>
                 <p className={`text-[15px] font-semibold ${t.heading} mb-2`}>{trip.name}</p>
-                <p className={`text-[13px] ${t.body} leading-relaxed mb-4 flex-1`}>{trip.description}</p>
+                <p className={`text-[14px] ${t.body} leading-relaxed mb-4 flex-1`}>{trip.description}</p>
                 <div className="flex flex-wrap gap-1.5">
-                  {trip.tags.map(tag => <span key={tag} className={`text-[12px] px-2 py-0.5 rounded-full ${t.pill}`}>{tag}</span>)}
+                  {trip.tags.map(tag => <span key={tag} className={`text-[13px] px-2 py-0.5 rounded-full ${t.pill}`}>{tag}</span>)}
                 </div>
               </a>
             ))}
@@ -967,14 +967,14 @@ celebrating Costa Rica's extraordinary ingredients."
                   <div className={`w-10 h-10 rounded-2xl ${t.accentMid} flex items-center justify-center`}>
                     <Icon name={b.icon} className={`w-5 h-5 ${t.accent}`} />
                   </div>
-                  <span className={`text-[12px] font-semibold px-2.5 py-1 rounded-full ${t.pill}`}>{b.type}</span>
+                  <span className={`text-[13px] font-semibold px-2.5 py-1 rounded-full ${t.pill}`}>{b.type}</span>
                 </div>
                 <p className={`text-[17px] font-semibold ${t.heading} mb-2`}>{b.name}</p>
                 <p className={`text-[14px] ${t.body} leading-relaxed mb-4 flex-1`}>{b.description}</p>
                 <div className="flex flex-wrap gap-1.5 mb-3">
-                  {b.tags.map(tag => <span key={tag} className={`text-[13px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
+                  {b.tags.map(tag => <span key={tag} className={`text-[14px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
                 </div>
-                {b.contact && <div className={`text-[13px] ${t.muted} flex items-center gap-1.5`}><Phone className="w-3 h-3 flex-shrink-0" />{b.contact}</div>}
+                {b.contact && <div className={`text-[14px] ${t.muted} flex items-center gap-1.5`}><Phone className="w-3 h-3 flex-shrink-0" />{b.contact}</div>}
               </a>
             ))}
           </div>
@@ -987,7 +987,7 @@ celebrating Costa Rica's extraordinary ingredients."
           <SectionHead eyebrow="Good to Know" title="Practical Guide" t={t} />
 
           {/* Transport */}
-          <p className={`text-[12px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-5`}>Getting Here & Around</p>
+          <p className={`text-[13px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-5`}>Getting Here & Around</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-16">
             {transport.map(tr => (
               <div key={tr.title} className={`${t.cardBg} rounded-2xl p-6`}>
@@ -999,47 +999,47 @@ celebrating Costa Rica's extraordinary ingredients."
                 </div>
                 <p className={`text-[14px] ${t.body} leading-relaxed mb-3`}>{tr.description}</p>
                 <div className="flex flex-wrap gap-1.5 mb-2">
-                  {tr.tags.map(tag => <span key={tag} className={`text-[13px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
+                  {tr.tags.map(tag => <span key={tag} className={`text-[14px] px-2.5 py-1 rounded-full ${t.pill}`}>{tag}</span>)}
                 </div>
-                {tr.contact && <div className={`text-[13px] ${t.muted} flex items-center gap-1.5`}><Globe className="w-3 h-3 flex-shrink-0" />{tr.contact}</div>}
+                {tr.contact && <div className={`text-[14px] ${t.muted} flex items-center gap-1.5`}><Globe className="w-3 h-3 flex-shrink-0" />{tr.contact}</div>}
               </div>
             ))}
           </div>
 
           {/* Groceries */}
-          <p className={`text-[12px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-5`}>Stock Up En Route from Airport</p>
+          <p className={`text-[13px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-5`}>Stock Up En Route from Airport</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
             {groceriesEnRoute.map(g => (
               <div key={g.name} className={`${t.cardBg} rounded-2xl p-6`}>
                 <div className="flex items-center justify-between mb-3">
                   <p className={`text-[17px] font-semibold ${t.heading}`}>{g.name}</p>
-                  <span className={`text-[12px] font-semibold px-2.5 py-1 rounded-full ${t.mustGoBadge}`}>{g.highlight}</span>
+                  <span className={`text-[13px] font-semibold px-2.5 py-1 rounded-full ${t.mustGoBadge}`}>{g.highlight}</span>
                 </div>
-                <p className={`text-[13px] ${t.muted} mb-2 flex items-center gap-1`}><MapPin className="w-3 h-3 flex-shrink-0" />{g.distance}</p>
+                <p className={`text-[14px] ${t.muted} mb-2 flex items-center gap-1`}><MapPin className="w-3 h-3 flex-shrink-0" />{g.distance}</p>
                 <p className={`text-[14px] ${t.body} leading-relaxed mb-3`}>{g.description}</p>
                 <div className="flex flex-wrap gap-1.5">
-                  {g.tags.map(tag => <span key={tag} className={`text-[12px] px-2 py-0.5 rounded-full ${t.pill}`}>{tag}</span>)}
+                  {g.tags.map(tag => <span key={tag} className={`text-[13px] px-2 py-0.5 rounded-full ${t.pill}`}>{tag}</span>)}
                 </div>
               </div>
             ))}
           </div>
 
-          <p className={`text-[12px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-5`}>Near Las Catalinas</p>
+          <p className={`text-[13px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-5`}>Near Las Catalinas</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-16">
             {groceriesNearLC.map(g => (
               <div key={g.name} className={`${t.cardBg} rounded-xl px-5 py-4`}>
                 <div className="flex items-start justify-between gap-2 mb-1">
                   <p className={`text-[14px] font-semibold ${t.heading}`}>{g.name}</p>
-                  <p className={`text-[13px] ${t.muted} flex-shrink-0`}>{g.distance}</p>
+                  <p className={`text-[14px] ${t.muted} flex-shrink-0`}>{g.distance}</p>
                 </div>
-                <p className={`text-[13px] ${t.body}`}>{g.description}</p>
-                {g.hours && <p className={`text-[13px] font-medium ${t.accent} mt-1`}>{g.hours}</p>}
+                <p className={`text-[14px] ${t.body}`}>{g.description}</p>
+                {g.hours && <p className={`text-[14px] font-medium ${t.accent} mt-1`}>{g.hours}</p>}
               </div>
             ))}
           </div>
 
           {/* Medical */}
-          <p className={`text-[12px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-5`}>Medical & Emergency</p>
+          <p className={`text-[13px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-5`}>Medical & Emergency</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {medicalInfo.map(m => (
               <div key={m.title} className={`${t.cardBg} rounded-2xl p-6 ${m.urgent ? "border-l-[3px] border-rose-500" : ""}`}>
@@ -1068,7 +1068,7 @@ celebrating Costa Rica's extraordinary ingredients."
         <div className="max-w-4xl mx-auto text-center">
           <p className="text-[22px] font-semibold text-white mb-2">Las Catalinas</p>
           <p className={`text-[14px] ${t.footerText} mb-1`}>Guanacaste, Costa Rica · Car-Free Beach Town</p>
-          <p className={`text-[13px] ${t.footerText}`}>A guest guide made with care · Pura Vida</p>
+          <p className={`text-[14px] ${t.footerText}`}>A guest guide made with care · Pura Vida</p>
         </div>
       </footer>
 
@@ -1076,7 +1076,7 @@ celebrating Costa Rica's extraordinary ingredients."
       <div className="fixed bottom-5 right-4 z-50 flex flex-col items-end">
         {pickerOpen && (
           <div className="mb-3 bg-white rounded-2xl shadow-2xl p-4 w-56 border border-[#d2d2d7]/40 animate-fade-up">
-            <p className="text-[12px] font-semibold text-[#86868b] uppercase tracking-widest mb-3">Style</p>
+            <p className="text-[13px] font-semibold text-[#86868b] uppercase tracking-widest mb-3">Style</p>
             <div className="space-y-1">
               {(Object.keys(themes) as ThemeKey[]).map(key => (
                 <button key={key} onClick={() => { setThemeKey(key); setPickerOpen(false); }}
@@ -1087,10 +1087,10 @@ celebrating Costa Rica's extraordinary ingredients."
                     ))}
                   </div>
                   <div className="flex-1">
-                    <p className="text-[13px] font-semibold text-[#1d1d1f]">{themes[key].name}</p>
-                    <p className="text-[12px] text-[#86868b]">{themes[key].tagline}</p>
+                    <p className="text-[14px] font-semibold text-[#1d1d1f]">{themes[key].name}</p>
+                    <p className="text-[13px] text-[#86868b]">{themes[key].tagline}</p>
                   </div>
-                  {themeKey === key && <span className="text-[12px] font-bold text-emerald-500">✓</span>}
+                  {themeKey === key && <span className="text-[13px] font-bold text-emerald-500">✓</span>}
                 </button>
               ))}
             </div>
