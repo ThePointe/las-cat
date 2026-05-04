@@ -1,3 +1,113 @@
+// ─── Casa Seabranch (your property) ────────────────────────────────────────
+
+export const casaSeabranch = {
+  // Front card
+  eyebrow: "Your Home in Las Catalinas",
+  name: "Casa Seabranch",
+  tagline: "Ocean views. Open air.\nEverything steps away.",
+  locationChip: "14 BTN Flats · 3rd Floor · Beach Town North",
+  sketch: {
+    src: "/images/seabranch/sketch-seabranch-flat.png",
+    alt: "Architectural sketch of Casa Seabranch — a 3-bedroom flat with covered terrace",
+  },
+  shortDescription:
+    "A modern 3-bedroom, 3-ensuite retreat with sweeping ocean views, seamless indoor-outdoor living, and a spacious covered terrace. Designed for slow mornings, salty afternoons, and sunset gatherings — your place to land, breathe, and settle into Pura Vida.",
+  highlights: [
+    { icon: "bed",         label: "3 Bedrooms" },
+    { icon: "bath",        label: "3 Ensuite Baths" },
+    { icon: "waves",       label: "Ocean Views" },
+    { icon: "sun",         label: "Covered Terrace" },
+    { icon: "map-pin",     label: "Steps to Beach & Mercado" },
+    { icon: "wind",        label: "A/C in Every Room" },
+    { icon: "wifi",        label: "High-Speed Wi-Fi" },
+    { icon: "anchor",      label: "Beach Gear Included" },
+  ] as { icon: string; label: string }[],
+
+  // Drawer — long-form content
+  about: [
+    "Casa Seabranch is your private ocean-view retreat in Las Catalinas — a car-free beach town tucked between the Pacific and the lush hills of Costa Rica's Guanacaste coast. Located on the 3rd floor of 14 BTN Flats in Beach Town North, directly across from the soccer fields, the home places you exactly where you want to be: steps from the beach, Mercado dining, Copper & Stone, Center of Joy, Pura Vida Ride, cafés, wellness, fitness, and the town's hiking and biking trails.",
+    "Inside, the feeling is bright, calm, and quietly elevated. High ceilings and floor-to-ceiling windows bring in ocean views and soft natural light. A/C splits cool every room, and upgraded insulated, double-glazed windows create a peaceful retreat above the rhythm of town. Open the accordion-style glass doors and the home changes shape — kitchen, dining, living room, and the spacious covered terrace become one open-air space. Morning coffee. Sunset drinks. Long dinners. Salty towels. Somehow, everyone ends up on the terrace.",
+  ],
+
+  actions: {
+    arrivalVideo: "/videos/seabranch-arrival-video.mp4",
+    customMap:    "https://www.google.com/maps/d/u/0/edit?mid=1bPlz4W4k8YRSK7vNtcmgRoglM_iINoM&usp=sharing",
+    floorPlan:    "/images/seabranch/seabranch-layout.png",
+    googleMaps:   "https://maps.app.goo.gl/txmSvrKcYLvcXD628",
+    coordinates:  "10.482897, -85.786461",
+  },
+
+  arrivalImage: {
+    src: "/images/seabranch/14-btn-flats-arrival.jpg",
+    alt: "Side view of the blue 14 BTN Flats building with exterior staircase and 14 BTN FLATS marker",
+    caption: "Look for the blue building with the exterior staircase and the 14 BTN FLATS marker on the side.",
+  },
+
+  whatYoullLove: [
+    {
+      icon: "sun",
+      title: "Indoor-Outdoor Living",
+      body: "Slide open the floor-to-ceiling glass wall and the living space flows straight onto the covered terrace. Easy, breezy, and made for the way vacation should feel.",
+    },
+    {
+      icon: "waves",
+      title: "Steps From the Beach",
+      body: "No car. No planning spiral. Walk out the door and you're just steps from the sand, the water, and the rhythm of Las Catalinas.",
+    },
+    {
+      icon: "map-pin",
+      title: "Heart of Beach Town North",
+      body: "Mercado restaurants, Copper & Stone, Center of Joy, Pura Vida Ride, fitness classes, rentals, and trails — all within an easy walk.",
+    },
+    {
+      icon: "shield",
+      title: "Designed for Real Comfort",
+      body: "High-speed Wi-Fi, A/C splits in every room, washer & dryer, a large workspace, and a calm, comfortable layout that works whether you're fully unplugged or sneaking in a quick call.",
+    },
+  ] as { icon: string; title: string; body: string }[],
+
+  propertySnapshot: {
+    inside: [
+      "One-level layout, 3 bedrooms, 3 ensuite baths",
+      "A/C splits in every room",
+      "Floor-to-ceiling, double-glazed insulated windows",
+      "High ceilings & ocean views",
+      "Fully stocked kitchen — induction range, dishwasher, coffee maker, blender, toaster oven, spices",
+      "Washer and dryer; blow dryers in every bathroom",
+      "Large workspace desk and high-speed Wi-Fi",
+      "Beach towels, beach chairs, cooler, and 2 boogie boards included",
+    ],
+    outside: [
+      "Expansive covered terrace seating up to 8",
+      "Accordion-style glass doors open to the living space",
+      "Al fresco dining and lounging",
+      "Sunset cocktail spot with ocean & town views",
+    ],
+    nearby: [
+      "Beach (steps away)",
+      "Mercado restaurants & cafés",
+      "Copper & Stone gourmet grocery",
+      "Center of Joy wellness & Nature's Table",
+      "Pura Vida Ride (bikes & paddleboards)",
+      "Outdoor fitness classes",
+      "Hiking and biking trails",
+    ],
+  },
+
+  sleepingLayout: [
+    { suite: "Primary suite", config: "King bed" },
+    { suite: "Guest suite",   config: "King bed" },
+    { suite: "Third suite",   config: "Two XL twins or convertible King (connector + comfort bridge + king topper)" },
+  ] as { suite: string; config: string }[],
+
+  goodToKnow: [
+    "On the 3rd floor with floor-to-ceiling windows — please let us know in advance if traveling with very young children so we can help you decide what works best.",
+    "Pull alongside the building to unload, then park in the larger guest lot across the street, to the left of the vendor lot near the soccer field.",
+    "Beach Club day passes are optional, paid separately, and not guaranteed during high season — go first thing in the morning to secure them.",
+    "Quiet hours after 9:00 PM. No smoking. No pets.",
+  ],
+};
+
 // ─── The Club ──────────────────────────────────────────────────────────────
 
 export const theClub = {
