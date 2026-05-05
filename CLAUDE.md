@@ -33,6 +33,7 @@ Expert Architect & UX/UI Lead Guidance for the Las Catalinas Guest Concierge Sit
 - **Asset Hygiene:** `/public` is for production-ready assets only. No backups or spare files. Use Git history for version control.
 - **Interactive Testing:** For any new interactivity, provide the specific URL/step for the user to test in the local preview.
 - **Final Check:** Run `npm run build` after changes to ensure no TypeScript or build errors exist.
+- **No AI attribution:** Do not add "Generated with Claude Code," "Co-Authored-By," or AI attribution footers/trailers to commit messages or PR descriptions unless Sheila explicitly asks.
 
 ## Preview URLs
 - **Main project:** http://localhost:3000 — Sheila's canonical dev server (run from `/Users/sheila/Documents/Claude/las-cat`).
