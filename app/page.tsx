@@ -440,7 +440,8 @@ export default function Home() {
               aria-hidden={!seabranchOpen}
             >
               <div className="overflow-hidden">
-                <div className={`border-t ${t.border} p-6 sm:p-10 lg:p-12 flex flex-col gap-12`}>
+                <div className={`border-t ${t.border} p-6 sm:p-10 lg:p-12`}>
+                  <div className="mx-auto max-w-[880px] flex flex-col gap-12">
 
                   {/* About */}
                   <div>
@@ -455,20 +456,20 @@ export default function Home() {
                     </div>
                   </div>
 
-                  {/* Arrival & Wayfinding — video + building photo side-by-side, buttons below */}
+                  {/* Arrival & Wayfinding */}
                   <div>
-                    <p className={`text-[13px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-4`}>
+                    <p className={`text-[13px] font-semibold tracking-[0.12em] uppercase ${t.muted} mb-5`}>
                       Arrival & Wayfinding
                     </p>
 
-                    <div className="flex flex-col lg:flex-row gap-5 lg:gap-6 items-start mb-6">
-                      {/* LEFT: arrival video — compact phone-video preview, height-capped */}
-                      <div className="rounded-2xl overflow-hidden bg-black w-fit max-w-full shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
+                    <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 items-start mb-8">
+                      {/* LEFT: phone-clip video, fixed 240px column on desktop */}
+                      <div className="rounded-2xl overflow-hidden bg-black w-fit max-w-full mx-auto lg:mx-0 lg:w-[240px] lg:shrink-0 shadow-[0_8px_30px_rgba(0,0,0,0.08)]">
                         <video
                           controls
                           preload="metadata"
                           playsInline
-                          className="block w-auto h-auto max-w-full max-h-[60vh] sm:max-h-[55vh] lg:max-h-[480px] xl:max-h-[520px] object-contain"
+                          className="block w-auto lg:w-full h-auto max-w-full max-h-[60vh] sm:max-h-[55vh] lg:max-h-[420px] object-contain"
                           aria-label="Casa Seabranch arrival video — drive-up directions to 14 BTN Flats"
                         >
                           <source src={casaSeabranch.actions.arrivalVideo} type="video/mp4" />
@@ -480,10 +481,10 @@ export default function Home() {
                         </video>
                       </div>
 
-                      {/* RIGHT: building photo, then heading + caption directly under it */}
-                      <div>
+                      {/* RIGHT: building photo + heading + caption, one captioned figure */}
+                      <div className="w-full lg:flex-1 lg:min-w-0">
                         <a href={casaSeabranch.arrivalImage.src} target="_blank" rel="noopener noreferrer"
-                          className="group block rounded-2xl overflow-hidden mb-4 max-w-[560px]"
+                          className="group block rounded-2xl overflow-hidden mb-4"
                           aria-label="Open larger view of the 14 BTN FLATS building">
                           <img
                             src={casaSeabranch.arrivalImage.src}
@@ -491,17 +492,17 @@ export default function Home() {
                             className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
                           />
                         </a>
-                        <h3 className={`text-xl sm:text-2xl font-bold ${t.heading} mb-3 leading-tight`}>
+                        <h3 className={`text-xl sm:text-2xl font-bold ${t.heading} mb-2 leading-tight`}>
                           14 BTN Flats — the blue one
                         </h3>
-                        <p className={`text-[14px] ${t.body} leading-relaxed max-w-[560px]`}>
+                        <p className={`text-[14px] ${t.body} leading-relaxed`}>
                           {casaSeabranch.arrivalImage.caption}
                         </p>
                       </div>
                     </div>
 
-                    {/* Action buttons + coordinates note — full-width below the media grid */}
-                    <div className="flex flex-wrap gap-3 mb-3">
+                    {/* Action buttons */}
+                    <div className="flex flex-wrap gap-3 mb-5">
                       <a href={casaSeabranch.actions.customMap} target="_blank" rel="noopener noreferrer"
                         className={`inline-flex items-center gap-2 px-5 py-3 rounded-xl ${t.accentBg} text-white text-[14px] font-medium hover:opacity-90 transition-opacity`}>
                         <MapIcon className="w-4 h-4" />
@@ -518,9 +519,20 @@ export default function Home() {
                         Open in Google Maps
                       </a>
                     </div>
-                    <p className={`text-[14px] ${t.muted} leading-relaxed`}>
-                      Coordinates: {casaSeabranch.actions.coordinates} · Google Maps can be imprecise inside Las Catalinas — use the custom map once you arrive.
-                    </p>
+
+                    {/* Coordinates info card — quiet, practical */}
+                    <div className={`flex items-start gap-3 p-4 rounded-xl border ${t.border} ${t.pageBg}`}>
+                      <MapPin className={`w-5 h-5 ${t.accent} flex-shrink-0 mt-0.5`} />
+                      <div className="min-w-0 space-y-1">
+                        <p className={`text-[14px] ${t.heading} leading-snug`}>
+                          <span className="font-medium">Coordinates: </span>
+                          <span className="font-mono tabular-nums">{casaSeabranch.actions.coordinates}</span>
+                        </p>
+                        <p className={`text-[13px] ${t.muted} leading-relaxed`}>
+                          Google Maps can be imprecise inside Las Catalinas — use the custom map once you arrive.
+                        </p>
+                      </div>
+                    </div>
                   </div>
 
                   {/* What You'll Love */}
@@ -626,6 +638,7 @@ export default function Home() {
                     </ul>
                   </div>
 
+                  </div>
                 </div>
               </div>
             </div>
