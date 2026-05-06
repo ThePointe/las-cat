@@ -13,6 +13,7 @@ Expert Architect & UX/UI Lead Guidance for the Las Catalinas Guest Concierge Sit
 - **Separation of Concerns:** Keep interactive logic (the 'smarts') strictly separate from the styling (the 'looks').
 - **Styling Protection:** Ensure a beginner can safely edit Tailwind colors/fonts without breaking component functionality.
 - **Single Source of Truth:** [app/data.ts] is the ONLY source for guest info. No hard-coded text in UI components. Use JSX only for layout/logic.
+- **Protected files:** Do not edit `app/globals.css`, `app/layout.tsx`, `next.config.ts`, `tsconfig.json`, or `package.json` unless Sheila explicitly asks.
 
 ## Localization Strategy (Deferred)
 - **Architecture Only:** Implement bilingual objects `{ en: "", es: "" }` in `app/data.ts` now to prevent future refactoring.
@@ -46,6 +47,8 @@ Expert Architect & UX/UI Lead Guidance for the Las Catalinas Guest Concierge Sit
 - **Asset Hygiene:** `/public` is for production-ready assets only. No backups or spare files. Use Git history for version control.
 - **Interactive Testing:** For any new interactivity, provide the specific URL/step for the user to test in the local preview.
 - **Final Check:** Run `npm run build` after changes to ensure no TypeScript or build errors exist.
+- **UI task done = build passes + looks good in browser at mobile and desktop viewports + no regressions in adjacent sections.**
+- **Ask before creating files:** Do not create new components, pages, hooks, or utilities unless explicitly instructed. Prefer editing existing files.
 - **No AI attribution:** Do not add "Generated with Claude Code," "Co-Authored-By," or AI attribution footers/trailers to commit messages or PR descriptions unless Sheila explicitly asks.
 
 ## Preview URLs
