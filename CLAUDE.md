@@ -28,6 +28,19 @@ Expert Architect & UX/UI Lead Guidance for the Las Catalinas Guest Concierge Sit
 - **Context:** Guests will be standing on cobblestone streets in Costa Rica looking at their phones.
 - **Design:** "Thumb-friendly" navigation. Use "scannable" content: big buttons, short sentences, clear icons, and zero dense text blocks.
 
+## UX/UI Design Standard
+
+**Before editing any visible UI, think like a senior product designer — not an implementer.**
+
+- **Diagnose first.** Identify the visual problem in plain English: alignment, visual weight, hierarchy, proportion, whitespace, grouping/proximity, readability/contrast, responsive behavior.
+- **Classify the root cause:** layout bug · composition problem · content hierarchy · responsiveness · design-system/token issue.
+- **Propose the design solution before touching code:** module max-width, column ratios, alignment rules, spacing rhythm, typography scale, contrast adjustments, mobile stacking behavior.
+- **Do not code until Sheila approves the design plan.**
+- Prefer polished, editorial, premium compositions over technically correct ones. If it looks visually amateur, redesign before committing.
+- Avoid lopsided layouts, full-width sprawl, oversized media, tiny low-contrast text, and disconnected floating elements.
+- "It compiles" ≠ "it looks good." The bar is visual quality, not build success.
+- Preserve the site's calm, premium, luxury guest-guide feel.
+
 ## Workflow & Verification
 - **Mentor Mode:** Explain the "why" behind your technical or UX choices in simple, non-engineer terms.
 - **Asset Hygiene:** `/public` is for production-ready assets only. No backups or spare files. Use Git history for version control.
